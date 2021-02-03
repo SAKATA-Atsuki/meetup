@@ -1150,14 +1150,14 @@ class Router implements BindingRegistrar, RegistrarContract
     public function auth(array $options = [])
     {
         // Authentication Routes...
-        $this->get('login', 'Auth\LoginController@showLoginForm')->name('login');
-        $this->post('login', 'Auth\LoginController@login');
-        $this->post('logout', 'Auth\LoginController@logout')->name('logout');
+        $this->get('login', 'User\Auth\LoginController@showLoginForm')->name('user.login');
+        $this->post('login', 'User\Auth\LoginController@login');
+        $this->post('logout', 'User\Auth\LoginController@logout')->name('user.logout');
 
         // Registration Routes...
         if ($options['register'] ?? true) {
-            $this->get('register', 'Auth\RegisterController@showRegistrationForm')->name('register');
-            $this->post('register', 'Auth\RegisterController@register');
+            $this->get('register', 'User\Auth\RegisterController@showRegistrationForm')->name('user.register');
+            $this->post('register', 'User\Auth\RegisterController@register');
         }
 
         // Password Reset Routes...
@@ -1167,7 +1167,7 @@ class Router implements BindingRegistrar, RegistrarContract
 
         // Password Confirmation Routes...
         if ($options['confirm'] ??
-            class_exists($this->prependGroupNamespace('Auth\ConfirmPasswordController'))) {
+            class_exists($this->prependGroupNamespace('User\Auth\ConfirmPasswordController'))) {
             $this->confirmPassword();
         }
 
@@ -1184,10 +1184,10 @@ class Router implements BindingRegistrar, RegistrarContract
      */
     public function resetPassword()
     {
-        $this->get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm')->name('password.request');
-        $this->post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail')->name('password.email');
-        $this->get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm')->name('password.reset');
-        $this->post('password/reset', 'Auth\ResetPasswordController@reset')->name('password.update');
+        $this->get('password/reset', 'User\Auth\ForgotPasswordController@showLinkRequestForm')->name('user.password.request');
+        $this->post('password/email', 'User\Auth\ForgotPasswordController@sendResetLinkEmail')->name('user.password.email');
+        $this->get('password/reset/{token}', 'User\Auth\ResetPasswordController@showResetForm')->name('user.password.reset');
+        $this->post('password/reset', 'User\Auth\ResetPasswordController@reset')->name('user.password.update');
     }
 
     /**
@@ -1197,8 +1197,8 @@ class Router implements BindingRegistrar, RegistrarContract
      */
     public function confirmPassword()
     {
-        $this->get('password/confirm', 'Auth\ConfirmPasswordController@showConfirmForm')->name('password.confirm');
-        $this->post('password/confirm', 'Auth\ConfirmPasswordController@confirm');
+        $this->get('password/confirm', 'User\Auth\ConfirmPasswordController@showConfirmForm')->name('user.password.confirm');
+        $this->post('password/confirm', 'User\Auth\ConfirmPasswordController@confirm');
     }
 
     /**
@@ -1208,9 +1208,9 @@ class Router implements BindingRegistrar, RegistrarContract
      */
     public function emailVerification()
     {
-        $this->get('email/verify', 'Auth\VerificationController@show')->name('verification.notice');
-        $this->get('email/verify/{id}/{hash}', 'Auth\VerificationController@verify')->name('verification.verify');
-        $this->post('email/resend', 'Auth\VerificationController@resend')->name('verification.resend');
+        $this->get('email/verify', 'User\Auth\VerificationController@show')->name('user.verification.notice');
+        $this->get('email/verify/{id}/{hash}', 'User\Auth\VerificationController@verify')->name('user.verification.verify');
+        $this->post('email/resend', 'User\Auth\VerificationController@resend')->name('user.verification.resend');
     }
 
     /**
