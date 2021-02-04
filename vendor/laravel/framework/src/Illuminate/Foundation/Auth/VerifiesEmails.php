@@ -20,7 +20,7 @@ trait VerifiesEmails
     {
         return $request->user()->hasVerifiedEmail()
                         ? redirect($this->redirectPath())
-                        : view('auth.verify');
+                        : view('user.auth.verify');
     }
 
     /**

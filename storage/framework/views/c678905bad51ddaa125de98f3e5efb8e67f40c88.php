@@ -6,7 +6,7 @@
                 <div class="card-header"><?php echo e(__('Login')); ?></div>
 
                 <div class="card-body">
-                    <form method="POST" action="<?php echo e(route('login')); ?>">
+                    <form method="POST" action="<?php echo e(route('user.login')); ?>">
                         <?php echo csrf_field(); ?>
 
                         <div class="form-group row">
@@ -86,7 +86,7 @@ unset($__errorArgs, $__bag); ?>
                                 </button>
 
                                 <?php if(Route::has('password.request')): ?>
-                                    <a class="btn btn-link" href="<?php echo e(route('password.request')); ?>">
+                                    <a class="btn btn-link" href="<?php echo e(route('user.password.request')); ?>">
                                         <?php echo e(__('Forgot Your Password?')); ?>
 
                                     </a>

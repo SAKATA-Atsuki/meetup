@@ -1,0 +1,309 @@
+.error {
+    color: red;
+    text-align: left;
+}
+
+.success {
+    color: green;
+}
+
+/* index ---------------------------------------------------------------------------------------------------- */
+.header {
+    background-color: rgb(154, 2, 0);
+    margin: -8px;
+    display: flex;
+    justify-content: space-between;
+    height: 103px;
+
+    .left {
+        margin-left: 20px;
+        display: flex;
+        align-items: center;
+
+        a {
+            text-decoration: none;
+            color: white;
+            font-size: 25px;    
+        }
+    }
+
+    .right {
+        margin-right: 20px;
+
+        p {
+            color: white;
+            text-align: right;
+        }
+
+        .button {
+            display: flex;
+            margin-top: -2px;
+
+            .button_1 {
+                text-decoration: none;
+                text-align: center;
+                width: 200px;
+                font-size: 20px;
+                color: black;
+                background-color: lightgreen;
+                border: black solid 2px;
+                border-radius: 100px;
+                padding: 5px 0;        
+                margin-right: 10px;
+            }
+
+            .button_2 {
+                text-decoration: none;
+                text-align: center;
+                width: 200px;
+                font-size: 20px;
+                color: black;
+                background-color: lightgreen;
+                border: black solid 2px;
+                border-radius: 100px;
+                padding: 5px 0;        
+            }
+        }
+
+        .form {
+            display: flex;
+
+            .freshman {
+                .button {
+                    display: flex;
+                    flex-direction: column;
+                    margin-right: 10px;
+                    margin-top: 0;
+        
+                    .button_1 {
+                        text-decoration: none;
+                        text-align: center;
+                        width: 200px;
+                        font-size: 20px;
+                        color: black;
+                        background-color: lightgreen;
+                        border: black solid 2px;
+                        border-radius: 100px;
+                        padding: 5px 0;
+                        margin: 5px 0;
+                    }
+        
+                    .button_2 {
+                        text-decoration: none;
+                        text-align: center;
+                        width: 200px;
+                        font-size: 20px;
+                        color: black;
+                        background-color: lightgreen;
+                        border: black solid 2px;
+                        border-radius: 100px;
+                        padding: 5px 0;
+                        margin-bottom: 5px;
+                    }
+                }
+            }
+    
+            .circle {
+                .button {
+                    display: flex;
+                    flex-direction: column;
+                    margin-top: 0;
+        
+                    .button_1 {
+                        text-decoration: none;
+                        text-align: center;
+                        width: 200px;
+                        font-size: 20px;
+                        color: black;
+                        background-color: lightblue;
+                        border: black solid 2px;
+                        border-radius: 100px;
+                        padding: 5px 0;
+                        margin: 5px 0;
+                    }
+        
+                    .button_2 {
+                        text-decoration: none;
+                        text-align: center;
+                        width: 200px;
+                        font-size: 20px;
+                        color: black;
+                        background-color: lightblue;
+                        border: black solid 2px;
+                        border-radius: 100px;
+                        padding: 5px 0;
+                        margin-bottom: 5px;
+                    }
+                }
+            }    
+        }
+    }
+}
+
+/* freshman/register ---------------------------------------------------------------------------------------------------- */
+.freshman_register_content {
+    text-align: center;
+
+    h1 {
+        font-weight: lighter;
+    }
+
+    .form {
+        display: flex;
+        width: 417px;
+        margin: 0 auto;
+        margin-bottom: 20px;
+        text-align: left;
+
+        .left {
+            width: 130px;
+        }
+
+        .right {
+            width: 287px;
+        }
+    }
+
+    .button {
+        margin: 50px 0;
+
+        .button_1 {
+            cursor: pointer;
+            outline: none;
+            width: 250px;
+            font-size: 25px;
+            color: black;
+            background-color: lightgreen;
+            border-color: green;
+            border-radius: 100px;
+            padding: 5px 0;    
+        }
+    }
+}
+
+/* freshman/check ---------------------------------------------------------------------------------------------------- */
+.freshman_check_content {
+    text-align: center;
+
+    h1 {
+        font-weight: lighter;
+    }
+
+    .check {
+        display: flex;
+        width: 417px;
+        margin: 0 auto;
+        margin-bottom: 20px;
+        text-align: left;
+
+        .left {
+            width: 130px;
+        }
+
+        .right {
+            width: 287px;
+        }
+    }
+
+    .button {
+        margin: 50px 0;
+
+        .button_1 {
+            cursor: pointer;
+            outline: none;
+            width: 250px;
+            font-size: 25px;
+            color: black;
+            background-color: lightgreen;
+            border-color: green;
+            border-radius: 100px;
+            padding: 5px 0;    
+        }
+    }
+}
+
+/* freshman/login ---------------------------------------------------------------------------------------------------- */
+.freshman_login_content {
+    text-align: center;
+
+    h1 {
+        font-weight: lighter;
+    }
+
+    .form {
+        display: flex;
+        width: 417px;
+        margin: 0 auto;
+        margin-bottom: 20px;
+        text-align: left;
+
+        .left {
+            width: 130px;
+        }
+
+        .right {
+            width: 287px;
+
+            a {
+                text-decoration: none;
+            }
+        }
+    }
+
+    .button {
+        margin: 50px 0;
+
+        .button_1 {
+            cursor: pointer;
+            outline: none;
+            width: 250px;
+            font-size: 25px;
+            color: black;
+            background-color: lightgreen;
+            border-color: green;
+            border-radius: 100px;
+            padding: 5px 0;    
+        }
+    }
+}
+
+/* freshman/password/reset ---------------------------------------------------------------------------------------------------- */
+.freshman_password_reset_content {
+    text-align: center;
+
+    h1 {
+        font-weight: lighter;
+    }
+
+    .form {
+        display: flex;
+        width: 417px;
+        margin: 0 auto;
+        margin-bottom: 20px;
+        text-align: left;
+
+        .left {
+            width: 130px;
+        }
+
+        .right {
+            width: 287px;
+        }
+    }
+
+    .button {
+        margin: 50px 0;
+
+        .button_1 {
+            cursor: pointer;
+            outline: none;
+            width: 250px;
+            font-size: 25px;
+            color: black;
+            background-color: lightgreen;
+            border-color: green;
+            border-radius: 100px;
+            padding: 5px 0;    
+        }
+    }
+}

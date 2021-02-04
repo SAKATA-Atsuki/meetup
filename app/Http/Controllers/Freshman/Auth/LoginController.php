@@ -5,6 +5,9 @@ namespace App\Http\Controllers\Freshman\Auth;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Http\Request;
+use App\Http\Requests\FreshmanLoginRequest;
+use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
@@ -26,7 +29,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = RouteServiceProvider::HOME;
+    protected $redirectTo = RouteServiceProvider::TOP;
 
     /**
      * Create a new controller instance.
@@ -36,5 +39,32 @@ class LoginController extends Controller
     public function __construct()
     {
         $this->middleware('guest:freshman')->except('logout');
+    }
+
+    // 新入生ログインフォーム表示
+    public function showLoginForm()
+    {
+        return view('freshman.auth.login');
+    }
+
+    // ログイン処理
+    public function login(FreshmanLoginRequest $request)
+    {
+        if ($this->attemptLogin($request)) {
+            return $this->sendLoginResponse($request);
+        }
+
+        // If the login attempt was unsuccessful we will increment the number of attempts
+        // to login and redirect the user back to the login form. Of course, when this
+        // user surpasses their maximum number of attempts they will get locked out.
+        $this->incrementLoginAttempts($request);
+
+        return $this->sendFailedLoginResponse($request);
+    }
+
+    // ガード
+    protected function guard()
+    {
+        return Auth::guard('freshman');
     }
 }
