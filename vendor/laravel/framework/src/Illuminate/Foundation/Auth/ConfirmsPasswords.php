@@ -15,7 +15,7 @@ trait ConfirmsPasswords
      */
     public function showConfirmForm()
     {
-        return view('auth.passwords.confirm');
+        return view('user.auth.passwords.confirm');
     }
 
     /**
