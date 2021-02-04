@@ -63,7 +63,7 @@
                 </div>
                 <div class="right">
                     <select name="campus_id">
-                        <option value="0" @if (old('campus_id') == 0) selected @endif>--------------------</option>
+                        <option value="">--------------------</option>
                         @foreach ($campuses as $campus)
                             <option value="{{ $campus['id'] }}" @if (old('campus_id') == $campus['id']) selected @endif>{{ $campus['name'] }}</option>
                         @endforeach

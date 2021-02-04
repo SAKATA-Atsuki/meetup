@@ -22,7 +22,7 @@ class CreateFreshmenTable extends Migration
             $table->integer('gender')->comment('性別（1=男性、2=女性）');
             $table->string('email', 255)->comment('メールアドレス');
             $table->string('password', 255)->comment('パスワード');
-            $table->text('introduction')->comment('自己紹介');
+            $table->text('introduction')->nullable($value = true)->comment('自己紹介');
             $table->integer('auth_code')->nullable($value = true)->comment('認証コード');
             $table->timestamp('created_at')->nullable($value = true)->comment('登録日時');
             $table->timestamp('updated_at')->nullable($value = true)->comment('編集日時');

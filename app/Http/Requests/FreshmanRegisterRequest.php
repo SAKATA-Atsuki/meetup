@@ -29,7 +29,7 @@ class FreshmanRegisterRequest extends FormRequest
             'name_mei' => 'required|max:20',
             'nickname' => 'required|max:10',
             'gender' => 'required',
-            'campus_id' => 'integer|gt:0',
+            'campus_id' => 'required',
             'email' => 'required|max:200|email|unique:freshmen',
             'password' => ['required', 'min:8', 'max:20', new Hankaku],
             'password_check' => ['required', 'min:8', 'max:20', new Hankaku, 'same:password']
@@ -46,7 +46,7 @@ class FreshmanRegisterRequest extends FormRequest
             'nickname.required' => '※入力してください',
             'nickname.max' => '※10文字以内で入力してください',
             'gender.required' => '※選択してください',
-            'campus_id.gt' => '※選択してください',
+            'campus_id.required' => '※選択してください',
             'email.required' => '※入力してください',
             'email.max' => "※200文字以内で入力してください",
             'email.email' => '※正しい形式で入力してください',

@@ -26,9 +26,9 @@ class CircleRegisterRequest extends FormRequest
     {
         return [
             'name' => 'required|max:40',
-            'campus_id' => 'integer|gt:0',
+            'campus_id' => 'required',
             'circle_category_id' => 'required',
-            'circle_subcategory_id' => 'integer|gt:0',
+            'circle_subcategory_id' => 'required',
             'email' => 'required|max:200|email|unique:circles',
             'password' => ['required', 'min:8', 'max:20', new Hankaku],
             'password_check' => ['required', 'min:8', 'max:20', new Hankaku, 'same:password']
@@ -40,9 +40,9 @@ class CircleRegisterRequest extends FormRequest
         return [
             'name.required' => '※入力してください',
             'name.max' => '※40文字以内で入力してください',
-            'campus_id.gt' => '※選択してください',
+            'campus_id.required' => '※選択してください',
             'circle_category_id.required' => '※選択してください',
-            'circle_subcategory_id.gt' => '※選択してください',
+            'circle_subcategory_id.required' => '※選択してください',
             'email.required' => '※入力してください',
             'email.max' => "※200文字以内で入力してください",
             'email.email' => '※正しい形式で入力してください',

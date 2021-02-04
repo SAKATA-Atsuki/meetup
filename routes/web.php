@@ -15,8 +15,11 @@
 //     return view('welcome');
 // });
 
-Route::get('/', 'TopController@index')->name('top');
+// Route::get('/home', 'User\HomeController@index')->name('home');
 
+// auth
 Auth::routes();
 
-Route::get('/home', 'User\HomeController@index')->name('home');
+// top
+Route::get('/', 'TopController@index')->name('top');
+Route::post('/', 'TopController@index');

@@ -7,8 +7,8 @@ body {
   text-align: left;
 }
 
-.success {
-  color: green;
+.enji {
+  color: #9a0200;
 }
 
 /* index ---------------------------------------------------------------------------------------------------- */
@@ -185,6 +185,54 @@ body {
   border-radius: 100px;
   padding: 5px 0;
   margin-bottom: 5px;
+}
+
+.top_search {
+  text-align: center;
+  background-color: white;
+  width: 600px;
+  margin: 0 auto;
+  margin-top: 50px;
+  padding: 50px 0;
+  border: black solid 1px;
+}
+
+.top_search .form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 417px;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.top_search .form .left {
+  width: 130px;
+}
+
+.top_search .form .right {
+  width: 287px;
+}
+
+.top_search .form .right select {
+  width: 140px;
+}
+
+.top_search .button {
+  margin-top: 50px;
+}
+
+.top_search .button .button_1 {
+  cursor: pointer;
+  outline: none;
+  width: 250px;
+  font-size: 25px;
+  color: white;
+  background-color: #9a0200;
+  border-color: gray;
+  border-radius: 100px;
+  padding: 5px 0;
 }
 
 /* freshman/register ---------------------------------------------------------------------------------------------------- */

@@ -20,7 +20,7 @@
             @csrf
             <h1>パスワードリセット</h1>
             @if (session('status'))
-                <p class="success">{{ session('status') }}</p>
+                <p class="enji">{{ session('status') }}</p>
             @endif
             <div class="form">
                 <div class="left">

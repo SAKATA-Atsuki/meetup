@@ -7,8 +7,8 @@ body {
     text-align: left;
 }
 
-.success {
-    color: green;
+.enji {
+    color: rgb(154, 2, 0);
 }
 
 /* index ---------------------------------------------------------------------------------------------------- */
@@ -165,6 +165,52 @@ body {
                     }
                 }
             }    
+        }
+    }
+}
+
+.top_search {
+    text-align: center;
+    background-color: white;
+    width: 600px;
+    margin: 0 auto;
+    margin-top: 50px;
+    padding: 50px 0;
+    border: black solid 1px;
+
+    .form {
+        display: flex;
+        width: 417px;
+        margin: 0 auto;
+        margin-bottom: 20px;
+        text-align: left;
+
+        .left {
+            width: 130px;
+        }
+
+        .right {
+            width: 287px;
+
+            select {
+                width: 140px;
+            }
+        }
+    }
+
+    .button {
+        margin-top: 50px;
+
+        .button_1 {
+            cursor: pointer;
+            outline: none;
+            width: 250px;
+            font-size: 25px;
+            color: white;
+            background-color: rgb(154, 2, 0);
+            border-color: gray;
+            border-radius: 100px;
+            padding: 5px 0;    
         }
     }
 }

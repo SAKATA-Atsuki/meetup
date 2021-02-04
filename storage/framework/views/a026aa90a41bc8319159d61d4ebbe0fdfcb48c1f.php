@@ -91,7 +91,7 @@ unset($__errorArgs, $__bag); ?>
                 </div>
                 <div class="right">
                     <select name="campus_id">
-                        <option value="0" <?php if(old('campus_id') == 0): ?> selected <?php endif; ?>>--------------------</option>
+                        <option value="">--------------------</option>
                         <?php $__currentLoopData = $campuses; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $campus): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                             <option value="<?php echo e($campus['id']); ?>" <?php if(old('campus_id') == $campus['id']): ?> selected <?php endif; ?>><?php echo e($campus['name']); ?></option>
                         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>

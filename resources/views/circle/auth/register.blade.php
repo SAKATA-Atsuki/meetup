@@ -73,7 +73,7 @@
                 </div>
                 <div class="right">
                     <select name="campus_id">
-                        <option value="0" @if (old('campus_id') == 0) selected @endif>--------------------</option>
+                        <option value="">--------------------</option>
                         @foreach ($campuses as $campus)
                             <option value="{{ $campus['id'] }}" @if (old('campus_id') == $campus['id']) selected @endif>{{ $campus['name'] }}</option>
                         @endforeach
@@ -103,7 +103,7 @@
                 <div class="right">
                     <select name="circle_subcategory_id">
                         @if (old('circle_subcategory_id') == 0)
-                            <option value="0">--------------------</option>
+                            <option value="">--------------------</option>
                         @else
                             @foreach ($circle_subcategories as $circle_subcategory)
                                 <option value="{{ $circle_subcategory['id'] }}" @if (old('circle_subcategory_id') == $circle_subcategory['id']) selected @endif>{{ $circle_subcategory['name'] }}</option>
