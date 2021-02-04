@@ -1,3 +1,7 @@
+body {
+  background-color: whitesmoke;
+}
+
 .error {
   color: red;
   text-align: left;
@@ -72,6 +76,31 @@
   font-size: 20px;
   color: black;
   background-color: lightgreen;
+  border: black solid 2px;
+  border-radius: 100px;
+  padding: 5px 0;
+}
+
+.header .right .button .button_3 {
+  text-decoration: none;
+  text-align: center;
+  width: 200px;
+  font-size: 20px;
+  color: black;
+  background-color: lightblue;
+  border: black solid 2px;
+  border-radius: 100px;
+  padding: 5px 0;
+  margin-right: 10px;
+}
+
+.header .right .button .button_4 {
+  text-decoration: none;
+  text-align: center;
+  width: 200px;
+  font-size: 20px;
+  color: black;
+  background-color: lightblue;
   border: black solid 2px;
   border-radius: 100px;
   padding: 5px 0;
@@ -183,6 +212,10 @@
 
 .freshman_register_content .form .right {
   width: 287px;
+}
+
+.freshman_register_content .form .right select {
+  width: 140px;
 }
 
 .freshman_register_content .button {
@@ -330,6 +363,186 @@
   color: black;
   background-color: lightgreen;
   border-color: green;
+  border-radius: 100px;
+  padding: 5px 0;
+}
+
+/* circle/register ---------------------------------------------------------------------------------------------------- */
+.circle_register_content {
+  text-align: center;
+}
+
+.circle_register_content h1 {
+  font-weight: lighter;
+}
+
+.circle_register_content .form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 417px;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.circle_register_content .form .left {
+  width: 130px;
+}
+
+.circle_register_content .form .right {
+  width: 287px;
+}
+
+.circle_register_content .form .right select {
+  width: 140px;
+}
+
+.circle_register_content .button {
+  margin: 50px 0;
+}
+
+.circle_register_content .button .button_1 {
+  cursor: pointer;
+  outline: none;
+  width: 250px;
+  font-size: 25px;
+  color: black;
+  background-color: lightblue;
+  border-color: blue;
+  border-radius: 100px;
+  padding: 5px 0;
+}
+
+/* circle/check ---------------------------------------------------------------------------------------------------- */
+.circle_check_content {
+  text-align: center;
+}
+
+.circle_check_content h1 {
+  font-weight: lighter;
+}
+
+.circle_check_content .check {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 417px;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.circle_check_content .check .left {
+  width: 130px;
+}
+
+.circle_check_content .check .right {
+  width: 287px;
+}
+
+.circle_check_content .button {
+  margin: 50px 0;
+}
+
+.circle_check_content .button .button_1 {
+  cursor: pointer;
+  outline: none;
+  width: 250px;
+  font-size: 25px;
+  color: black;
+  background-color: lightblue;
+  border-color: blue;
+  border-radius: 100px;
+  padding: 5px 0;
+}
+
+/* circle/login ---------------------------------------------------------------------------------------------------- */
+.circle_login_content {
+  text-align: center;
+}
+
+.circle_login_content h1 {
+  font-weight: lighter;
+}
+
+.circle_login_content .form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 417px;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.circle_login_content .form .left {
+  width: 130px;
+}
+
+.circle_login_content .form .right {
+  width: 287px;
+}
+
+.circle_login_content .form .right a {
+  text-decoration: none;
+}
+
+.circle_login_content .button {
+  margin: 50px 0;
+}
+
+.circle_login_content .button .button_1 {
+  cursor: pointer;
+  outline: none;
+  width: 250px;
+  font-size: 25px;
+  color: black;
+  background-color: lightblue;
+  border-color: blue;
+  border-radius: 100px;
+  padding: 5px 0;
+}
+
+/* circle/password/reset ---------------------------------------------------------------------------------------------------- */
+.circle_password_reset_content {
+  text-align: center;
+}
+
+.circle_password_reset_content h1 {
+  font-weight: lighter;
+}
+
+.circle_password_reset_content .form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 417px;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.circle_password_reset_content .form .left {
+  width: 130px;
+}
+
+.circle_password_reset_content .form .right {
+  width: 287px;
+}
+
+.circle_password_reset_content .button {
+  margin: 50px 0;
+}
+
+.circle_password_reset_content .button .button_1 {
+  cursor: pointer;
+  outline: none;
+  width: 250px;
+  font-size: 25px;
+  color: black;
+  background-color: lightblue;
+  border-color: blue;
   border-radius: 100px;
   padding: 5px 0;
 }

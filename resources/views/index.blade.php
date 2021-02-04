@@ -20,6 +20,11 @@
                     <a href="{{ route('freshman.logout') }}" class="button_2">ログアウト</a>    
                 </div>
             @elseif (Auth::guard('circle')->check())
+                <p>{{ Auth::guard('circle')->user()->name }}　様</p>
+                <div class="button">
+                    <a href="" class="button_3">アカウント設定</a>
+                    <a href="{{ route('circle.logout') }}" class="button_4">ログアウト</a>    
+                </div>
             @else
                 <div class="form">
                     <div class="freshman">
@@ -30,8 +35,8 @@
                     </div>
                     <div class="circle">
                         <div class="button">
-                            <a href="" class="button_1">サークルログイン</a>
-                            <a href="" class="button_2">サークル登録</a>    
+                            <a href="{{ route('circle.login') }}" class="button_1">サークルログイン</a>
+                            <a href="{{ route('circle.register') }}" class="button_2">サークル登録</a>    
                         </div>    
                     </div>    
                 </div>

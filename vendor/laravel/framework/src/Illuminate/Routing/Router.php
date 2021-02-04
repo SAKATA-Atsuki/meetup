@@ -1161,6 +1161,12 @@ class Router implements BindingRegistrar, RegistrarContract
         $this->get('freshman/logout', 'Freshman\Auth\LoginController@logout')->name('freshman.logout');
         $this->post('freshman/logout', 'Freshman\Auth\LoginController@logout');
 
+        // circle
+        $this->get('circle/login', 'Circle\Auth\LoginController@showLoginForm')->name('circle.login');
+        $this->post('circle/login', 'Circle\Auth\LoginController@login');
+        $this->get('circle/logout', 'Circle\Auth\LoginController@logout')->name('circle.logout');
+        $this->post('circle/logout', 'Circle\Auth\LoginController@logout');
+
         // Registration Routes...
         if ($options['register'] ?? true) {
             // user
@@ -1171,6 +1177,12 @@ class Router implements BindingRegistrar, RegistrarContract
             $this->get('freshman/register', 'Freshman\Auth\RegisterController@showRegistrationForm')->name('freshman.register');
             $this->post('freshman/register', 'Freshman\Auth\RegisterController@register');
             $this->post('freshman/register/store', 'Freshman\Auth\RegisterController@store')->name('freshman.register.store');
+            
+            // circle
+            $this->get('circle/register', 'Circle\Auth\RegisterController@showRegistrationForm')->name('circle.register');
+            $this->post('circle/register/category', 'Circle\Auth\RegisterController@category')->name('circle.register.category');
+            $this->post('circle/register', 'Circle\Auth\RegisterController@register');
+            $this->post('circle/register/store', 'Circle\Auth\RegisterController@store')->name('circle.register.store');
         }
 
         // Password Reset Routes...
@@ -1208,6 +1220,12 @@ class Router implements BindingRegistrar, RegistrarContract
         $this->post('freshman/password/email', 'Freshman\Auth\ForgotPasswordController@sendResetLinkEmail')->name('freshman.password.email');
         $this->get('freshman/password/reset/{token}', 'Freshman\Auth\ResetPasswordController@showResetForm')->name('freshman.password.reset');
         $this->post('freshman/password/reset', 'Freshman\Auth\ResetPasswordController@reset')->name('freshman.password.update');
+        
+        // circle
+        $this->get('circle/password/reset', 'Circle\Auth\ForgotPasswordController@showLinkRequestForm')->name('circle.password.request');
+        $this->post('circle/password/email', 'Circle\Auth\ForgotPasswordController@sendResetLinkEmail')->name('circle.password.email');
+        $this->get('circle/password/reset/{token}', 'Circle\Auth\ResetPasswordController@showResetForm')->name('circle.password.reset');
+        $this->post('circle/password/reset', 'Circle\Auth\ResetPasswordController@reset')->name('circle.password.update');
     }
 
     /**

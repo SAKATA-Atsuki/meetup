@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Freshman\Auth;
+namespace App\Http\Controllers\Circle\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
@@ -35,7 +35,7 @@ class VerificationController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth:freshman');
+        $this->middleware('auth:circle');
         $this->middleware('signed')->only('verify');
         $this->middleware('throttle:6,1')->only('verify', 'resend');
     }
