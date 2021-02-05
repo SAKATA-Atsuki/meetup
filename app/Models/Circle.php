@@ -15,4 +15,24 @@ class Circle extends Authenticatable
     {
         $this->notify(new CirclePasswordResetNotification($token));
     }
+
+    public function campus()
+    {
+        return $this->belongsTo('App\Models\Campus');
+    }
+
+    public function getCampusName()
+    {
+        return $this->campus->name;
+    }
+
+    public function circle_subcategory()
+    {
+        return $this->belongsTo('App\Models\Circle_subcategory');
+    }
+
+    public function getCircleSubcategoryName()
+    {
+        return $this->circle_subcategory->name;
+    }
 }

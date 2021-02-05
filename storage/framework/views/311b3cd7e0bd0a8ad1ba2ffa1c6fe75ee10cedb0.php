@@ -19,7 +19,7 @@
                     }
                 })
                 $.ajax({
-                    url: "<?php echo e(route('circle.register.category')); ?>",
+                    url: "<?php echo e(route('top.category')); ?>",
                     type: "POST",
                     dataType: "json",
                     data: {
@@ -29,6 +29,7 @@
                 .done(function(data) {
                     // optionタグを全て削除
                     $('select[name="circle_subcategory_id"] option').remove();
+                    $('select[name="circle_subcategory_id"]').append($('<option>').attr('value', '').text('--------------------'));
 
                     // 返ってきたdataをそれぞれoptionタグとして追加
                     $.each(data, function(id, name) {
@@ -106,7 +107,7 @@
             </div>    
             <div class="form">
                 <div class="left">
-                    <span>種別</span>
+                    <span>カテゴリ1</span>
                 </div>
                 <div class="right">
                     <?php $__currentLoopData = config('master.circle_category'); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $index => $value): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
@@ -116,13 +117,12 @@
             </div>    
             <div class="form">
                 <div class="left">
-                    <span>種目</span>
+                    <span>カテゴリ2</span>
                 </div>
                 <div class="right">
                     <select name="circle_subcategory_id">
-                        <?php if($data['circle_subcategory_id'] == 0): ?>
-                            <option value="">--------------------</option>
-                        <?php else: ?>
+                        <option value="">--------------------</option>
+                        <?php if (! ($data['circle_category_id'] == '')): ?>
                             <?php $__currentLoopData = $circle_subcategories; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $circle_subcategory): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                 <option value="<?php echo e($circle_subcategory['id']); ?>" <?php if($data['circle_subcategory_id'] == $circle_subcategory['id']): ?> selected <?php endif; ?>><?php echo e($circle_subcategory['name']); ?></option>
                             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>    
@@ -131,9 +131,51 @@
                 </div>
             </div>    
             <div class="button">
+                <input type="hidden" name="page" value="1">
                 <input type="submit" value="検索する" class="button_1">
             </div>
         </form>
+    </div>
+    <div class="top_result">
+        <div class="title">
+            <p class="name">サークル名</p>
+            <p class="campus">キャンパス</p>
+            <p class="circle_category">カテゴリ1</p>
+            <p class="circle_subcategory">カテゴリ2</p>
+        </div>
+        <?php $__currentLoopData = $circles; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $circle): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+            <div class="content">
+                <p class="name"><a href=""><?php echo e($circle['name']); ?></a></p>
+                <p class="campus"><?php echo e($circle->getCampusName()); ?></p>
+                <?php $__currentLoopData = config('master.circle_category'); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $index => $value): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                    <?php if($circle['circle_category_id'] == $index): ?>
+                        <p class="circle_category"><?php echo e($value); ?></p>
+                    <?php endif; ?>
+                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                <p class="circle_subcategory"><?php echo e($circle->getCircleSubcategoryName()); ?></p>
+            </div>
+        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+        <?php if(count($circles)): ?>
+            <div class="button">
+                <ul class="pagination">
+                    <?php if($circles->onFirstPage()): ?>
+                        <li><span>　</span></li>
+                        <li><span>　</span></li>
+                    <?php else: ?>
+                        <li><a href="<?php echo e($circles->appends(['name' => $data['name'], 'campus_id' => $data['campus_id'], 'circle_category_id' => $data['circle_category_id'], 'circle_subcategory_id' => $data['circle_subcategory_id']])->previousPageUrl()); ?>">&lt;</a></li>
+                        <li><a href="<?php echo e($circles->appends(['name' => $data['name'], 'campus_id' => $data['campus_id'], 'circle_category_id' => $data['circle_category_id'], 'circle_subcategory_id' => $data['circle_subcategory_id']])->previousPageUrl()); ?>"><?php echo e($circles->currentPage() - 1); ?></a></li>
+                    <?php endif; ?>
+                    <li><span class="active"><?php echo e($circles->currentPage()); ?></span></li>
+                    <?php if($circles->hasMorePages()): ?>
+                        <li><a href="<?php echo e($circles->appends(['name' => $data['name'], 'campus_id' => $data['campus_id'], 'circle_category_id' => $data['circle_category_id'], 'circle_subcategory_id' => $data['circle_subcategory_id']])->nextPageUrl()); ?>"><?php echo e($circles->currentPage() + 1); ?></a></li>
+                        <li><a href="<?php echo e($circles->appends(['name' => $data['name'], 'campus_id' => $data['campus_id'], 'circle_category_id' => $data['circle_category_id'], 'circle_subcategory_id' => $data['circle_subcategory_id']])->nextPageUrl()); ?>">&gt;</a></li>
+                    <?php else: ?>
+                        <li><span>　</span></li>
+                        <li><span>　</span></li>
+                    <?php endif; ?>
+                </ul>
+            </div>
+        <?php endif; ?>
     </div>
 </body>
 </html><?php /**PATH /Applications/MAMP/htdocs/meetup/resources/views/index.blade.php ENDPATH**/ ?>

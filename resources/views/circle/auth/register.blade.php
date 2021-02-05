@@ -85,7 +85,7 @@
             </div>    
             <div class="form">
                 <div class="left">
-                    <span>種別</span>
+                    <span>カテゴリ1</span>
                 </div>
                 <div class="right">
                     @foreach (config('master.circle_category') as $index => $value)
@@ -98,7 +98,7 @@
             </div>    
             <div class="form">
                 <div class="left">
-                    <span>種目</span>
+                    <span>カテゴリ2</span>
                 </div>
                 <div class="right">
                     <select name="circle_subcategory_id">

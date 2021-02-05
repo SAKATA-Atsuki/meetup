@@ -22,4 +22,5 @@ Auth::routes();
 
 // top
 Route::get('/', 'TopController@index')->name('top');
+Route::post('/category', 'TopController@category')->name('top.category');
 Route::post('/', 'TopController@index');

@@ -35,7 +35,7 @@
         </div>
         <div class="check">
             <div class="left">
-                <span>種別</span>
+                <span>カテゴリ1</span>
             </div>
             <div class="right">
                 <span>
@@ -47,7 +47,7 @@
         </div>
         <div class="check">
             <div class="left">
-                <span>種目</span>
+                <span>カテゴリ2</span>
             </div>
             <div class="right">
                 <span>{{ $circle_subcategory['name'] }}</span>

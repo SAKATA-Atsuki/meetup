@@ -19,7 +19,7 @@
                     }
                 })
                 $.ajax({
-                    url: "{{ route('circle.register.category') }}",
+                    url: "{{ route('top.category') }}",
                     type: "POST",
                     dataType: "json",
                     data: {
@@ -29,6 +29,7 @@
                 .done(function(data) {
                     // optionタグを全て削除
                     $('select[name="circle_subcategory_id"] option').remove();
+                    $('select[name="circle_subcategory_id"]').append($('<option>').attr('value', '').text('--------------------'));
 
                     // 返ってきたdataをそれぞれoptionタグとして追加
                     $.each(data, function(id, name) {
@@ -106,7 +107,7 @@
             </div>    
             <div class="form">
                 <div class="left">
-                    <span>種別</span>
+                    <span>カテゴリ1</span>
                 </div>
                 <div class="right">
                     @foreach (config('master.circle_category') as $index => $value)
@@ -116,24 +117,65 @@
             </div>    
             <div class="form">
                 <div class="left">
-                    <span>種目</span>
+                    <span>カテゴリ2</span>
                 </div>
                 <div class="right">
                     <select name="circle_subcategory_id">
-                        @if ($data['circle_subcategory_id'] == 0)
-                            <option value="">--------------------</option>
-                        @else
+                        <option value="">--------------------</option>
+                        @unless ($data['circle_category_id'] == '')
                             @foreach ($circle_subcategories as $circle_subcategory)
                                 <option value="{{ $circle_subcategory['id'] }}" @if ($data['circle_subcategory_id'] == $circle_subcategory['id']) selected @endif>{{ $circle_subcategory['name'] }}</option>
                             @endforeach    
-                        @endif
+                        @endunless
                     </select>
                 </div>
             </div>    
             <div class="button">
+                <input type="hidden" name="page" value="1">
                 <input type="submit" value="検索する" class="button_1">
             </div>
         </form>
+    </div>
+    <div class="top_result">
+        <div class="title">
+            <p class="name">サークル名</p>
+            <p class="campus">キャンパス</p>
+            <p class="circle_category">カテゴリ1</p>
+            <p class="circle_subcategory">カテゴリ2</p>
+        </div>
+        @foreach ($circles as $circle)
+            <div class="content">
+                <p class="name"><a href="">{{ $circle['name'] }}</a></p>
+                <p class="campus">{{ $circle->getCampusName() }}</p>
+                @foreach (config('master.circle_category') as $index => $value)
+                    @if ($circle['circle_category_id'] == $index)
+                        <p class="circle_category">{{ $value }}</p>
+                    @endif
+                @endforeach
+                <p class="circle_subcategory">{{ $circle->getCircleSubcategoryName() }}</p>
+            </div>
+        @endforeach
+        @if (count($circles))
+            <div class="button">
+                <ul class="pagination">
+                    @if ($circles->onFirstPage())
+                        <li><span>　</span></li>
+                        <li><span>　</span></li>
+                    @else
+                        <li><a href="{{ $circles->appends(['name' => $data['name'], 'campus_id' => $data['campus_id'], 'circle_category_id' => $data['circle_category_id'], 'circle_subcategory_id' => $data['circle_subcategory_id']])->previousPageUrl() }}">&lt;</a></li>
+                        <li><a href="{{ $circles->appends(['name' => $data['name'], 'campus_id' => $data['campus_id'], 'circle_category_id' => $data['circle_category_id'], 'circle_subcategory_id' => $data['circle_subcategory_id']])->previousPageUrl() }}">{{ $circles->currentPage() - 1 }}</a></li>
+                    @endif
+                    <li><span class="active">{{ $circles->currentPage() }}</span></li>
+                    @if ($circles->hasMorePages())
+                        <li><a href="{{ $circles->appends(['name' => $data['name'], 'campus_id' => $data['campus_id'], 'circle_category_id' => $data['circle_category_id'], 'circle_subcategory_id' => $data['circle_subcategory_id']])->nextPageUrl() }}">{{ $circles->currentPage() + 1 }}</a></li>
+                        <li><a href="{{ $circles->appends(['name' => $data['name'], 'campus_id' => $data['campus_id'], 'circle_category_id' => $data['circle_category_id'], 'circle_subcategory_id' => $data['circle_subcategory_id']])->nextPageUrl() }}">&gt;</a></li>
+                    @else
+                        <li><span>　</span></li>
+                        <li><span>　</span></li>
+                    @endif
+                </ul>
+            </div>
+        @endif
     </div>
 </body>
 </html>

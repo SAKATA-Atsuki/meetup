@@ -99,7 +99,7 @@ unset($__errorArgs, $__bag); ?>
             </div>    
             <div class="form">
                 <div class="left">
-                    <span>種別</span>
+                    <span>カテゴリ1</span>
                 </div>
                 <div class="right">
                     <?php $__currentLoopData = config('master.circle_category'); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $index => $value): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
@@ -119,7 +119,7 @@ unset($__errorArgs, $__bag); ?>
             </div>    
             <div class="form">
                 <div class="left">
-                    <span>種目</span>
+                    <span>カテゴリ2</span>
                 </div>
                 <div class="right">
                     <select name="circle_subcategory_id">
