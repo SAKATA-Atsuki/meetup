@@ -89,7 +89,7 @@
                     <span>サークル名</span>
                 </div>
                 <div class="right">
-                    <input type="text" name="name" value="{{ $data['name'] }}" size="39">
+                    <input type="text" name="name" value="{{ $session_top_search['name'] }}" size="39">
                 </div>
             </div>    
             <div class="form">
@@ -100,7 +100,7 @@
                     <select name="campus_id">
                         <option value="">--------------------</option>
                         @foreach ($campuses as $campus)
-                            <option value="{{ $campus['id'] }}" @if ($data['campus_id'] == $campus['id']) selected @endif>{{ $campus['name'] }}</option>
+                            <option value="{{ $campus['id'] }}" @if ($session_top_search['campus_id'] == $campus['id']) selected @endif>{{ $campus['name'] }}</option>
                         @endforeach
                     </select>
                 </div>
@@ -111,7 +111,7 @@
                 </div>
                 <div class="right">
                     @foreach (config('master.circle_category') as $index => $value)
-                        <input type="radio" name="circle_category_id" value="{{ $index }}" @if ($data['circle_category_id'] == $index) checked @endif>{{ $value }}　
+                        <input type="radio" name="circle_category_id" value="{{ $index }}" @if ($session_top_search['circle_category_id'] == $index) checked @endif>{{ $value }}　
                     @endforeach
                 </div>
             </div>    
@@ -122,9 +122,9 @@
                 <div class="right">
                     <select name="circle_subcategory_id">
                         <option value="">--------------------</option>
-                        @unless ($data['circle_category_id'] == '')
+                        @unless ($session_top_search['circle_category_id'] == '')
                             @foreach ($circle_subcategories as $circle_subcategory)
-                                <option value="{{ $circle_subcategory['id'] }}" @if ($data['circle_subcategory_id'] == $circle_subcategory['id']) selected @endif>{{ $circle_subcategory['name'] }}</option>
+                                <option value="{{ $circle_subcategory['id'] }}" @if ($session_top_search['circle_subcategory_id'] == $circle_subcategory['id']) selected @endif>{{ $circle_subcategory['name'] }}</option>
                             @endforeach    
                         @endunless
                     </select>
@@ -145,7 +145,7 @@
         </div>
         @foreach ($circles as $circle)
             <div class="content">
-                <p class="name"><a href="">{{ $circle['name'] }}</a></p>
+                <p class="name"><a href="{{ route('circle', ['id' => $circle['id'], 'pg' => $page]) }}">{{ $circle['name'] }}</a></p>
                 <p class="campus">{{ $circle->getCampusName() }}</p>
                 @foreach (config('master.circle_category') as $index => $value)
                     @if ($circle['circle_category_id'] == $index)
@@ -162,13 +162,13 @@
                         <li><span>　</span></li>
                         <li><span>　</span></li>
                     @else
-                        <li><a href="{{ $circles->appends(['name' => $data['name'], 'campus_id' => $data['campus_id'], 'circle_category_id' => $data['circle_category_id'], 'circle_subcategory_id' => $data['circle_subcategory_id']])->previousPageUrl() }}">&lt;</a></li>
-                        <li><a href="{{ $circles->appends(['name' => $data['name'], 'campus_id' => $data['campus_id'], 'circle_category_id' => $data['circle_category_id'], 'circle_subcategory_id' => $data['circle_subcategory_id']])->previousPageUrl() }}">{{ $circles->currentPage() - 1 }}</a></li>
+                        <li><a href="{{ $circles->previousPageUrl() }}">&lt;</a></li>
+                        <li><a href="{{ $circles->previousPageUrl() }}">{{ $circles->currentPage() - 1 }}</a></li>
                     @endif
                     <li><span class="active">{{ $circles->currentPage() }}</span></li>
                     @if ($circles->hasMorePages())
-                        <li><a href="{{ $circles->appends(['name' => $data['name'], 'campus_id' => $data['campus_id'], 'circle_category_id' => $data['circle_category_id'], 'circle_subcategory_id' => $data['circle_subcategory_id']])->nextPageUrl() }}">{{ $circles->currentPage() + 1 }}</a></li>
-                        <li><a href="{{ $circles->appends(['name' => $data['name'], 'campus_id' => $data['campus_id'], 'circle_category_id' => $data['circle_category_id'], 'circle_subcategory_id' => $data['circle_subcategory_id']])->nextPageUrl() }}">&gt;</a></li>
+                        <li><a href="{{ $circles->nextPageUrl() }}">{{ $circles->currentPage() + 1 }}</a></li>
+                        <li><a href="{{ $circles->nextPageUrl() }}">&gt;</a></li>
                     @else
                         <li><span>　</span></li>
                         <li><span>　</span></li>

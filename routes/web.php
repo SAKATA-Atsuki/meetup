@@ -22,5 +22,10 @@ Auth::routes();
 
 // top
 Route::get('/', 'TopController@index')->name('top');
+Route::post('/', 'TopController@search');
 Route::post('/category', 'TopController@category')->name('top.category');
-Route::post('/', 'TopController@index');
+
+// circle
+Route::get('circle', 'CircleController@index')->name('circle');
+Route::get('circle/favorite', 'CircleController@favorite')->name('circle.favorite');
+Route::get('circle/unfavorite', 'CircleController@unfavorite')->name('circle.unfavorite');
