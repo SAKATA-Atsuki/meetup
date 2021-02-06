@@ -66,8 +66,19 @@
     </div>
     <div class="circle_thread_message_title">
         <div class="content">
-            <span class="title"><?php echo e($thread['title']); ?></span>
-            <br>
+            <div class="top">
+                <span class="title"><?php echo e($thread['title']); ?></span>
+                <?php if(Auth::guard('freshman')->check()): ?>
+                    <?php if(Auth::guard('freshman')->user()->id == $thread['freshman_id']): ?>
+                        <a href="<?php echo e(route('circle.thread.delete', ['id' => $circle['id'], 'pg' => $pg, 'thread_id' => $thread['id']])); ?>" class="trash"><i class="fas fa-trash-alt"></i></a>
+                    <?php endif; ?>
+                <?php endif; ?>
+                <?php if(Auth::guard('circle')->check()): ?>
+                    <?php if(Auth::guard('circle')->user()->id == $thread['circle_id']): ?>
+                        <a href="<?php echo e(route('circle.thread.delete', ['id' => $circle['id'], 'pg' => $pg, 'thread_id' => $thread['id']])); ?>" class="trash"><i class="fas fa-trash-alt"></i></a>
+                    <?php endif; ?>
+                <?php endif; ?>
+            </div>
             <?php if($thread['freshman_id'] == null): ?>
                 <span>作成者　<span class="circle"><?php echo e($thread->getCircleName()); ?></span></span>
                 <br>
@@ -86,19 +97,19 @@
                     <div class="top">
                         <?php if($message['freshman_id'] == null): ?>
                             <span class="circle"><?php echo e($message->getCircleName()); ?></span>
-                            <?php if(Auth::guard('circle')->check()): ?>
-                                <?php if(Auth::guard('circle')->user()->id == $message['circle_id']): ?>
-                                    <a href="<?php echo e(route('circle.thread.message.delete', ['id' => $circle['id'], 'pg' => $pg, 'thread_id' => $thread['id'], 'page' => $page, 'message_id' => $message['id']])); ?>" class="trash"><i class="fas fa-trash-alt"></i></a>
-                                <?php endif; ?>
-                            <?php endif; ?>
                         <?php else: ?>
                             <a href="<?php echo e(route('circle.thread.message.freshman', ['id' => $circle['id'], 'pg' => $pg, 'thread_id' => $thread['id'], 'page' => $page, 'freshman_id' => $message['freshman_id']])); ?>" class="freshman"><?php echo e($message->getFreshmanNickname()); ?></a>
-                            <?php if(Auth::guard('freshman')->check()): ?>
-                                <?php if(Auth::guard('freshman')->user()->id == $message['freshman_id']): ?>
-                                    <a href="<?php echo e(route('circle.thread.message.delete', ['id' => $circle['id'], 'pg' => $pg, 'thread_id' => $thread['id'], 'page' => $page, 'message_id' => $message['id']])); ?>" class="trash"><i class="fas fa-trash-alt"></i></a>
-                                <?php endif; ?>
-                            <?php endif; ?>
                         <?php endif; ?>    
+                        <?php if(Auth::guard('freshman')->check()): ?>
+                            <?php if(Auth::guard('freshman')->user()->id == $message['freshman_id']): ?>
+                                <a href="<?php echo e(route('circle.thread.message.delete', ['id' => $circle['id'], 'pg' => $pg, 'thread_id' => $thread['id'], 'page' => $page, 'message_id' => $message['id']])); ?>" class="trash"><i class="fas fa-trash-alt"></i></a>
+                            <?php endif; ?>
+                        <?php endif; ?>
+                        <?php if(Auth::guard('circle')->check()): ?>
+                            <?php if(Auth::guard('circle')->user()->id == $message['circle_id']): ?>
+                                <a href="<?php echo e(route('circle.thread.message.delete', ['id' => $circle['id'], 'pg' => $pg, 'thread_id' => $thread['id'], 'page' => $page, 'message_id' => $message['id']])); ?>" class="trash"><i class="fas fa-trash-alt"></i></a>
+                            <?php endif; ?>
+                        <?php endif; ?>
                     </div>
                     <span><?php echo e($message['created_at']); ?></span>
                     <div class="message">

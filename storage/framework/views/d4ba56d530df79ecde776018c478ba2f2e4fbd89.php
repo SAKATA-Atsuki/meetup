@@ -20,7 +20,7 @@
             <?php echo csrf_field(); ?>
             <h1>パスワードリセット</h1>
             <?php if(session('status')): ?>
-                <p class="enji"><?php echo e(session('status')); ?></p>
+                <p class="success"><?php echo e(session('status')); ?></p>
             <?php endif; ?>
             <div class="form">
                 <div class="left">

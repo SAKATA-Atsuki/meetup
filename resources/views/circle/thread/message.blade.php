@@ -66,8 +66,19 @@
     </div>
     <div class="circle_thread_message_title">
         <div class="content">
-            <span class="title">{{ $thread['title'] }}</span>
-            <br>
+            <div class="top">
+                <span class="title">{{ $thread['title'] }}</span>
+                @if (Auth::guard('freshman')->check())
+                    @if (Auth::guard('freshman')->user()->id == $thread['freshman_id'])
+                        <a href="{{ route('circle.thread.delete', ['id' => $circle['id'], 'pg' => $pg, 'thread_id' => $thread['id']]) }}" class="trash"><i class="fas fa-trash-alt"></i></a>
+                    @endif
+                @endif
+                @if (Auth::guard('circle')->check())
+                    @if (Auth::guard('circle')->user()->id == $thread['circle_id'])
+                        <a href="{{ route('circle.thread.delete', ['id' => $circle['id'], 'pg' => $pg, 'thread_id' => $thread['id']]) }}" class="trash"><i class="fas fa-trash-alt"></i></a>
+                    @endif
+                @endif
+            </div>
             @if ($thread['freshman_id'] == null)
                 <span>作成者　<span class="circle">{{ $thread->getCircleName() }}</span></span>
                 <br>
@@ -86,19 +97,19 @@
                     <div class="top">
                         @if ($message['freshman_id'] == null)
                             <span class="circle">{{ $message->getCircleName() }}</span>
-                            @if (Auth::guard('circle')->check())
-                                @if (Auth::guard('circle')->user()->id == $message['circle_id'])
-                                    <a href="{{ route('circle.thread.message.delete', ['id' => $circle['id'], 'pg' => $pg, 'thread_id' => $thread['id'], 'page' => $page, 'message_id' => $message['id']]) }}" class="trash"><i class="fas fa-trash-alt"></i></a>
-                                @endif
-                            @endif
                         @else
                             <a href="{{ route('circle.thread.message.freshman', ['id' => $circle['id'], 'pg' => $pg, 'thread_id' => $thread['id'], 'page' => $page, 'freshman_id' => $message['freshman_id']]) }}" class="freshman">{{ $message->getFreshmanNickname() }}</a>
-                            @if (Auth::guard('freshman')->check())
-                                @if (Auth::guard('freshman')->user()->id == $message['freshman_id'])
-                                    <a href="{{ route('circle.thread.message.delete', ['id' => $circle['id'], 'pg' => $pg, 'thread_id' => $thread['id'], 'page' => $page, 'message_id' => $message['id']]) }}" class="trash"><i class="fas fa-trash-alt"></i></a>
-                                @endif
-                            @endif
                         @endif    
+                        @if (Auth::guard('freshman')->check())
+                            @if (Auth::guard('freshman')->user()->id == $message['freshman_id'])
+                                <a href="{{ route('circle.thread.message.delete', ['id' => $circle['id'], 'pg' => $pg, 'thread_id' => $thread['id'], 'page' => $page, 'message_id' => $message['id']]) }}" class="trash"><i class="fas fa-trash-alt"></i></a>
+                            @endif
+                        @endif
+                        @if (Auth::guard('circle')->check())
+                            @if (Auth::guard('circle')->user()->id == $message['circle_id'])
+                                <a href="{{ route('circle.thread.message.delete', ['id' => $circle['id'], 'pg' => $pg, 'thread_id' => $thread['id'], 'page' => $page, 'message_id' => $message['id']]) }}" class="trash"><i class="fas fa-trash-alt"></i></a>
+                            @endif
+                        @endif
                     </div>
                     <span>{{ $message['created_at'] }}</span>
                     <div class="message">

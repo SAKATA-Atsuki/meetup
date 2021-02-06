@@ -1209,8 +1209,18 @@ body {
         width: 1000px;
         margin: 10px auto;
 
-        .title {
-            font-size: 31px;
+        .top {
+            display: flex;
+            justify-content: space-between;
+
+            .title {
+                font-size: 31px;
+            }    
+
+            .trash {
+                text-decoration: none;
+                color: gray;
+            }
         }
 
         .circle {

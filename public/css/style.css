@@ -1281,8 +1281,22 @@ body {
   margin: 10px auto;
 }
 
-.circle_thread_message_title .content .title {
+.circle_thread_message_title .content .top {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.circle_thread_message_title .content .top .title {
   font-size: 31px;
+}
+
+.circle_thread_message_title .content .top .trash {
+  text-decoration: none;
+  color: gray;
 }
 
 .circle_thread_message_title .content .circle {

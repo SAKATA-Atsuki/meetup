@@ -96,7 +96,7 @@ class CircleThreadController extends Controller
     }    
 
     // お気に入り処理
-    public function favorite(Request $request)
+    public function threadFavorite(Request $request)
     {
         $favorite = new Favorite;
         $favorite->freshman_id = Auth::guard('freshman')->user()->id;
@@ -107,7 +107,7 @@ class CircleThreadController extends Controller
     }
 
     // お気に入り解除処理
-    public function unfavorite(Request $request)
+    public function threadUnfavorite(Request $request)
     {
         Favorite::where('freshman_id', Auth::guard('freshman')->user()->id)
                 ->where('circle_id', $request->id)
@@ -157,7 +157,7 @@ class CircleThreadController extends Controller
     }        
     
     // スレッド登録
-    public function store(ThreadRegisterRequest $request)
+    public function threadStore(ThreadRegisterRequest $request)
     {
         $thread = new Thread;
         if (Auth::guard('freshman')->check()) {
@@ -170,8 +170,16 @@ class CircleThreadController extends Controller
         return redirect()->route('circle.thread', ['id' => $request->id, 'pg' => $request->pg]);
     }
 
+    // スレッド削除
+    public function threadDelete(Request $request)
+    {
+        Thread::find($request->thread_id)->delete();
+
+        return redirect()->route('circle.thread', ['id' => $request->id, 'pg' => $request->pg]);
+    }
+    
     // 新入生詳細表示
-    public function freshman(Request $request)
+    public function threadFreshman(Request $request)
     {
         $id = $request->id;
         $pg = $request->pg;
@@ -242,7 +250,7 @@ class CircleThreadController extends Controller
     }    
 
     // メッセージ削除
-    public function delete(Request $request)
+    public function messageDelete(Request $request)
     {
         Message::find($request->message_id)->delete();
 

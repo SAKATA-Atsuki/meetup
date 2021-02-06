@@ -146,11 +146,12 @@
         @foreach ($circles as $circle)
             <div class="content">
                 <p class="name"><a href="{{ route('circle', ['id' => $circle['id'], 'pg' => $page]) }}">
-                    @if (mb_strlen($circle['name']) > 16)
+                    {{-- @if (mb_strlen($circle['name']) > 16)
                         {{ mb_substr($circle['name'], 0, 16) }}…
                     @else
                         {{ $circle['name'] }}
-                    @endif
+                    @endif --}}
+                    {{ $circle['name'] }}
                 </a></p>
                 <p class="campus">{{ $circle->getCampusName() }}</p>
                 @foreach (config('master.circle_category') as $index => $value)
