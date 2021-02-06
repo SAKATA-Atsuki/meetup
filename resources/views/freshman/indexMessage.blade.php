@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>サークル詳細</title>
+    <title>新入生詳細</title>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 </head>
@@ -44,31 +44,15 @@
             @endif
         </div>
     </div>
-    <div class="circle_content">
-        <a href="{{ route('top', ['page' => $pg]) }}" class="button_1">< サークル一覧へ</a>    
+    <div class="freshman_content">
+        <a href="{{ route('circle.thread.message', ['id' => $id, 'pg' => $pg, 'thread_id' => $thread_id, 'page' => $page]) }}" class="button_1">< スレッド詳細へ</a>    
         <div class="name">
-            <span>{{ $circle['name'] }}</span>
-            @if (Auth::guard('freshman')->check())
-                @if (count($favorite) == 0)
-                    <a href="{{ route('circle.favorite', ['id' => $circle['id'], 'pg' => $pg]) }}" class="button_2"><i class="far fa-heart"></i> お気に入り追加</a>
-                @else
-                    <a href="{{ route('circle.unfavorite', ['id' => $circle['id'], 'pg' => $pg]) }}" class="button_3"><i class="fas fa-heart"></i> お気に入り済み</a>
-                @endif
-            @endif
+            <span>{{ $freshman['nickname'] }}</span>
         </div>
-        <span>{{ $circle->getCampusName() }}</span>
-        @foreach (config('master.circle_category') as $index => $value)
-            @if ($circle['circle_category_id'] == $index)
-                <span>　{{ $value }}　</span>
-            @endif
-        @endforeach
-        <span>{{ $circle->getCircleSubcategoryName() }}</span>
+        <span>{{ $freshman->getCampusName() }}</span>
         <div class="introduction">
-            <span class="title">サークル紹介</span>
-            <span class="content">{!! nl2br(e($circle['introduction'])) !!}</span>
-        </div>
-        <div class="button">
-            <a href="{{ route('circle.thread', ['id' => $circle['id'], 'pg' => $pg]) }}" class="button_4">スレッド一覧へ</a>    
+            <span class="title">自己紹介</span>
+            <span class="content">{!! nl2br(e($freshman['introduction'])) !!}</span>
         </div>
     </div>
 </body>

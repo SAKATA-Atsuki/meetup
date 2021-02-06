@@ -47,7 +47,7 @@ class RegisterController extends Controller
         $this->middleware('guest:circle');
     }
 
-    // 新入生登録フォーム表示
+    // サークル登録フォーム表示
     public function showRegistrationForm()
     {
         $campuses = Campus::all();
@@ -71,7 +71,7 @@ class RegisterController extends Controller
         echo json_encode($circle_subcategory_list);
     }
 
-    // 新入生登録フォーム確認
+    // サークル登録フォーム確認
     public function register(CircleRegisterRequest $request)
     {
         $data = $request->all();
@@ -81,7 +81,7 @@ class RegisterController extends Controller
         return view('circle.auth.check', compact('data', 'campus', 'circle_subcategory'));
     }
 
-    // 新入生登録
+    // サークル登録
     public function store(Request $request)
     {
         if ($request->has('back')) {

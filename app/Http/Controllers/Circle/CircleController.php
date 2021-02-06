@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Circle;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Circle;
 use App\Models\Favorite;
@@ -25,7 +26,6 @@ class CircleController extends Controller
         } else {
             return view('circle.index', compact('pg', 'circle'));
         }
-
     }
 
     // お気に入り処理

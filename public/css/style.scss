@@ -7,8 +7,8 @@ body {
     text-align: left;
 }
 
-.enji {
-    color: rgb(154, 2, 0);
+.success {
+    color: green;
 }
 
 /* index ---------------------------------------------------------------------------------------------------- */
@@ -217,8 +217,7 @@ body {
 
 .top_result {
     width: 950px;
-    margin: 0 auto;
-    margin-top: 50px;
+    margin: 50px auto;
 
     .title {
         display: flex;
@@ -256,7 +255,8 @@ body {
 
     .button {
         width: 292px;
-        margin: 50px auto;
+        margin: 0 auto;
+        margin-top: 50px;
 
         .pagination {
             cursor: default;
@@ -504,6 +504,65 @@ body {
     }
 }
 
+/* freshman/index ---------------------------------------------------------------------------------------------------- */
+.freshman_content {
+    width: 1000px;
+    margin: 50px auto;
+
+    .button_1 {
+        display: block;
+        text-decoration: none;
+        text-align: center;
+        width: 250px;
+        font-size: 25px;
+        color: white;
+        background-color: rgb(154, 2, 0);
+        border: gray solid 2px;
+        border-radius: 100px;
+        padding: 5px 0;        
+    }
+
+    .name {
+        margin-top: 35px;
+
+        span {
+            font-size: 31px;
+            width: 750px;
+        }
+    }
+
+    .introduction {
+        margin-top: 35px;
+        display: flex;
+
+        .title {
+            width: 115px;
+        }
+
+        .content {
+            width: 885px;
+        }
+    }
+
+    .button {
+        margin-top: 50px;
+
+        .button_4 {
+            display: block;
+            text-decoration: none;
+            text-align: center;
+            width: 250px;
+            font-size: 25px;
+            color: white;
+            background-color: rgb(154, 2, 0);
+            border: gray solid 2px;
+            border-radius: 100px;
+            padding: 5px 0;        
+            margin: 0 auto;
+        }    
+    }
+}
+
 /* circle/register ---------------------------------------------------------------------------------------------------- */
 .circle_register_content {
     text-align: center;
@@ -738,6 +797,10 @@ body {
         .title {
             width: 115px;
         }
+
+        .content {
+            width: 885px;
+        }
     }
 
     .button {
@@ -756,5 +819,467 @@ body {
             padding: 5px 0;        
             margin: 0 auto;
         }    
+    }
+}
+
+/* circle/thread/index ---------------------------------------------------------------------------------------------------- */
+.circle_thread_content {
+    width: 1000px;
+    margin: 50px auto;
+
+    .button_1 {
+        display: block;
+        text-decoration: none;
+        text-align: center;
+        width: 250px;
+        font-size: 25px;
+        color: white;
+        background-color: rgb(154, 2, 0);
+        border: gray solid 2px;
+        border-radius: 100px;
+        padding: 5px 0;        
+    }
+
+    .name {
+        margin-top: 35px;
+        display: flex;
+        justify-content: space-between;
+
+        span {
+            font-size: 31px;
+            width: 750px;
+        }
+
+        .button_2 {
+            text-decoration: none;
+            text-align: center;
+            width: 200px;
+            height: 31px;
+            font-size: 20px;
+            color: black;
+            background-color: pink;
+            border: gray solid 2px;
+            border-radius: 100px;
+            padding: 5px 0;        
+        }    
+
+        .button_3 {
+            text-decoration: none;
+            text-align: center;
+            width: 200px;
+            height: 31px;
+            font-size: 20px;
+            color: red;
+            background-color: pink;
+            border: gray solid 2px;
+            border-radius: 100px;
+            padding: 5px 0;        
+        }    
+    }
+}
+
+.circle_thread_search {
+    text-align: center;
+    background-color: white;
+    width: 600px;
+    margin: 0 auto;
+    margin-top: 50px;
+    padding: 50px 0;
+    border: black solid 1px;
+
+    .form {
+        display: flex;
+        width: 437px;
+        margin: 0 auto;
+        margin-bottom: 20px;
+        text-align: left;
+
+        .left {
+            width: 150px;
+        }
+
+        .right {
+            width: 287px;
+        }
+    }
+
+    .button {
+        margin-top: 50px;
+
+        .button_1 {
+            cursor: pointer;
+            outline: none;
+            width: 250px;
+            font-size: 25px;
+            color: white;
+            background-color: rgb(154, 2, 0);
+            border-color: gray;
+            border-radius: 100px;
+            padding: 5px 0;    
+        }
+    }
+}
+
+.circle_thread_result {
+    width: 1000px;
+    margin: 50px auto;
+
+    .button_1 {
+        display: block;
+        text-decoration: none;
+        text-align: center;
+        width: 250px;
+        font-size: 25px;
+        color: white;
+        background-color: rgb(154, 2, 0);
+        border: gray solid 2px;
+        border-radius: 100px;
+        padding: 5px 0;        
+        margin-bottom: 20px;
+    }
+
+    .title {
+        display: flex;
+        border-top: black solid 2px;
+        border-bottom: black solid 2px;
+        padding: 0 25px;
+        font-weight: bold;
+    }
+
+    .content {
+        display: flex;
+        border-bottom: black solid 1px;
+        padding: 0 25px;
+
+        a {
+            text-decoration: none;
+        }
+
+        .circle {
+            color: blue;
+        }
+
+        .freshman {
+            text-decoration: none;
+            color: green;
+        }
+    }
+
+    .thread_title {
+        width: 450px;
+    }
+
+    .number {
+        width: 200px;
+    }
+
+    .author {
+        width: 300px;
+    }
+
+    .button {
+        width: 292px;
+        margin: 0 auto;
+        margin-top: 50px;
+
+        .pagination {
+            cursor: default;
+            margin: 0;
+            padding: 10px;
+            background-color: #fff;
+            border-radius: 40px;
+            box-shadow: 0 5px 25px 0 rgba(0,0,0,.5);
+
+            li {
+                display: inline-block;
+                list-style: none;
+
+                span {
+                    display: block;
+                    width: 40px;
+                    height: 40px;
+                    line-height: 40px;
+                    background-color: #fff;
+                    text-align: center;
+                    border-radius: 4px;
+                    margin: 5px;
+                    box-shadow: inset 0 5px 10px rgba(0,0,0,.1), 0 2px 5px rgba(0,0,0,.5);
+                    transition: all .3s ease;
+
+                    &.active {
+                        color: #fff;
+				        background-color: rgb(154, 2, 0);
+                    }
+                }
+                
+                a {
+                    display: block;
+                    width: 40px;
+                    height: 40px;
+                    line-height: 40px;
+                    background-color: #fff;
+                    text-align: center;
+                    text-decoration: none;
+                    color: #252525;
+                    border-radius: 4px;
+                    margin: 5px;
+                    box-shadow: inset 0 5px 10px rgba(0,0,0,.1), 0 2px 5px rgba(0,0,0,.5);
+                    transition: all .3s ease;
+
+                    &:hover, &.active {
+                        color: #fff;
+				        background-color: rgb(154, 2, 0);
+                    }
+                }
+
+                &:first-child {
+                    span {
+                        border-radius: 40px 0 0 40px;
+                    }
+
+                    a {
+                        border-radius: 40px 0 0 40px;
+                    }
+                }
+
+                &:last-child {
+                    span {
+                        border-radius: 0 40px 40px 0;
+                    }
+
+                    a {
+                        border-radius: 0 40px 40px 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* circle/thread/register ---------------------------------------------------------------------------------------------------- */
+.circle_thread_register_content {
+    width: 1000px;
+    margin: 50px auto;
+
+    .button_1 {
+        display: block;
+        text-decoration: none;
+        text-align: center;
+        width: 250px;
+        font-size: 25px;
+        color: white;
+        background-color: rgb(154, 2, 0);
+        border: gray solid 2px;
+        border-radius: 100px;
+        padding: 5px 0;        
+    }
+
+    .name {
+        margin-top: 35px;
+        display: flex;
+        justify-content: space-between;
+
+        span {
+            font-size: 31px;
+            width: 750px;
+        }
+
+        .button_2 {
+            text-decoration: none;
+            text-align: center;
+            width: 200px;
+            height: 31px;
+            font-size: 20px;
+            color: black;
+            background-color: pink;
+            border: gray solid 2px;
+            border-radius: 100px;
+            padding: 5px 0;        
+        }    
+
+        .button_3 {
+            text-decoration: none;
+            text-align: center;
+            width: 200px;
+            height: 31px;
+            font-size: 20px;
+            color: red;
+            background-color: pink;
+            border: gray solid 2px;
+            border-radius: 100px;
+            padding: 5px 0;        
+        }    
+    }
+}
+
+.circle_thread_register_form {
+    display: flex;
+    width: 437px;
+    margin: 0 auto;
+
+    .left {
+        width: 150px;
+    }
+
+    .right {
+        width: 287px;
+    }
+}
+
+.circle_thread_register_button {
+    margin: 50px 0;
+    text-align: center;
+
+    .button_1 {
+        cursor: pointer;
+        outline: none;
+        width: 250px;
+        font-size: 25px;
+        color: white;
+        background-color: rgb(154, 2, 0);
+        border-color: gray;
+        border-radius: 100px;
+        padding: 5px 0;    
+    }
+}
+
+/* circle/thread/message ---------------------------------------------------------------------------------------------------- */
+.circle_thread_message_content {
+    width: 1000px;
+    margin: 50px auto;
+
+    .button_1 {
+        display: block;
+        text-decoration: none;
+        text-align: center;
+        width: 250px;
+        font-size: 25px;
+        color: white;
+        background-color: rgb(154, 2, 0);
+        border: gray solid 2px;
+        border-radius: 100px;
+        padding: 5px 0;        
+    }
+
+    .name {
+        margin-top: 35px;
+        display: flex;
+        justify-content: space-between;
+
+        span {
+            font-size: 31px;
+            width: 750px;
+        }
+
+        .button_2 {
+            text-decoration: none;
+            text-align: center;
+            width: 200px;
+            height: 31px;
+            font-size: 20px;
+            color: black;
+            background-color: pink;
+            border: gray solid 2px;
+            border-radius: 100px;
+            padding: 5px 0;        
+        }    
+
+        .button_3 {
+            text-decoration: none;
+            text-align: center;
+            width: 200px;
+            height: 31px;
+            font-size: 20px;
+            color: red;
+            background-color: pink;
+            border: gray solid 2px;
+            border-radius: 100px;
+            padding: 5px 0;        
+        }    
+    }
+}
+
+.circle_thread_message_title {
+    background-color: white;
+    border-top: black solid 1px;
+    border-bottom: black solid 1px;
+    margin: 0 -8px;
+
+    .content {
+        width: 1000px;
+        margin: 10px auto;
+
+        .title {
+            font-size: 31px;
+        }
+
+        .circle {
+            color: blue;
+        }
+
+        .freshman {
+            text-decoration: none;
+            color: green;
+        }
+    }
+}
+
+.circle_thread_message_list {
+    width: 1000px;
+    margin: 0 auto;
+    margin-bottom: 50px;
+
+    .content {
+        border-bottom: black solid 1px;
+        padding: 15px 25px;
+
+        .top {
+            display: flex;
+            justify-content: space-between;
+
+            .circle {
+                color: blue;
+            }
+
+            .freshman {
+                text-decoration: none;
+                color: green;
+            }
+
+            .trash {
+                text-decoration: none;
+                color: gray;
+            }
+        }
+
+        .message {
+            margin-top: 10px;
+        }
+    }
+
+    .form {
+        text-align: center;
+        margin-top: 50px;
+
+        p {
+            margin-left: 25px;
+        }
+    }
+
+    .button {
+        text-align: center;
+        margin-top: 20px;
+
+        .button_1 {
+            cursor: pointer;
+            outline: none;
+            width: 250px;
+            font-size: 25px;
+            color: white;
+            background-color: rgb(154, 2, 0);
+            border-color: gray;
+            border-radius: 100px;
+            padding: 5px 0;    
+        }
     }
 }

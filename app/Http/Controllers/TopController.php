@@ -88,7 +88,7 @@ class TopController extends Controller
                             ->where('circle_category_id', 'like', '%' . $session_top_search['circle_category_id'] . '%')
                             ->where('circle_subcategory_id', 'like', '%' . $session_top_search['circle_subcategory_id'] . '%')
                             ->orderBy('updated_at', 'desc')
-                            ->simplePaginate(5);
+                            ->simplePaginate(10);
 
         return view('index', compact('session_top_search', 'page', 'campuses', 'circle_subcategories', 'circles'));
     }

@@ -54,13 +54,13 @@
             @if (Auth::guard('freshman')->check())
                 <p>{{ Auth::guard('freshman')->user()->name_sei . Auth::guard('freshman')->user()->name_mei }}　様</p>
                 <div class="button">
-                    <a href="" class="button_1">アカウント設定</a>
+                    <a href="" class="button_1">マイページ</a>
                     <a href="{{ route('freshman.logout') }}" class="button_2">ログアウト</a>    
                 </div>
             @elseif (Auth::guard('circle')->check())
                 <p>{{ Auth::guard('circle')->user()->name }}　様</p>
                 <div class="button">
-                    <a href="" class="button_3">アカウント設定</a>
+                    <a href="" class="button_3">マイページ</a>
                     <a href="{{ route('circle.logout') }}" class="button_4">ログアウト</a>    
                 </div>
             @else
@@ -145,7 +145,13 @@
         </div>
         @foreach ($circles as $circle)
             <div class="content">
-                <p class="name"><a href="{{ route('circle', ['id' => $circle['id'], 'pg' => $page]) }}">{{ $circle['name'] }}</a></p>
+                <p class="name"><a href="{{ route('circle', ['id' => $circle['id'], 'pg' => $page]) }}">
+                    @if (mb_strlen($circle['name']) > 16)
+                        {{ mb_substr($circle['name'], 0, 16) }}…
+                    @else
+                        {{ $circle['name'] }}
+                    @endif
+                </a></p>
                 <p class="campus">{{ $circle->getCampusName() }}</p>
                 @foreach (config('master.circle_category') as $index => $value)
                     @if ($circle['circle_category_id'] == $index)

@@ -7,8 +7,8 @@ body {
   text-align: left;
 }
 
-.enji {
-  color: #9a0200;
+.success {
+  color: green;
 }
 
 /* index ---------------------------------------------------------------------------------------------------- */
@@ -237,8 +237,7 @@ body {
 
 .top_result {
   width: 950px;
-  margin: 0 auto;
-  margin-top: 50px;
+  margin: 50px auto;
 }
 
 .top_result .title {
@@ -281,7 +280,8 @@ body {
 
 .top_result .button {
   width: 292px;
-  margin: 50px auto;
+  margin: 0 auto;
+  margin-top: 50px;
 }
 
 .top_result .button .pagination {
@@ -537,6 +537,67 @@ body {
   padding: 5px 0;
 }
 
+/* freshman/index ---------------------------------------------------------------------------------------------------- */
+.freshman_content {
+  width: 1000px;
+  margin: 50px auto;
+}
+
+.freshman_content .button_1 {
+  display: block;
+  text-decoration: none;
+  text-align: center;
+  width: 250px;
+  font-size: 25px;
+  color: white;
+  background-color: #9a0200;
+  border: gray solid 2px;
+  border-radius: 100px;
+  padding: 5px 0;
+}
+
+.freshman_content .name {
+  margin-top: 35px;
+}
+
+.freshman_content .name span {
+  font-size: 31px;
+  width: 750px;
+}
+
+.freshman_content .introduction {
+  margin-top: 35px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.freshman_content .introduction .title {
+  width: 115px;
+}
+
+.freshman_content .introduction .content {
+  width: 885px;
+}
+
+.freshman_content .button {
+  margin-top: 50px;
+}
+
+.freshman_content .button .button_4 {
+  display: block;
+  text-decoration: none;
+  text-align: center;
+  width: 250px;
+  font-size: 25px;
+  color: white;
+  background-color: #9a0200;
+  border: gray solid 2px;
+  border-radius: 100px;
+  padding: 5px 0;
+  margin: 0 auto;
+}
+
 /* circle/register ---------------------------------------------------------------------------------------------------- */
 .circle_register_content {
   text-align: center;
@@ -788,6 +849,10 @@ body {
   width: 115px;
 }
 
+.circle_content .introduction .content {
+  width: 885px;
+}
+
 .circle_content .button {
   margin-top: 50px;
 }
@@ -804,5 +869,492 @@ body {
   border-radius: 100px;
   padding: 5px 0;
   margin: 0 auto;
+}
+
+/* circle/thread/index ---------------------------------------------------------------------------------------------------- */
+.circle_thread_content {
+  width: 1000px;
+  margin: 50px auto;
+}
+
+.circle_thread_content .button_1 {
+  display: block;
+  text-decoration: none;
+  text-align: center;
+  width: 250px;
+  font-size: 25px;
+  color: white;
+  background-color: #9a0200;
+  border: gray solid 2px;
+  border-radius: 100px;
+  padding: 5px 0;
+}
+
+.circle_thread_content .name {
+  margin-top: 35px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.circle_thread_content .name span {
+  font-size: 31px;
+  width: 750px;
+}
+
+.circle_thread_content .name .button_2 {
+  text-decoration: none;
+  text-align: center;
+  width: 200px;
+  height: 31px;
+  font-size: 20px;
+  color: black;
+  background-color: pink;
+  border: gray solid 2px;
+  border-radius: 100px;
+  padding: 5px 0;
+}
+
+.circle_thread_content .name .button_3 {
+  text-decoration: none;
+  text-align: center;
+  width: 200px;
+  height: 31px;
+  font-size: 20px;
+  color: red;
+  background-color: pink;
+  border: gray solid 2px;
+  border-radius: 100px;
+  padding: 5px 0;
+}
+
+.circle_thread_search {
+  text-align: center;
+  background-color: white;
+  width: 600px;
+  margin: 0 auto;
+  margin-top: 50px;
+  padding: 50px 0;
+  border: black solid 1px;
+}
+
+.circle_thread_search .form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 437px;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.circle_thread_search .form .left {
+  width: 150px;
+}
+
+.circle_thread_search .form .right {
+  width: 287px;
+}
+
+.circle_thread_search .button {
+  margin-top: 50px;
+}
+
+.circle_thread_search .button .button_1 {
+  cursor: pointer;
+  outline: none;
+  width: 250px;
+  font-size: 25px;
+  color: white;
+  background-color: #9a0200;
+  border-color: gray;
+  border-radius: 100px;
+  padding: 5px 0;
+}
+
+.circle_thread_result {
+  width: 1000px;
+  margin: 50px auto;
+}
+
+.circle_thread_result .button_1 {
+  display: block;
+  text-decoration: none;
+  text-align: center;
+  width: 250px;
+  font-size: 25px;
+  color: white;
+  background-color: #9a0200;
+  border: gray solid 2px;
+  border-radius: 100px;
+  padding: 5px 0;
+  margin-bottom: 20px;
+}
+
+.circle_thread_result .title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border-top: black solid 2px;
+  border-bottom: black solid 2px;
+  padding: 0 25px;
+  font-weight: bold;
+}
+
+.circle_thread_result .content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border-bottom: black solid 1px;
+  padding: 0 25px;
+}
+
+.circle_thread_result .content a {
+  text-decoration: none;
+}
+
+.circle_thread_result .content .circle {
+  color: blue;
+}
+
+.circle_thread_result .content .freshman {
+  text-decoration: none;
+  color: green;
+}
+
+.circle_thread_result .thread_title {
+  width: 450px;
+}
+
+.circle_thread_result .number {
+  width: 200px;
+}
+
+.circle_thread_result .author {
+  width: 300px;
+}
+
+.circle_thread_result .button {
+  width: 292px;
+  margin: 0 auto;
+  margin-top: 50px;
+}
+
+.circle_thread_result .button .pagination {
+  cursor: default;
+  margin: 0;
+  padding: 10px;
+  background-color: #fff;
+  border-radius: 40px;
+  -webkit-box-shadow: 0 5px 25px 0 rgba(0, 0, 0, 0.5);
+          box-shadow: 0 5px 25px 0 rgba(0, 0, 0, 0.5);
+}
+
+.circle_thread_result .button .pagination li {
+  display: inline-block;
+  list-style: none;
+}
+
+.circle_thread_result .button .pagination li span {
+  display: block;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  background-color: #fff;
+  text-align: center;
+  border-radius: 4px;
+  margin: 5px;
+  -webkit-box-shadow: inset 0 5px 10px rgba(0, 0, 0, 0.1), 0 2px 5px rgba(0, 0, 0, 0.5);
+          box-shadow: inset 0 5px 10px rgba(0, 0, 0, 0.1), 0 2px 5px rgba(0, 0, 0, 0.5);
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
+}
+
+.circle_thread_result .button .pagination li span.active {
+  color: #fff;
+  background-color: #9a0200;
+}
+
+.circle_thread_result .button .pagination li a {
+  display: block;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  background-color: #fff;
+  text-align: center;
+  text-decoration: none;
+  color: #252525;
+  border-radius: 4px;
+  margin: 5px;
+  -webkit-box-shadow: inset 0 5px 10px rgba(0, 0, 0, 0.1), 0 2px 5px rgba(0, 0, 0, 0.5);
+          box-shadow: inset 0 5px 10px rgba(0, 0, 0, 0.1), 0 2px 5px rgba(0, 0, 0, 0.5);
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
+}
+
+.circle_thread_result .button .pagination li a:hover, .circle_thread_result .button .pagination li a.active {
+  color: #fff;
+  background-color: #9a0200;
+}
+
+.circle_thread_result .button .pagination li:first-child span {
+  border-radius: 40px 0 0 40px;
+}
+
+.circle_thread_result .button .pagination li:first-child a {
+  border-radius: 40px 0 0 40px;
+}
+
+.circle_thread_result .button .pagination li:last-child span {
+  border-radius: 0 40px 40px 0;
+}
+
+.circle_thread_result .button .pagination li:last-child a {
+  border-radius: 0 40px 40px 0;
+}
+
+/* circle/thread/register ---------------------------------------------------------------------------------------------------- */
+.circle_thread_register_content {
+  width: 1000px;
+  margin: 50px auto;
+}
+
+.circle_thread_register_content .button_1 {
+  display: block;
+  text-decoration: none;
+  text-align: center;
+  width: 250px;
+  font-size: 25px;
+  color: white;
+  background-color: #9a0200;
+  border: gray solid 2px;
+  border-radius: 100px;
+  padding: 5px 0;
+}
+
+.circle_thread_register_content .name {
+  margin-top: 35px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.circle_thread_register_content .name span {
+  font-size: 31px;
+  width: 750px;
+}
+
+.circle_thread_register_content .name .button_2 {
+  text-decoration: none;
+  text-align: center;
+  width: 200px;
+  height: 31px;
+  font-size: 20px;
+  color: black;
+  background-color: pink;
+  border: gray solid 2px;
+  border-radius: 100px;
+  padding: 5px 0;
+}
+
+.circle_thread_register_content .name .button_3 {
+  text-decoration: none;
+  text-align: center;
+  width: 200px;
+  height: 31px;
+  font-size: 20px;
+  color: red;
+  background-color: pink;
+  border: gray solid 2px;
+  border-radius: 100px;
+  padding: 5px 0;
+}
+
+.circle_thread_register_form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 437px;
+  margin: 0 auto;
+}
+
+.circle_thread_register_form .left {
+  width: 150px;
+}
+
+.circle_thread_register_form .right {
+  width: 287px;
+}
+
+.circle_thread_register_button {
+  margin: 50px 0;
+  text-align: center;
+}
+
+.circle_thread_register_button .button_1 {
+  cursor: pointer;
+  outline: none;
+  width: 250px;
+  font-size: 25px;
+  color: white;
+  background-color: #9a0200;
+  border-color: gray;
+  border-radius: 100px;
+  padding: 5px 0;
+}
+
+/* circle/thread/message ---------------------------------------------------------------------------------------------------- */
+.circle_thread_message_content {
+  width: 1000px;
+  margin: 50px auto;
+}
+
+.circle_thread_message_content .button_1 {
+  display: block;
+  text-decoration: none;
+  text-align: center;
+  width: 250px;
+  font-size: 25px;
+  color: white;
+  background-color: #9a0200;
+  border: gray solid 2px;
+  border-radius: 100px;
+  padding: 5px 0;
+}
+
+.circle_thread_message_content .name {
+  margin-top: 35px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.circle_thread_message_content .name span {
+  font-size: 31px;
+  width: 750px;
+}
+
+.circle_thread_message_content .name .button_2 {
+  text-decoration: none;
+  text-align: center;
+  width: 200px;
+  height: 31px;
+  font-size: 20px;
+  color: black;
+  background-color: pink;
+  border: gray solid 2px;
+  border-radius: 100px;
+  padding: 5px 0;
+}
+
+.circle_thread_message_content .name .button_3 {
+  text-decoration: none;
+  text-align: center;
+  width: 200px;
+  height: 31px;
+  font-size: 20px;
+  color: red;
+  background-color: pink;
+  border: gray solid 2px;
+  border-radius: 100px;
+  padding: 5px 0;
+}
+
+.circle_thread_message_title {
+  background-color: white;
+  border-top: black solid 1px;
+  border-bottom: black solid 1px;
+  margin: 0 -8px;
+}
+
+.circle_thread_message_title .content {
+  width: 1000px;
+  margin: 10px auto;
+}
+
+.circle_thread_message_title .content .title {
+  font-size: 31px;
+}
+
+.circle_thread_message_title .content .circle {
+  color: blue;
+}
+
+.circle_thread_message_title .content .freshman {
+  text-decoration: none;
+  color: green;
+}
+
+.circle_thread_message_list {
+  width: 1000px;
+  margin: 0 auto;
+  margin-bottom: 50px;
+}
+
+.circle_thread_message_list .content {
+  border-bottom: black solid 1px;
+  padding: 15px 25px;
+}
+
+.circle_thread_message_list .content .top {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.circle_thread_message_list .content .top .circle {
+  color: blue;
+}
+
+.circle_thread_message_list .content .top .freshman {
+  text-decoration: none;
+  color: green;
+}
+
+.circle_thread_message_list .content .top .trash {
+  text-decoration: none;
+  color: gray;
+}
+
+.circle_thread_message_list .content .message {
+  margin-top: 10px;
+}
+
+.circle_thread_message_list .form {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.circle_thread_message_list .form p {
+  margin-left: 25px;
+}
+
+.circle_thread_message_list .button {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.circle_thread_message_list .button .button_1 {
+  cursor: pointer;
+  outline: none;
+  width: 250px;
+  font-size: 25px;
+  color: white;
+  background-color: #9a0200;
+  border-color: gray;
+  border-radius: 100px;
+  padding: 5px 0;
 }
 /*# sourceMappingURL=style.css.map */

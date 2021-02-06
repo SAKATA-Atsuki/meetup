@@ -18,4 +18,14 @@ class Freshman extends Authenticatable
     {
         $this->notify(new FreshmanPasswordResetNotification($token));
     }
+
+    public function campus()
+    {
+        return $this->belongsTo('App\Models\Campus');
+    }
+
+    public function getCampusName()
+    {
+        return $this->campus->name;
+    }
 }

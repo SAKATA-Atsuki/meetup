@@ -54,13 +54,13 @@
             <?php if(Auth::guard('freshman')->check()): ?>
                 <p><?php echo e(Auth::guard('freshman')->user()->name_sei . Auth::guard('freshman')->user()->name_mei); ?>　様</p>
                 <div class="button">
-                    <a href="" class="button_1">アカウント設定</a>
+                    <a href="" class="button_1">マイページ</a>
                     <a href="<?php echo e(route('freshman.logout')); ?>" class="button_2">ログアウト</a>    
                 </div>
             <?php elseif(Auth::guard('circle')->check()): ?>
                 <p><?php echo e(Auth::guard('circle')->user()->name); ?>　様</p>
                 <div class="button">
-                    <a href="" class="button_3">アカウント設定</a>
+                    <a href="" class="button_3">マイページ</a>
                     <a href="<?php echo e(route('circle.logout')); ?>" class="button_4">ログアウト</a>    
                 </div>
             <?php else: ?>
@@ -145,7 +145,14 @@
         </div>
         <?php $__currentLoopData = $circles; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $circle): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
             <div class="content">
-                <p class="name"><a href="<?php echo e(route('circle', ['id' => $circle['id'], 'pg' => $page])); ?>"><?php echo e($circle['name']); ?></a></p>
+                <p class="name"><a href="<?php echo e(route('circle', ['id' => $circle['id'], 'pg' => $page])); ?>">
+                    <?php if(mb_strlen($circle['name']) > 16): ?>
+                        <?php echo e(mb_substr($circle['name'], 0, 16)); ?>…
+                    <?php else: ?>
+                        <?php echo e($circle['name']); ?>
+
+                    <?php endif; ?>
+                </a></p>
                 <p class="campus"><?php echo e($circle->getCampusName()); ?></p>
                 <?php $__currentLoopData = config('master.circle_category'); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $index => $value): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                     <?php if($circle['circle_category_id'] == $index): ?>

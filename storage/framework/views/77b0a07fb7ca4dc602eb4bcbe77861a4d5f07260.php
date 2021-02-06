@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>サークル詳細</title>
+    <title>新入生詳細</title>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
     <link rel="stylesheet" href="<?php echo e(asset('css/style.css')); ?>">
 </head>
@@ -44,32 +44,16 @@
             <?php endif; ?>
         </div>
     </div>
-    <div class="circle_content">
-        <a href="<?php echo e(route('top', ['page' => $pg])); ?>" class="button_1">< サークル一覧へ</a>    
+    <div class="freshman_content">
+        <a href="<?php echo e(route('circle.thread.message', ['id' => $id, 'pg' => $pg, 'thread_id' => $thread_id, 'page' => $page])); ?>" class="button_1">< スレッド詳細へ</a>    
         <div class="name">
-            <span><?php echo e($circle['name']); ?></span>
-            <?php if(Auth::guard('freshman')->check()): ?>
-                <?php if(count($favorite) == 0): ?>
-                    <a href="<?php echo e(route('circle.favorite', ['id' => $circle['id'], 'pg' => $pg])); ?>" class="button_2"><i class="far fa-heart"></i> お気に入り追加</a>
-                <?php else: ?>
-                    <a href="<?php echo e(route('circle.unfavorite', ['id' => $circle['id'], 'pg' => $pg])); ?>" class="button_3"><i class="fas fa-heart"></i> お気に入り済み</a>
-                <?php endif; ?>
-            <?php endif; ?>
+            <span><?php echo e($freshman['nickname']); ?></span>
         </div>
-        <span><?php echo e($circle->getCampusName()); ?></span>
-        <?php $__currentLoopData = config('master.circle_category'); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $index => $value): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-            <?php if($circle['circle_category_id'] == $index): ?>
-                <span>　<?php echo e($value); ?>　</span>
-            <?php endif; ?>
-        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-        <span><?php echo e($circle->getCircleSubcategoryName()); ?></span>
+        <span><?php echo e($freshman->getCampusName()); ?></span>
         <div class="introduction">
-            <span class="title">サークル紹介</span>
-            <span class="content"><?php echo nl2br(e($circle['introduction'])); ?></span>
-        </div>
-        <div class="button">
-            <a href="<?php echo e(route('circle.thread', ['id' => $circle['id'], 'pg' => $pg])); ?>" class="button_4">スレッド一覧へ</a>    
+            <span class="title">自己紹介</span>
+            <span class="content"><?php echo nl2br(e($freshman['introduction'])); ?></span>
         </div>
     </div>
 </body>
-</html><?php /**PATH /Applications/MAMP/htdocs/meetup/resources/views/circle/index.blade.php ENDPATH**/ ?>
+</html><?php /**PATH /Applications/MAMP/htdocs/meetup/resources/views/freshman/indexMessage.blade.php ENDPATH**/ ?>
