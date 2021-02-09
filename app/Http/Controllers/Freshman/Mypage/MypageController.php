@@ -12,8 +12,6 @@ class MypageController extends Controller
     // マイページ表示
     public function index(Request $request)
     {
-        $freshman = Freshman::find(Auth::guard('freshman')->user()->id);
-
-        return view('freshman.mypage.index', compact('freshman'));        
+        return view('freshman.mypage.index');        
     }
 }

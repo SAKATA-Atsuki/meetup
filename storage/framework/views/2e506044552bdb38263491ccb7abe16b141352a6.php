@@ -27,7 +27,7 @@
                     <span>氏名</span>
                 </div>
                 <div class="right">
-                    <span><?php echo e($freshman['name_sei']); ?>　<?php echo e($freshman['name_mei']); ?></span>
+                    <span><?php echo e(Auth::guard('freshman')->user()->name_sei); ?>　<?php echo e(Auth::guard('freshman')->user()->name_mei); ?></span>
                 </div>
             </div>
             <div class="check">
@@ -35,7 +35,7 @@
                     <span>ニックネーム</span>
                 </div>
                 <div class="right">
-                    <span><?php echo e($freshman['nickname']); ?></span>
+                    <span><?php echo e(Auth::guard('freshman')->user()->nickname); ?></span>
                 </div>
             </div>
             <div class="check">
@@ -45,7 +45,7 @@
                 <div class="right">
                     <span>
                         <?php $__currentLoopData = config('master.gender'); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $index => $value): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                            <?php if($freshman['gender'] == $index): ?> <?php echo e($value); ?> <?php endif; ?>
+                            <?php if(Auth::guard('freshman')->user()->gender == $index): ?> <?php echo e($value); ?> <?php endif; ?>
                         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                     </span>
                 </div>
@@ -55,7 +55,7 @@
                     <span>キャンパス</span>
                 </div>
                 <div class="right">
-                    <span><?php echo e($freshman->getCampusName()); ?></span>
+                    <span><?php echo e(Auth::guard('freshman')->user()->getCampusName()); ?></span>
                 </div>
             </div>
             <div class="check">
@@ -63,7 +63,7 @@
                     <span>メールアドレス</span>
                 </div>
                 <div class="right">
-                    <span><?php echo e($freshman['email']); ?></span>
+                    <span><?php echo e(Auth::guard('freshman')->user()->email); ?></span>
                 </div>
             </div>
             <div class="check">
@@ -79,16 +79,16 @@
                     <span>自己紹介</span>
                 </div>
                 <div class="right">
-                    <span><?php echo nl2br(e($freshman['introduction'])); ?></span>
+                    <span><?php echo nl2br(e(Auth::guard('freshman')->user()->introduction)); ?></span>
                 </div>
             </div>    
         </div>
         <div class="buttons">
             <a href="<?php echo e(route('freshman.mypage.favorite')); ?>" class="button">お気に入りしたサークル</a>    
             <a href="<?php echo e(route('freshman.mypage.profile')); ?>" class="button">プロフィール変更</a>    
-            <a href="" class="button">メールアドレス変更</a>    
-            <a href="" class="button">パスワード変更</a>    
-            <a href="" class="button">退会</a>    
+            <a href="<?php echo e(route('freshman.mypage.email')); ?>" class="button">メールアドレス変更</a>    
+            <a href="<?php echo e(route('freshman.mypage.password')); ?>" class="button">パスワード変更</a>    
+            <a href="<?php echo e(route('freshman.mypage.withdrawal')); ?>" class="button">退会</a>    
         </div>
     </div>
 </body>

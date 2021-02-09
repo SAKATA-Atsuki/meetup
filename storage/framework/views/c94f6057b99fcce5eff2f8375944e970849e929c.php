@@ -29,7 +29,7 @@
                     <span>氏名</span>
                 </div>
                 <div class="right">
-                    姓<input type="text" name="name_sei" value="<?php if(old('name_sei') == null): ?><?php echo e($freshman['name_sei']); ?><?php else: ?><?php echo e(old('name_sei')); ?><?php endif; ?>" size="15">　名<input type="text" name="name_mei" value="<?php if(old('name_mei') == null): ?><?php echo e($freshman['name_mei']); ?><?php else: ?><?php echo e(old('name_mei')); ?><?php endif; ?>" size="15">
+                    姓<input type="text" name="name_sei" value="<?php if(old('name_sei') == null): ?><?php echo e(Auth::guard('freshman')->user()->name_sei); ?><?php else: ?><?php echo e(old('name_sei')); ?><?php endif; ?>" size="15">　名<input type="text" name="name_mei" value="<?php if(old('name_mei') == null): ?><?php echo e(Auth::guard('freshman')->user()->name_mei); ?><?php else: ?><?php echo e(old('name_mei')); ?><?php endif; ?>" size="15">
                     <?php $__errorArgs = ['name_sei'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
@@ -57,7 +57,7 @@ unset($__errorArgs, $__bag); ?>
                     <span>ニックネーム</span>
                 </div>
                 <div class="right">
-                    <input type="text" name="nickname" value="<?php if(old('nickname') == null): ?><?php echo e($freshman['nickname']); ?><?php else: ?><?php echo e(old('nickname')); ?><?php endif; ?>" size="39">
+                    <input type="text" name="nickname" value="<?php if(old('nickname') == null): ?><?php echo e(Auth::guard('freshman')->user()->nickname); ?><?php else: ?><?php echo e(old('nickname')); ?><?php endif; ?>" size="39">
                     <?php $__errorArgs = ['nickname'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
@@ -77,7 +77,7 @@ unset($__errorArgs, $__bag); ?>
                 <div class="right">
                     <?php
                         if (old('gender') == null) {
-                            $gender = $freshman['gender'];
+                            $gender = Auth::guard('freshman')->user()->gender;
                         } else {
                             $gender = old('gender');
                         }
@@ -104,7 +104,7 @@ unset($__errorArgs, $__bag); ?>
                 <div class="right">
                     <?php
                         if (old('campus_id') == null) {
-                            $campus_id = $freshman['campus_id'];
+                            $campus_id = Auth::guard('freshman')->user()->campus_id;
                         } else {
                             $campus_id = old('campus_id');
                         }
@@ -132,13 +132,13 @@ unset($__errorArgs, $__bag); ?>
                     <span>自己紹介</span>
                 </div>
                 <div class="right">
-                    <textarea name="introduction" cols="38" rows="7"><?php if(old('introduction') == null): ?><?php echo e($freshman['introduction']); ?><?php else: ?><?php echo e(old('introduction')); ?><?php endif; ?></textarea>
+                    <textarea name="introduction" cols="38" rows="7"><?php if(old('introduction') == null): ?><?php echo e(Auth::guard('freshman')->user()->introduction); ?><?php else: ?><?php echo e(old('introduction')); ?><?php endif; ?></textarea>
                 </div>
             </div>
             <div class="button">
                 <input type="submit" value="確認画面へ" class="button_1">
                 <br><br>
-                <input type="submit" name="back" value="マイページへ" class="button_1">
+                <a href="<?php echo e(route('freshman.mypage')); ?>" class="button_2">マイページへ</a>    
             </div>
         </form>
     </div>

@@ -1297,6 +1297,7 @@ body {
 .circle_thread_message_title .content .top .trash {
   text-decoration: none;
   color: gray;
+  height: 24px;
 }
 
 .circle_thread_message_title .content .circle {
@@ -1611,6 +1612,19 @@ body {
   padding: 5px 0;
 }
 
+.freshman_mypage_profile_edit_content .button .button_2 {
+  display: block;
+  text-decoration: none;
+  width: 246px;
+  font-size: 25px;
+  color: black;
+  background-color: lightgreen;
+  border: green solid 2px;
+  border-radius: 100px;
+  padding: 5px 0;
+  margin: 0 auto;
+}
+
 /* freshman/mypage/profileCheck ---------------------------------------------------------------------------------------------------- */
 .freshman_mypage_profile_check_content {
   text-align: center;
@@ -1652,5 +1666,211 @@ body {
   border-color: green;
   border-radius: 100px;
   padding: 5px 0;
+}
+
+/* freshman/mypage/email ---------------------------------------------------------------------------------------------------- */
+.freshman_mypage_email_edit_content {
+  text-align: center;
+}
+
+.freshman_mypage_email_edit_content h1 {
+  font-weight: lighter;
+}
+
+.freshman_mypage_email_edit_content .form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 477px;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.freshman_mypage_email_edit_content .form .left {
+  width: 190px;
+}
+
+.freshman_mypage_email_edit_content .form .right {
+  width: 287px;
+}
+
+.freshman_mypage_email_edit_content .button {
+  margin: 50px 0;
+}
+
+.freshman_mypage_email_edit_content .button .button_1 {
+  cursor: pointer;
+  outline: none;
+  width: 250px;
+  font-size: 25px;
+  color: black;
+  background-color: lightgreen;
+  border-color: green;
+  border-radius: 100px;
+  padding: 5px 0;
+}
+
+.freshman_mypage_email_edit_content .button .button_2 {
+  display: block;
+  text-decoration: none;
+  width: 246px;
+  font-size: 25px;
+  color: black;
+  background-color: lightgreen;
+  border: green solid 2px;
+  border-radius: 100px;
+  padding: 5px 0;
+  margin: 0 auto;
+}
+
+/* freshman/mypage/auth ---------------------------------------------------------------------------------------------------- */
+.freshman_mypage_email_auth_content {
+  text-align: center;
+}
+
+.freshman_mypage_email_auth_content h1 {
+  font-weight: lighter;
+}
+
+.freshman_mypage_email_auth_content .form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 417px;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.freshman_mypage_email_auth_content .form .left {
+  width: 130px;
+}
+
+.freshman_mypage_email_auth_content .form .right {
+  width: 287px;
+}
+
+.freshman_mypage_email_auth_content .button {
+  margin: 50px 0;
+}
+
+.freshman_mypage_email_auth_content .button .button_1 {
+  cursor: pointer;
+  outline: none;
+  width: 250px;
+  font-size: 25px;
+  color: black;
+  background-color: lightgreen;
+  border-color: green;
+  border-radius: 100px;
+  padding: 5px 0;
+}
+
+.freshman_mypage_email_auth_content .button .button_2 {
+  display: block;
+  text-decoration: none;
+  width: 246px;
+  font-size: 25px;
+  color: black;
+  background-color: lightgreen;
+  border: green solid 2px;
+  border-radius: 100px;
+  padding: 5px 0;
+  margin: 0 auto;
+}
+
+/* freshman/mypage/password ---------------------------------------------------------------------------------------------------- */
+.freshman_mypage_password_edit_content {
+  text-align: center;
+}
+
+.freshman_mypage_password_edit_content h1 {
+  font-weight: lighter;
+}
+
+.freshman_mypage_password_edit_content .form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 417px;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.freshman_mypage_password_edit_content .form .left {
+  width: 130px;
+}
+
+.freshman_mypage_password_edit_content .form .right {
+  width: 287px;
+}
+
+.freshman_mypage_password_edit_content .button {
+  margin: 50px 0;
+}
+
+.freshman_mypage_password_edit_content .button .button_1 {
+  cursor: pointer;
+  outline: none;
+  width: 250px;
+  font-size: 25px;
+  color: black;
+  background-color: lightgreen;
+  border-color: green;
+  border-radius: 100px;
+  padding: 5px 0;
+}
+
+.freshman_mypage_password_edit_content .button .button_2 {
+  display: block;
+  text-decoration: none;
+  width: 246px;
+  font-size: 25px;
+  color: black;
+  background-color: lightgreen;
+  border: green solid 2px;
+  border-radius: 100px;
+  padding: 5px 0;
+  margin: 0 auto;
+}
+
+/* freshman/mypage/withdrawal ---------------------------------------------------------------------------------------------------- */
+.freshman_mypage_withdrawal_content {
+  text-align: center;
+}
+
+.freshman_mypage_withdrawal_content h1 {
+  font-weight: lighter;
+}
+
+.freshman_mypage_withdrawal_content .button {
+  margin: 50px 0;
+}
+
+.freshman_mypage_withdrawal_content .button .button_1 {
+  cursor: pointer;
+  outline: none;
+  width: 250px;
+  font-size: 25px;
+  color: black;
+  background-color: lightgreen;
+  border-color: green;
+  border-radius: 100px;
+  padding: 5px 0;
+}
+
+.freshman_mypage_withdrawal_content .button .button_2 {
+  display: block;
+  text-decoration: none;
+  width: 246px;
+  font-size: 25px;
+  color: black;
+  background-color: lightgreen;
+  border: green solid 2px;
+  border-radius: 100px;
+  padding: 5px 0;
+  margin: 0 auto;
 }
 /*# sourceMappingURL=style.css.map */

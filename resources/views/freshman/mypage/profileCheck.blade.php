@@ -67,7 +67,7 @@
             </div>
         </div>
         <div class="button">
-            <form action="{{ route('freshman.mypage.profile.store') }}" method="POST">
+            <form action="{{ route('freshman.mypage.profile.update') }}" method="POST">
                 @csrf
                 <input type="hidden" name="name_sei" value="{{ $data['name_sei'] }}">
                 <input type="hidden" name="name_mei" value="{{ $data['name_mei'] }}">
@@ -75,7 +75,7 @@
                 <input type="hidden" name="gender" value="{{ $data['gender'] }}">
                 <input type="hidden" name="campus_id" value="{{ $data['campus_id'] }}">
                 <input type="hidden" name="introduction" value="{{ $data['introduction'] }}">
-                <input type="submit" value="登録する" class="button_1">
+                <input type="submit" value="変更する" class="button_1">
                 <br><br>
                 <input type="submit" name="back" value="前に戻る" class="button_1">
             </form>

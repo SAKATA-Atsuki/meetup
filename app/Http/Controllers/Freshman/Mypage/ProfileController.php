@@ -14,32 +14,27 @@ class ProfileController extends Controller
     // プロフィール変更フォーム表示
     public function index(Request $request)
     {
-        $freshman = Freshman::find(Auth::guard('freshman')->user()->id);
         $campuses = Campus::all();
 
-        return view('freshman.mypage.profile', compact('freshman', 'campuses'));        
+        return view('freshman.mypage.profile', compact('campuses'));        
     }
 
     // プロフィール変更フォーム確認
     public function check(FreshmanMypageProfileRequest $request)
     {
-        if ($request->has('back')) {
-            return redirect()->route('freshman.mypage');
-        } else {
-            $data = $request->all();
-            $campus = Campus::find($data['campus_id']);
-    
-            return view('freshman.mypage.profileCheck', compact('data', 'campus'));    
-        }
+        $data = $request->all();
+        $campus = Campus::find($data['campus_id']);
+
+        return view('freshman.mypage.profileCheck', compact('data', 'campus'));    
     }
 
-    // プロフィール変更登録
-    public function store(Request $request)
+    // プロフィール変更
+    public function update(Request $request)
     {
         if ($request->has('back')) {
             return redirect()->route('freshman.mypage.profile')->withInput($request->all());
         } else {
-            $freshman = Freshman::find(Auth::guard('freshman')->user()->id);
+            $freshman = Auth::guard('freshman')->user();
             $freshman->name_sei = $request->name_sei;
             $freshman->name_mei = $request->name_mei;
             $freshman->nickname = $request->nickname;

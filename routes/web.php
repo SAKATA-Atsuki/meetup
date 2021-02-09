@@ -69,16 +69,21 @@ Route::get('freshman/mypage/favorite/circle/unfavorite', 'Freshman\Mypage\Favori
 // freshman.mypage.profile
 Route::get('freshman/mypage/profile', 'Freshman\Mypage\ProfileController@index')->name('freshman.mypage.profile')->middleware(FreshmanMypage::class);
 Route::post('freshman/mypage/profile/check', 'Freshman\Mypage\ProfileController@check')->name('freshman.mypage.profile.check')->middleware(FreshmanMypage::class);
-Route::post('freshman/mypage/profile/store', 'Freshman\Mypage\ProfileController@store')->name('freshman.mypage.profile.store')->middleware(FreshmanMypage::class);
+Route::post('freshman/mypage/profile/update', 'Freshman\Mypage\ProfileController@update')->name('freshman.mypage.profile.update')->middleware(FreshmanMypage::class);
 
 // freshman.mypage.email
+Route::get('freshman/mypage/email', 'Freshman\Mypage\EmailController@index')->name('freshman.mypage.email')->middleware(FreshmanMypage::class);
+Route::post('freshman/mypage/email/send', 'Freshman\Mypage\EmailController@send')->name('freshman.mypage.email.send')->middleware(FreshmanMypage::class);
+Route::get('freshman/mypage/email/auth', 'Freshman\Mypage\EmailController@auth')->name('freshman.mypage.email.auth')->middleware(FreshmanMypage::class);
+Route::post('freshman/mypage/email/update', 'Freshman\Mypage\EmailController@update')->name('freshman.mypage.email.update')->middleware(FreshmanMypage::class);
 
 // freshman.mypage.password
+Route::get('freshman/mypage/password', 'Freshman\Mypage\PasswordController@index')->name('freshman.mypage.password')->middleware(FreshmanMypage::class);
+Route::post('freshman/mypage/password/update', 'Freshman\Mypage\PasswordController@update')->name('freshman.mypage.password.update')->middleware(FreshmanMypage::class);
 
 // freshman.mypage.withdrawal
-
-
-
+Route::get('freshman/mypage/withdrawal', 'Freshman\Mypage\WithdrawalController@index')->name('freshman.mypage.withdrawal')->middleware(FreshmanMypage::class);
+Route::post('freshman/mypage/withdrawal/delete', 'Freshman\Mypage\WithdrawalController@delete')->name('freshman.mypage.withdrawal.delete')->middleware(FreshmanMypage::class);
 
 // circle.mypage
 use App\Http\Middleware\CircleMypage;
@@ -86,9 +91,20 @@ use App\Http\Middleware\CircleMypage;
 Route::get('circle/mypage', 'Circle\Mypage\MypageController@index')->name('circle.mypage')->middleware(CircleMypage::class);
 
 // circle.mypage.profile
+Route::get('circle/mypage/profile', 'Circle\Mypage\ProfileController@index')->name('circle.mypage.profile')->middleware(CircleMypage::class);
+Route::post('circle/mypage/profile/check', 'Circle\Mypage\ProfileController@check')->name('circle.mypage.profile.check')->middleware(CircleMypage::class);
+Route::post('circle/mypage/profile/update', 'Circle\Mypage\ProfileController@update')->name('circle.mypage.profile.update')->middleware(CircleMypage::class);
 
 // circle.mypage.email
+Route::get('circle/mypage/email', 'Circle\Mypage\EmailController@index')->name('circle.mypage.email')->middleware(CircleMypage::class);
+Route::post('circle/mypage/email/send', 'Circle\Mypage\EmailController@send')->name('circle.mypage.email.send')->middleware(CircleMypage::class);
+Route::get('circle/mypage/email/auth', 'Circle\Mypage\EmailController@auth')->name('circle.mypage.email.auth')->middleware(CircleMypage::class);
+Route::post('circle/mypage/email/update', 'Circle\Mypage\EmailController@update')->name('circle.mypage.email.update')->middleware(CircleMypage::class);
 
 // circle.mypage.password
+Route::get('circle/mypage/password', 'Circle\Mypage\PasswordController@index')->name('circle.mypage.password')->middleware(CircleMypage::class);
+Route::post('circle/mypage/password/update', 'Circle\Mypage\PasswordController@update')->name('circle.mypage.password.update')->middleware(CircleMypage::class);
 
 // circle.mypage.withdrawal
+Route::get('circle/mypage/withdrawal', 'Circle\Mypage\WithdrawalController@index')->name('circle.mypage.withdrawal')->middleware(CircleMypage::class);
+Route::post('circle/mypage/withdrawal/delete', 'Circle\Mypage\WithdrawalController@delete')->name('circle.mypage.withdrawal.delete')->middleware(CircleMypage::class);

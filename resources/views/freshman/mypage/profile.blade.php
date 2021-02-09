@@ -29,7 +29,7 @@
                     <span>氏名</span>
                 </div>
                 <div class="right">
-                    姓<input type="text" name="name_sei" value="@if(old('name_sei') == null){{ $freshman['name_sei'] }}@else{{ old('name_sei') }}@endif" size="15">　名<input type="text" name="name_mei" value="@if(old('name_mei') == null){{ $freshman['name_mei'] }}@else{{ old('name_mei') }}@endif" size="15">
+                    姓<input type="text" name="name_sei" value="@if(old('name_sei') == null){{ Auth::guard('freshman')->user()->name_sei }}@else{{ old('name_sei') }}@endif" size="15">　名<input type="text" name="name_mei" value="@if(old('name_mei') == null){{ Auth::guard('freshman')->user()->name_mei }}@else{{ old('name_mei') }}@endif" size="15">
                     @error('name_sei')
                         <p class="error">{{ $message }}</p>
                     @enderror
@@ -43,7 +43,7 @@
                     <span>ニックネーム</span>
                 </div>
                 <div class="right">
-                    <input type="text" name="nickname" value="@if(old('nickname') == null){{ $freshman['nickname'] }}@else{{ old('nickname') }}@endif" size="39">
+                    <input type="text" name="nickname" value="@if(old('nickname') == null){{ Auth::guard('freshman')->user()->nickname }}@else{{ old('nickname') }}@endif" size="39">
                     @error('nickname')
                         <p class="error">{{ $message }}</p>
                     @enderror    
@@ -56,7 +56,7 @@
                 <div class="right">
                     @php
                         if (old('gender') == null) {
-                            $gender = $freshman['gender'];
+                            $gender = Auth::guard('freshman')->user()->gender;
                         } else {
                             $gender = old('gender');
                         }
@@ -76,7 +76,7 @@
                 <div class="right">
                     @php
                         if (old('campus_id') == null) {
-                            $campus_id = $freshman['campus_id'];
+                            $campus_id = Auth::guard('freshman')->user()->campus_id;
                         } else {
                             $campus_id = old('campus_id');
                         }
@@ -97,13 +97,13 @@
                     <span>自己紹介</span>
                 </div>
                 <div class="right">
-                    <textarea name="introduction" cols="38" rows="7">@if(old('introduction') == null){{ $freshman['introduction'] }}@else{{ old('introduction') }}@endif</textarea>
+                    <textarea name="introduction" cols="38" rows="7">@if(old('introduction') == null){{ Auth::guard('freshman')->user()->introduction }}@else{{ old('introduction') }}@endif</textarea>
                 </div>
             </div>
             <div class="button">
                 <input type="submit" value="確認画面へ" class="button_1">
                 <br><br>
-                <input type="submit" name="back" value="マイページへ" class="button_1">
+                <a href="{{ route('freshman.mypage') }}" class="button_2">マイページへ</a>    
             </div>
         </form>
     </div>

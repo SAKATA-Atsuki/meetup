@@ -27,7 +27,7 @@
                     <span>氏名</span>
                 </div>
                 <div class="right">
-                    <span>{{ $freshman['name_sei'] }}　{{ $freshman['name_mei'] }}</span>
+                    <span>{{ Auth::guard('freshman')->user()->name_sei }}　{{ Auth::guard('freshman')->user()->name_mei }}</span>
                 </div>
             </div>
             <div class="check">
@@ -35,7 +35,7 @@
                     <span>ニックネーム</span>
                 </div>
                 <div class="right">
-                    <span>{{ $freshman['nickname'] }}</span>
+                    <span>{{ Auth::guard('freshman')->user()->nickname }}</span>
                 </div>
             </div>
             <div class="check">
@@ -45,7 +45,7 @@
                 <div class="right">
                     <span>
                         @foreach (config('master.gender') as $index => $value)
-                            @if ($freshman['gender'] == $index) {{ $value }} @endif
+                            @if (Auth::guard('freshman')->user()->gender == $index) {{ $value }} @endif
                         @endforeach
                     </span>
                 </div>
@@ -55,7 +55,7 @@
                     <span>キャンパス</span>
                 </div>
                 <div class="right">
-                    <span>{{ $freshman->getCampusName() }}</span>
+                    <span>{{ Auth::guard('freshman')->user()->getCampusName() }}</span>
                 </div>
             </div>
             <div class="check">
@@ -63,7 +63,7 @@
                     <span>メールアドレス</span>
                 </div>
                 <div class="right">
-                    <span>{{ $freshman['email'] }}</span>
+                    <span>{{ Auth::guard('freshman')->user()->email }}</span>
                 </div>
             </div>
             <div class="check">
@@ -79,16 +79,16 @@
                     <span>自己紹介</span>
                 </div>
                 <div class="right">
-                    <span>{!! nl2br(e($freshman['introduction'])) !!}</span>
+                    <span>{!! nl2br(e(Auth::guard('freshman')->user()->introduction)) !!}</span>
                 </div>
             </div>    
         </div>
         <div class="buttons">
             <a href="{{ route('freshman.mypage.favorite') }}" class="button">お気に入りしたサークル</a>    
             <a href="{{ route('freshman.mypage.profile') }}" class="button">プロフィール変更</a>    
-            <a href="" class="button">メールアドレス変更</a>    
-            <a href="" class="button">パスワード変更</a>    
-            <a href="" class="button">退会</a>    
+            <a href="{{ route('freshman.mypage.email') }}" class="button">メールアドレス変更</a>    
+            <a href="{{ route('freshman.mypage.password') }}" class="button">パスワード変更</a>    
+            <a href="{{ route('freshman.mypage.withdrawal') }}" class="button">退会</a>    
         </div>
     </div>
 </body>

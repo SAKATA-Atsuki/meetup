@@ -67,7 +67,7 @@
             </div>
         </div>
         <div class="button">
-            <form action="<?php echo e(route('freshman.mypage.profile.store')); ?>" method="POST">
+            <form action="<?php echo e(route('freshman.mypage.profile.update')); ?>" method="POST">
                 <?php echo csrf_field(); ?>
                 <input type="hidden" name="name_sei" value="<?php echo e($data['name_sei']); ?>">
                 <input type="hidden" name="name_mei" value="<?php echo e($data['name_mei']); ?>">
@@ -75,7 +75,7 @@
                 <input type="hidden" name="gender" value="<?php echo e($data['gender']); ?>">
                 <input type="hidden" name="campus_id" value="<?php echo e($data['campus_id']); ?>">
                 <input type="hidden" name="introduction" value="<?php echo e($data['introduction']); ?>">
-                <input type="submit" value="登録する" class="button_1">
+                <input type="submit" value="変更する" class="button_1">
                 <br><br>
                 <input type="submit" name="back" value="前に戻る" class="button_1">
             </form>
