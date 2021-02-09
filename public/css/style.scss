@@ -1293,3 +1293,260 @@ body {
         }
     }
 }
+
+/* freshman/mypage/index ---------------------------------------------------------------------------------------------------- */
+.freshman_mypage_content {
+    width: 800px;
+    margin: 0 auto;
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-between;
+
+    .profile {
+        text-align: center;
+    
+        .check {
+            display: flex;
+            width: 417px;
+            margin: 0 auto;
+            margin-bottom: 20px;
+            text-align: left;
+    
+            .left {
+                width: 130px;
+            }
+    
+            .right {
+                width: 287px;
+            }
+        }    
+    }
+
+    .buttons {
+        display: flex;
+        flex-direction: column;
+
+        .button {
+            text-decoration: none;
+            text-align: center;
+            width: 300px;
+            height: 37px;
+            font-size: 25px;
+            color: white;
+            background-color: rgb(154, 2, 0);
+            border: gray solid 2px;
+            border-radius: 100px;
+            padding: 5px 0;        
+            margin-bottom: 30px;
+        }    
+    }
+}
+
+/* freshman/mypage/favorite ---------------------------------------------------------------------------------------------------- */
+.freshman_mypage_favorite_content {
+    width: 950px;
+    margin: 50px auto;
+
+    .button_1 {
+        display: block;
+        text-decoration: none;
+        text-align: center;
+        width: 250px;
+        font-size: 25px;
+        color: white;
+        background-color: rgb(154, 2, 0);
+        border: gray solid 2px;
+        border-radius: 100px;
+        padding: 5px 0;        
+        margin-bottom: 42px;
+    }
+
+    .title {
+        display: flex;
+        border-top: black solid 2px;
+        border-bottom: black solid 2px;
+        padding: 0 25px;
+        font-weight: bold;
+    }
+
+    .content {
+        display: flex;
+        border-bottom: black solid 1px;
+        padding: 0 25px;
+
+        a {
+            text-decoration: none;
+        }
+    }
+
+    .name {
+        width: 300px;
+    }
+
+    .campus {
+        width: 200px;
+    }
+
+    .circle_category {
+        width: 200px;
+    }
+
+    .circle_subcategory {
+        width: 200px;
+    }
+}
+
+/* freshman/mypage/circle ---------------------------------------------------------------------------------------------------- */
+.freshman_mypage_circle_content {
+    width: 950px;
+    margin: 50px auto;
+
+    .button_1 {
+        display: block;
+        text-decoration: none;
+        text-align: center;
+        width: 250px;
+        font-size: 25px;
+        color: white;
+        background-color: rgb(154, 2, 0);
+        border: gray solid 2px;
+        border-radius: 100px;
+        padding: 5px 0;        
+    }
+
+    .name {
+        margin-top: 35px;
+        display: flex;
+        justify-content: space-between;
+
+        span {
+            font-size: 31px;
+            width: 700px;
+        }
+
+        .button_2 {
+            text-decoration: none;
+            text-align: center;
+            width: 200px;
+            height: 31px;
+            font-size: 20px;
+            color: black;
+            background-color: pink;
+            border: gray solid 2px;
+            border-radius: 100px;
+            padding: 5px 0;        
+        }    
+
+        .button_3 {
+            text-decoration: none;
+            text-align: center;
+            width: 200px;
+            height: 31px;
+            font-size: 20px;
+            color: red;
+            background-color: pink;
+            border: gray solid 2px;
+            border-radius: 100px;
+            padding: 5px 0;        
+        }    
+    }
+
+    .introduction {
+        margin-top: 35px;
+        display: flex;
+
+        .title {
+            width: 115px;
+        }
+
+        .content {
+            width: 835px;
+        }
+    }
+}
+
+/* freshman/mypage/profile ---------------------------------------------------------------------------------------------------- */
+.freshman_mypage_profile_edit_content {
+    text-align: center;
+
+    h1 {
+        font-weight: lighter;
+    }
+
+    .form {
+        display: flex;
+        width: 417px;
+        margin: 0 auto;
+        margin-bottom: 20px;
+        text-align: left;
+
+        .left {
+            width: 130px;
+        }
+
+        .right {
+            width: 287px;
+
+            select {
+                width: 140px;
+            }
+        }
+    }
+
+    .button {
+        margin: 50px 0;
+
+        .button_1 {
+            cursor: pointer;
+            outline: none;
+            width: 250px;
+            font-size: 25px;
+            color: black;
+            background-color: lightgreen;
+            border-color: green;
+            border-radius: 100px;
+            padding: 5px 0;    
+        }
+    }
+}
+
+/* freshman/mypage/profileCheck ---------------------------------------------------------------------------------------------------- */
+.freshman_mypage_profile_check_content {
+    text-align: center;
+
+    h1 {
+        font-weight: lighter;
+    }
+
+    .check {
+        display: flex;
+        width: 417px;
+        margin: 0 auto;
+        margin-bottom: 20px;
+        text-align: left;
+
+        .left {
+            width: 130px;
+        }
+
+        .right {
+            width: 287px;
+        }
+    }
+
+    .button {
+        margin: 50px 0;
+
+        .button_1 {
+            cursor: pointer;
+            outline: none;
+            width: 250px;
+            font-size: 25px;
+            color: black;
+            background-color: lightgreen;
+            border-color: green;
+            border-radius: 100px;
+            padding: 5px 0;    
+        }
+    }
+}

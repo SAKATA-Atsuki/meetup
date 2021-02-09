@@ -9,7 +9,7 @@ use App\Models\Circle;
 
 class TopController extends Controller
 {
-    // トップ画面表示
+    // サークル一覧表示
     public function index(Request $request)
     {
         if ($request->has('page')) {

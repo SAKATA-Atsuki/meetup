@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>マイページ</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+</head>
+<body>
+    <div class="header">
+        <div class="left">
+            <a href="{{ route('top') }}">立命館大学<br>新入生・サークル交流サイト</a>
+        </div>
+        <div class="right">
+            <p>{{ Auth::guard('freshman')->user()->name_sei . Auth::guard('freshman')->user()->name_mei }}　様</p>
+            <div class="button">
+                <a href="{{ route('freshman.logout') }}" class="button_2">ログアウト</a>    
+            </div>
+        </div>
+    </div>
+    <div class="freshman_mypage_content">
+        <div class="profile">
+            <div class="check">
+                <div class="left">
+                    <span>氏名</span>
+                </div>
+                <div class="right">
+                    <span>{{ $freshman['name_sei'] }}　{{ $freshman['name_mei'] }}</span>
+                </div>
+            </div>
+            <div class="check">
+                <div class="left">
+                    <span>ニックネーム</span>
+                </div>
+                <div class="right">
+                    <span>{{ $freshman['nickname'] }}</span>
+                </div>
+            </div>
+            <div class="check">
+                <div class="left">
+                    <span>性別</span>
+                </div>
+                <div class="right">
+                    <span>
+                        @foreach (config('master.gender') as $index => $value)
+                            @if ($freshman['gender'] == $index) {{ $value }} @endif
+                        @endforeach
+                    </span>
+                </div>
+            </div>
+            <div class="check">
+                <div class="left">
+                    <span>キャンパス</span>
+                </div>
+                <div class="right">
+                    <span>{{ $freshman->getCampusName() }}</span>
+                </div>
+            </div>
+            <div class="check">
+                <div class="left">
+                    <span>メールアドレス</span>
+                </div>
+                <div class="right">
+                    <span>{{ $freshman['email'] }}</span>
+                </div>
+            </div>
+            <div class="check">
+                <div class="left">
+                    <span>パスワード</span>
+                </div>
+                <div class="right">
+                    <span>セキュリティのため非表示</span>
+                </div>
+            </div>
+            <div class="check">
+                <div class="left">
+                    <span>自己紹介</span>
+                </div>
+                <div class="right">
+                    <span>{!! nl2br(e($freshman['introduction'])) !!}</span>
+                </div>
+            </div>    
+        </div>
+        <div class="buttons">
+            <a href="{{ route('freshman.mypage.favorite') }}" class="button">お気に入りしたサークル</a>    
+            <a href="{{ route('freshman.mypage.profile') }}" class="button">プロフィール変更</a>    
+            <a href="" class="button">メールアドレス変更</a>    
+            <a href="" class="button">パスワード変更</a>    
+            <a href="" class="button">退会</a>    
+        </div>
+    </div>
+</body>
+</html>

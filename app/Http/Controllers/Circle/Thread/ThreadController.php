@@ -1,19 +1,17 @@
 <?php
 
-namespace App\Http\Controllers\Circle;
+namespace App\Http\Controllers\Circle\Thread;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Http\Requests\ThreadRegisterRequest;
-use App\Http\Requests\MessageRegisterRequest;
 use App\Models\Circle;
 use App\Models\Favorite;
 use App\Models\Thread;
 use App\Models\Freshman;
-use App\Models\Message;
 use Illuminate\Support\Facades\Auth;
 
-class CircleThreadController extends Controller
+class ThreadController extends Controller
 {
     // スレッド一覧表示
     public function index(Request $request)
@@ -157,7 +155,7 @@ class CircleThreadController extends Controller
     }        
     
     // スレッド登録
-    public function threadStore(ThreadRegisterRequest $request)
+    public function store(ThreadRegisterRequest $request)
     {
         $thread = new Thread;
         if (Auth::guard('freshman')->check()) {
@@ -171,7 +169,7 @@ class CircleThreadController extends Controller
     }
 
     // スレッド削除
-    public function threadDelete(Request $request)
+    public function delete(Request $request)
     {
         Thread::find($request->thread_id)->delete();
 
@@ -179,7 +177,7 @@ class CircleThreadController extends Controller
     }
     
     // 新入生詳細表示
-    public function threadFreshman(Request $request)
+    public function freshman(Request $request)
     {
         $id = $request->id;
         $pg = $request->pg;
@@ -189,84 +187,4 @@ class CircleThreadController extends Controller
 
         return view('freshman.indexThread', compact('id', 'pg', 'page', 'freshman'));
     }
-
-    // スレッド詳細表示
-    public function message(Request $request)
-    {
-        $pg = $request->pg;
-        $page = $request->page;
-
-        $circle = Circle::find($request->id);
-
-        $thread = Thread::find($request->thread_id);
-
-        $messages = Message::where('thread_id', $request->thread_id)->withTrashed()->get();
-
-        if (Auth::guard('freshman')->check()) {
-            $favorite = Favorite::where('freshman_id', Auth::guard('freshman')->user()->id)
-                                ->where('circle_id', $request->id)
-                                ->get();
-
-            return view('circle.thread.message', compact('pg', 'page', 'circle', 'thread', 'messages', 'favorite'));
-        } else {
-            return view('circle.thread.message', compact('pg', 'page', 'circle', 'thread', 'messages'));
-        }
-    }
-
-    // お気に入り処理
-    public function messageFavorite(Request $request)
-    {
-        $favorite = new Favorite;
-        $favorite->freshman_id = Auth::guard('freshman')->user()->id;
-        $favorite->circle_id = $request->id;
-        $favorite->save();
-
-        return redirect()->route('circle.thread.message', ['id' => $request->id, 'pg' => $request->pg, 'thread_id' => $request->thread_id, 'page' => $request->page]);
-    }
-
-    // お気に入り解除処理
-    public function messageUnfavorite(Request $request)
-    {
-        Favorite::where('freshman_id', Auth::guard('freshman')->user()->id)
-                ->where('circle_id', $request->id)
-                ->delete();
-
-        return redirect()->route('circle.thread.message', ['id' => $request->id, 'pg' => $request->pg, 'thread_id' => $request->thread_id, 'page' => $request->page]);
-    }        
-
-    // メッセージ登録
-    public function messageStore(MessageRegisterRequest $request)
-    {
-        $message = new Message;
-        $message->thread_id = $request->thread_id;
-        if (Auth::guard('freshman')->check()) {
-            $message->freshman_id = Auth::guard('freshman')->user()->id;
-        }
-        $message->circle_id = $request->id;
-        $message->content = $request->content;
-        $message->save();
-
-        return redirect()->route('circle.thread.message', ['id' => $request->id, 'pg' => $request->pg, 'thread_id' => $request->thread_id, 'page' => $request->page]);
-    }    
-
-    // メッセージ削除
-    public function messageDelete(Request $request)
-    {
-        Message::find($request->message_id)->delete();
-
-        return redirect()->route('circle.thread.message', ['id' => $request->id, 'pg' => $request->pg, 'thread_id' => $request->thread_id, 'page' => $request->page]);
-    }
-
-    // 新入生詳細表示
-    public function messageFreshman(Request $request)
-    {
-        $id = $request->id;
-        $pg = $request->pg;
-        $thread_id = $request->thread_id;
-        $page = $request->page;
-
-        $freshman = Freshman::find($request->freshman_id);
-
-        return view('freshman.indexMessage', compact('id', 'pg', 'thread_id', 'page', 'freshman'));
-    }    
 }

@@ -17,13 +17,13 @@
             <?php if(Auth::guard('freshman')->check()): ?>
                 <p><?php echo e(Auth::guard('freshman')->user()->name_sei . Auth::guard('freshman')->user()->name_mei); ?>　様</p>
                 <div class="button">
-                    <a href="" class="button_1">マイページ</a>
+                    <a href="<?php echo e(route('freshman.mypage')); ?>" class="button_1">マイページ</a>
                     <a href="<?php echo e(route('freshman.logout')); ?>" class="button_2">ログアウト</a>    
                 </div>
             <?php elseif(Auth::guard('circle')->check()): ?>
                 <p><?php echo e(Auth::guard('circle')->user()->name); ?>　様</p>
                 <div class="button">
-                    <a href="" class="button_3">マイページ</a>
+                    <a href="<?php echo e(route('circle.mypage', ['id' => Auth::guard('circle')->user()->id])); ?>" class="button_3">マイページ</a>
                     <a href="<?php echo e(route('circle.logout')); ?>" class="button_4">ログアウト</a>    
                 </div>
             <?php else: ?>
@@ -70,7 +70,7 @@
                 <span class="title"><?php echo e($thread['title']); ?></span>
                 <?php if(Auth::guard('freshman')->check()): ?>
                     <?php if(Auth::guard('freshman')->user()->id == $thread['freshman_id']): ?>
-                        <a href="<?php echo e(route('circle.thread.delete', ['id' => $circle['id'], 'pg' => $pg, 'thread_id' => $thread['id']])); ?>" class="trash"><i class="fas fa-trash-alt"></i></a>
+                        <a href="<?php echo e(route('circle.thread.delete', ['id' => $circle['id'], 'pg' => $pg, 'thread_id' => $thread['id'], 'freshman_id' => $thread['freshman_id']])); ?>" class="trash"><i class="fas fa-trash-alt"></i></a>
                     <?php endif; ?>
                 <?php endif; ?>
                 <?php if(Auth::guard('circle')->check()): ?>
@@ -102,7 +102,7 @@
                         <?php endif; ?>    
                         <?php if(Auth::guard('freshman')->check()): ?>
                             <?php if(Auth::guard('freshman')->user()->id == $message['freshman_id']): ?>
-                                <a href="<?php echo e(route('circle.thread.message.delete', ['id' => $circle['id'], 'pg' => $pg, 'thread_id' => $thread['id'], 'page' => $page, 'message_id' => $message['id']])); ?>" class="trash"><i class="fas fa-trash-alt"></i></a>
+                                <a href="<?php echo e(route('circle.thread.message.delete', ['id' => $circle['id'], 'pg' => $pg, 'thread_id' => $thread['id'], 'page' => $page, 'message_id' => $message['id'], 'freshman_id' => $message['freshman_id']])); ?>" class="trash"><i class="fas fa-trash-alt"></i></a>
                             <?php endif; ?>
                         <?php endif; ?>
                         <?php if(Auth::guard('circle')->check()): ?>

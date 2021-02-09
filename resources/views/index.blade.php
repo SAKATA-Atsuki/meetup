@@ -54,13 +54,13 @@
             @if (Auth::guard('freshman')->check())
                 <p>{{ Auth::guard('freshman')->user()->name_sei . Auth::guard('freshman')->user()->name_mei }}　様</p>
                 <div class="button">
-                    <a href="" class="button_1">マイページ</a>
+                    <a href="{{ route('freshman.mypage') }}" class="button_1">マイページ</a>
                     <a href="{{ route('freshman.logout') }}" class="button_2">ログアウト</a>    
                 </div>
             @elseif (Auth::guard('circle')->check())
                 <p>{{ Auth::guard('circle')->user()->name }}　様</p>
                 <div class="button">
-                    <a href="" class="button_3">マイページ</a>
+                    <a href="{{ route('circle.mypage', ['id' => Auth::guard('circle')->user()->id]) }}" class="button_3">マイページ</a>
                     <a href="{{ route('circle.logout') }}" class="button_4">ログアウト</a>    
                 </div>
             @else
