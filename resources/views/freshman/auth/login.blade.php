@@ -36,7 +36,6 @@
                 </div>
                 <div class="right">
                     <input type="password" name="password" value="{{ old('password') }}" size="39">
-                    <br>
                     <a href="{{ route('freshman.password.request') }}">パスワードを忘れた方はこちら</a>
                     @error('password')
                         <p class="error">{{ $message }}</p>
