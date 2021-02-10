@@ -43,7 +43,8 @@ unset($__errorArgs, $__bag); ?>
                 </div>
                 <div class="right">
                     <input type="password" name="password" value="<?php echo e(old('password')); ?>" size="39">
-                    <p><a href="<?php echo e(route('freshman.password.request')); ?>">パスワードを忘れた方はこちら</a></p>
+                    <br>
+                    <a href="<?php echo e(route('freshman.password.request')); ?>">パスワードを忘れた方はこちら</a>
                     <?php $__errorArgs = ['password'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
