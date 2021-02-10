@@ -1873,4 +1873,372 @@ body {
   padding: 5px 0;
   margin: 0 auto;
 }
+
+/* circle/mypage/index ---------------------------------------------------------------------------------------------------- */
+.circle_mypage_content {
+  width: 800px;
+  margin: 0 auto;
+  margin-top: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.circle_mypage_content .profile {
+  text-align: center;
+}
+
+.circle_mypage_content .profile .check {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 417px;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.circle_mypage_content .profile .check .left {
+  width: 130px;
+}
+
+.circle_mypage_content .profile .check .right {
+  width: 287px;
+}
+
+.circle_mypage_content .buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.circle_mypage_content .buttons .button {
+  text-decoration: none;
+  text-align: center;
+  width: 300px;
+  height: 37px;
+  font-size: 25px;
+  color: white;
+  background-color: #9a0200;
+  border: gray solid 2px;
+  border-radius: 100px;
+  padding: 5px 0;
+  margin-bottom: 30px;
+}
+
+/* circle/mypage/profile ---------------------------------------------------------------------------------------------------- */
+.circle_mypage_profile_edit_content {
+  text-align: center;
+}
+
+.circle_mypage_profile_edit_content h1 {
+  font-weight: lighter;
+}
+
+.circle_mypage_profile_edit_content .form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 417px;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.circle_mypage_profile_edit_content .form .left {
+  width: 130px;
+}
+
+.circle_mypage_profile_edit_content .form .right {
+  width: 287px;
+}
+
+.circle_mypage_profile_edit_content .form .right select {
+  width: 140px;
+}
+
+.circle_mypage_profile_edit_content .button {
+  margin: 50px 0;
+}
+
+.circle_mypage_profile_edit_content .button .button_1 {
+  cursor: pointer;
+  outline: none;
+  width: 250px;
+  font-size: 25px;
+  color: black;
+  background-color: lightblue;
+  border-color: blue;
+  border-radius: 100px;
+  padding: 5px 0;
+}
+
+.circle_mypage_profile_edit_content .button .button_2 {
+  display: block;
+  text-decoration: none;
+  width: 246px;
+  font-size: 25px;
+  color: black;
+  background-color: lightblue;
+  border: blue solid 2px;
+  border-radius: 100px;
+  padding: 5px 0;
+  margin: 0 auto;
+}
+
+/* circle/mypage/profileCheck ---------------------------------------------------------------------------------------------------- */
+.circle_mypage_profile_check_content {
+  text-align: center;
+}
+
+.circle_mypage_profile_check_content h1 {
+  font-weight: lighter;
+}
+
+.circle_mypage_profile_check_content .check {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 417px;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.circle_mypage_profile_check_content .check .left {
+  width: 130px;
+}
+
+.circle_mypage_profile_check_content .check .right {
+  width: 287px;
+}
+
+.circle_mypage_profile_check_content .button {
+  margin: 50px 0;
+}
+
+.circle_mypage_profile_check_content .button .button_1 {
+  cursor: pointer;
+  outline: none;
+  width: 250px;
+  font-size: 25px;
+  color: black;
+  background-color: lightblue;
+  border-color: blue;
+  border-radius: 100px;
+  padding: 5px 0;
+}
+
+/* circle/mypage/email ---------------------------------------------------------------------------------------------------- */
+.circle_mypage_email_edit_content {
+  text-align: center;
+}
+
+.circle_mypage_email_edit_content h1 {
+  font-weight: lighter;
+}
+
+.circle_mypage_email_edit_content .form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 477px;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.circle_mypage_email_edit_content .form .left {
+  width: 190px;
+}
+
+.circle_mypage_email_edit_content .form .right {
+  width: 287px;
+}
+
+.circle_mypage_email_edit_content .button {
+  margin: 50px 0;
+}
+
+.circle_mypage_email_edit_content .button .button_1 {
+  cursor: pointer;
+  outline: none;
+  width: 250px;
+  font-size: 25px;
+  color: black;
+  background-color: lightblue;
+  border-color: blue;
+  border-radius: 100px;
+  padding: 5px 0;
+}
+
+.circle_mypage_email_edit_content .button .button_2 {
+  display: block;
+  text-decoration: none;
+  width: 246px;
+  font-size: 25px;
+  color: black;
+  background-color: lightblue;
+  border: blue solid 2px;
+  border-radius: 100px;
+  padding: 5px 0;
+  margin: 0 auto;
+}
+
+/* circle/mypage/auth ---------------------------------------------------------------------------------------------------- */
+.circle_mypage_email_auth_content {
+  text-align: center;
+}
+
+.circle_mypage_email_auth_content h1 {
+  font-weight: lighter;
+}
+
+.circle_mypage_email_auth_content .form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 417px;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.circle_mypage_email_auth_content .form .left {
+  width: 130px;
+}
+
+.circle_mypage_email_auth_content .form .right {
+  width: 287px;
+}
+
+.circle_mypage_email_auth_content .button {
+  margin: 50px 0;
+}
+
+.circle_mypage_email_auth_content .button .button_1 {
+  cursor: pointer;
+  outline: none;
+  width: 250px;
+  font-size: 25px;
+  color: black;
+  background-color: lightblue;
+  border-color: blue;
+  border-radius: 100px;
+  padding: 5px 0;
+}
+
+.circle_mypage_email_auth_content .button .button_2 {
+  display: block;
+  text-decoration: none;
+  width: 246px;
+  font-size: 25px;
+  color: black;
+  background-color: lightblue;
+  border: blue solid 2px;
+  border-radius: 100px;
+  padding: 5px 0;
+  margin: 0 auto;
+}
+
+/* circle/mypage/password ---------------------------------------------------------------------------------------------------- */
+.circle_mypage_password_edit_content {
+  text-align: center;
+}
+
+.circle_mypage_password_edit_content h1 {
+  font-weight: lighter;
+}
+
+.circle_mypage_password_edit_content .form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 417px;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.circle_mypage_password_edit_content .form .left {
+  width: 130px;
+}
+
+.circle_mypage_password_edit_content .form .right {
+  width: 287px;
+}
+
+.circle_mypage_password_edit_content .button {
+  margin: 50px 0;
+}
+
+.circle_mypage_password_edit_content .button .button_1 {
+  cursor: pointer;
+  outline: none;
+  width: 250px;
+  font-size: 25px;
+  color: black;
+  background-color: lightblue;
+  border-color: blue;
+  border-radius: 100px;
+  padding: 5px 0;
+}
+
+.circle_mypage_password_edit_content .button .button_2 {
+  display: block;
+  text-decoration: none;
+  width: 246px;
+  font-size: 25px;
+  color: black;
+  background-color: lightblue;
+  border: blue solid 2px;
+  border-radius: 100px;
+  padding: 5px 0;
+  margin: 0 auto;
+}
+
+/* circle/mypage/withdrawal ---------------------------------------------------------------------------------------------------- */
+.circle_mypage_withdrawal_content {
+  text-align: center;
+}
+
+.circle_mypage_withdrawal_content h1 {
+  font-weight: lighter;
+}
+
+.circle_mypage_withdrawal_content .button {
+  margin: 50px 0;
+}
+
+.circle_mypage_withdrawal_content .button .button_1 {
+  cursor: pointer;
+  outline: none;
+  width: 250px;
+  font-size: 25px;
+  color: black;
+  background-color: lightblue;
+  border-color: blue;
+  border-radius: 100px;
+  padding: 5px 0;
+}
+
+.circle_mypage_withdrawal_content .button .button_2 {
+  display: block;
+  text-decoration: none;
+  width: 246px;
+  font-size: 25px;
+  color: black;
+  background-color: lightblue;
+  border: blue solid 2px;
+  border-radius: 100px;
+  padding: 5px 0;
+  margin: 0 auto;
+}
 /*# sourceMappingURL=style.css.map */

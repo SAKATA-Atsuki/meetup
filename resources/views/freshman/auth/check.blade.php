@@ -87,7 +87,6 @@
                 <input type="hidden" name="campus_id" value="{{ $data['campus_id'] }}">
                 <input type="hidden" name="email" value="{{ $data['email'] }}">
                 <input type="hidden" name="password" value="{{ $data['password'] }}">
-                <input type="hidden" name="password_check" value="{{ $data['password'] }}">
                 <input type="hidden" name="introduction" value="{{ $data['introduction'] }}">
                 <input type="submit" value="登録する" class="button_1">
                 <br><br>

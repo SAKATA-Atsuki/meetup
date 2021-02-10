@@ -5,7 +5,6 @@ namespace App\Http\Controllers\Freshman\Mypage;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Http\Requests\FreshmanMypageProfileRequest;
-use App\Models\Freshman;
 use App\Models\Campus;
 use Illuminate\Support\Facades\Auth;
 
@@ -25,7 +24,7 @@ class ProfileController extends Controller
         $data = $request->all();
         $campus = Campus::find($data['campus_id']);
 
-        return view('freshman.mypage.profileCheck', compact('data', 'campus'));    
+        return view('freshman.mypage.check', compact('data', 'campus'));    
     }
 
     // プロフィール変更

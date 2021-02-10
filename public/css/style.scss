@@ -1764,3 +1764,350 @@ body {
         }    
     }
 }
+
+/* circle/mypage/index ---------------------------------------------------------------------------------------------------- */
+.circle_mypage_content {
+    width: 800px;
+    margin: 0 auto;
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-between;
+
+    .profile {
+        text-align: center;
+    
+        .check {
+            display: flex;
+            width: 417px;
+            margin: 0 auto;
+            margin-bottom: 20px;
+            text-align: left;
+    
+            .left {
+                width: 130px;
+            }
+    
+            .right {
+                width: 287px;
+            }
+        }    
+    }
+
+    .buttons {
+        display: flex;
+        flex-direction: column;
+
+        .button {
+            text-decoration: none;
+            text-align: center;
+            width: 300px;
+            height: 37px;
+            font-size: 25px;
+            color: white;
+            background-color: rgb(154, 2, 0);
+            border: gray solid 2px;
+            border-radius: 100px;
+            padding: 5px 0;        
+            margin-bottom: 30px;
+        }    
+    }
+}
+
+/* circle/mypage/profile ---------------------------------------------------------------------------------------------------- */
+.circle_mypage_profile_edit_content {
+    text-align: center;
+
+    h1 {
+        font-weight: lighter;
+    }
+
+    .form {
+        display: flex;
+        width: 417px;
+        margin: 0 auto;
+        margin-bottom: 20px;
+        text-align: left;
+
+        .left {
+            width: 130px;
+        }
+
+        .right {
+            width: 287px;
+
+            select {
+                width: 140px;
+            }
+        }
+    }
+
+    .button {
+        margin: 50px 0;
+
+        .button_1 {
+            cursor: pointer;
+            outline: none;
+            width: 250px;
+            font-size: 25px;
+            color: black;
+            background-color: lightblue;
+            border-color: blue;
+            border-radius: 100px;
+            padding: 5px 0;    
+        }
+
+        .button_2 {
+            display: block;
+            text-decoration: none;
+            width: 246px;
+            font-size: 25px;
+            color: black;
+            background-color: lightblue;
+            border: blue solid 2px;
+            border-radius: 100px;
+            padding: 5px 0;        
+            margin: 0 auto;
+        }    
+    }
+}
+
+/* circle/mypage/profileCheck ---------------------------------------------------------------------------------------------------- */
+.circle_mypage_profile_check_content {
+    text-align: center;
+
+    h1 {
+        font-weight: lighter;
+    }
+
+    .check {
+        display: flex;
+        width: 417px;
+        margin: 0 auto;
+        margin-bottom: 20px;
+        text-align: left;
+
+        .left {
+            width: 130px;
+        }
+
+        .right {
+            width: 287px;
+        }
+    }
+
+    .button {
+        margin: 50px 0;
+
+        .button_1 {
+            cursor: pointer;
+            outline: none;
+            width: 250px;
+            font-size: 25px;
+            color: black;
+            background-color: lightblue;
+            border-color: blue;
+            border-radius: 100px;
+            padding: 5px 0;    
+        }
+    }
+}
+
+/* circle/mypage/email ---------------------------------------------------------------------------------------------------- */
+.circle_mypage_email_edit_content {
+    text-align: center;
+
+    h1 {
+        font-weight: lighter;
+    }
+
+    .form {
+        display: flex;
+        width: 477px;
+        margin: 0 auto;
+        margin-bottom: 20px;
+        text-align: left;
+
+        .left {
+            width: 190px;
+        }
+
+        .right {
+            width: 287px;
+        }
+    }
+
+    .button {
+        margin: 50px 0;
+
+        .button_1 {
+            cursor: pointer;
+            outline: none;
+            width: 250px;
+            font-size: 25px;
+            color: black;
+            background-color: lightblue;
+            border-color: blue;
+            border-radius: 100px;
+            padding: 5px 0;    
+        }
+
+        .button_2 {
+            display: block;
+            text-decoration: none;
+            width: 246px;
+            font-size: 25px;
+            color: black;
+            background-color: lightblue;
+            border: blue solid 2px;
+            border-radius: 100px;
+            padding: 5px 0;        
+            margin: 0 auto;
+        }    
+    }
+}
+
+/* circle/mypage/auth ---------------------------------------------------------------------------------------------------- */
+.circle_mypage_email_auth_content {
+    text-align: center;
+
+    h1 {
+        font-weight: lighter;
+    }
+
+    .form {
+        display: flex;
+        width: 417px;
+        margin: 0 auto;
+        margin-bottom: 20px;
+        text-align: left;
+
+        .left {
+            width: 130px;
+        }
+
+        .right {
+            width: 287px;
+        }
+    }
+
+    .button {
+        margin: 50px 0;
+
+        .button_1 {
+            cursor: pointer;
+            outline: none;
+            width: 250px;
+            font-size: 25px;
+            color: black;
+            background-color: lightblue;
+            border-color: blue;
+            border-radius: 100px;
+            padding: 5px 0;    
+        }
+
+        .button_2 {
+            display: block;
+            text-decoration: none;
+            width: 246px;
+            font-size: 25px;
+            color: black;
+            background-color: lightblue;
+            border: blue solid 2px;
+            border-radius: 100px;
+            padding: 5px 0;        
+            margin: 0 auto;
+        }    
+    }
+}
+
+/* circle/mypage/password ---------------------------------------------------------------------------------------------------- */
+.circle_mypage_password_edit_content {
+    text-align: center;
+
+    h1 {
+        font-weight: lighter;
+    }
+
+    .form {
+        display: flex;
+        width: 417px;
+        margin: 0 auto;
+        margin-bottom: 20px;
+        text-align: left;
+
+        .left {
+            width: 130px;
+        }
+
+        .right {
+            width: 287px;
+        }
+    }
+
+    .button {
+        margin: 50px 0;
+
+        .button_1 {
+            cursor: pointer;
+            outline: none;
+            width: 250px;
+            font-size: 25px;
+            color: black;
+            background-color: lightblue;
+            border-color: blue;
+            border-radius: 100px;
+            padding: 5px 0;    
+        }
+
+        .button_2 {
+            display: block;
+            text-decoration: none;
+            width: 246px;
+            font-size: 25px;
+            color: black;
+            background-color: lightblue;
+            border: blue solid 2px;
+            border-radius: 100px;
+            padding: 5px 0;        
+            margin: 0 auto;
+        }    
+    }
+}
+
+/* circle/mypage/withdrawal ---------------------------------------------------------------------------------------------------- */
+.circle_mypage_withdrawal_content {
+    text-align: center;
+
+    h1 {
+        font-weight: lighter;
+    }
+
+    .button {
+        margin: 50px 0;
+
+        .button_1 {
+            cursor: pointer;
+            outline: none;
+            width: 250px;
+            font-size: 25px;
+            color: black;
+            background-color: lightblue;
+            border-color: blue;
+            border-radius: 100px;
+            padding: 5px 0;    
+        }
+
+        .button_2 {
+            display: block;
+            text-decoration: none;
+            width: 246px;
+            font-size: 25px;
+            color: black;
+            background-color: lightblue;
+            border: blue solid 2px;
+            border-radius: 100px;
+            padding: 5px 0;        
+            margin: 0 auto;
+        }    
+    }
+}

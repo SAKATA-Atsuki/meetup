@@ -4,6 +4,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="csrf-token" content="<?php echo e(csrf_token()); ?>">
+    <script src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
+    <script type="text/javascript">
+        $(function() {
+            // 種別が変更されたとき
+            $('input[name="circle_category_id"]').change(function() {
+                var circle_category_id = $(this).val();
+
+                // circle_category_idの値を渡す
+                $.ajaxSetup({
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    }
+                })
+                $.ajax({
+                    url: "<?php echo e(route('circle.mypage.profile.category')); ?>",
+                    type: "POST",
+                    dataType: "json",
+                    data: {
+                        circle_category_id: circle_category_id
+                    }
+                })
+                .done(function(data) {
+                    // optionタグを全て削除
+                    $('select[name="circle_subcategory_id"] option').remove();
+
+                    // 返ってきたdataをそれぞれoptionタグとして追加
+                    $.each(data, function(id, name) {
+                        $('select[name="circle_subcategory_id"]').append($('<option>').attr('value', id).text(name));
+                    })
+                })
+                .fail(function() {
+                    console.log("失敗");
+                })
+            })
+        })
+    </script>
     <title>プロフィール変更フォーム</title>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
     <link rel="stylesheet" href="<?php echo e(asset('css/style.css')); ?>">
@@ -21,7 +58,7 @@
         </div>
     </div>
     <div class="circle_mypage_profile_edit_content">
-        <form action="<?php echo e(route('circle.mypage.profile.check', ['id' => Auth::guard('circle')->user()->id])); ?>" method="POST">
+        <form action="<?php echo e(route('circle.mypage.profile.check')); ?>" method="POST">
             <?php echo csrf_field(); ?>
             <h1>プロフィール変更</h1>
             <div class="form">
@@ -29,7 +66,7 @@
                     <span>サークル名</span>
                 </div>
                 <div class="right">
-                    <input type="text" name="name" value="<?php if(old('name') == null): ?><?php echo e($circle['name']); ?><?php else: ?><?php echo e(old('name')); ?><?php endif; ?>" size="39">
+                    <input type="text" name="name" value="<?php if(old('name') == null): ?><?php echo e(Auth::guard('circle')->user()->name); ?><?php else: ?><?php echo e(old('name')); ?><?php endif; ?>" size="39">
                     <?php $__errorArgs = ['name'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
@@ -49,7 +86,7 @@ unset($__errorArgs, $__bag); ?>
                 <div class="right">
                     <?php
                         if (old('campus_id') == null) {
-                            $campus_id = $circle['campus_id'];
+                            $campus_id = Auth::guard('circle')->user()->campus_id;
                         } else {
                             $campus_id = old('campus_id');
                         }
@@ -79,7 +116,7 @@ unset($__errorArgs, $__bag); ?>
                 <div class="right">
                     <?php
                         if (old('circle_category_id') == null) {
-                            $circle_category_id = $circle['circle_category_id'];
+                            $circle_category_id = Auth::guard('circle')->user()->circle_category_id;
                         } else {
                             $circle_category_id = old('circle_category_id');
                         }
@@ -106,19 +143,15 @@ unset($__errorArgs, $__bag); ?>
                 <div class="right">
                     <?php
                         if (old('circle_subcategory_id') == null) {
-                            $circle_subcategory_id = $circle['circle_subcategory_id'];
+                            $circle_subcategory_id = Auth::guard('circle')->user()->circle_subcategory_id;
                         } else {
                             $circle_subcategory_id = old('circle_subcategory_id');
                         }
                     ?>
                     <select name="circle_subcategory_id">
-                        <?php if(old('circle_subcategory_id') == 0): ?>
-                            <option value="">--------------------</option>
-                        <?php else: ?>
-                            <?php $__currentLoopData = $circle_subcategories; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $circle_subcategory): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                <option value="<?php echo e($circle_subcategory['id']); ?>" <?php if($circle_subcategory_id == $circle_subcategory['id']): ?> selected <?php endif; ?>><?php echo e($circle_subcategory['name']); ?></option>
-                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>    
-                        <?php endif; ?>
+                        <?php $__currentLoopData = $circle_subcategories; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $circle_subcategory): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                            <option value="<?php echo e($circle_subcategory['id']); ?>" <?php if($circle_subcategory_id == $circle_subcategory['id']): ?> selected <?php endif; ?>><?php echo e($circle_subcategory['name']); ?></option>
+                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>    
                     </select>
                     <?php $__errorArgs = ['circle_subcategory_id'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
@@ -137,17 +170,15 @@ unset($__errorArgs, $__bag); ?>
                     <span>サークル紹介</span>
                 </div>
                 <div class="right">
-                    <textarea name="introduction" cols="38" rows="7"><?php if(old('introduction') == null): ?><?php echo e($circle['introduction']); ?><?php else: ?><?php echo e(old('introduction')); ?><?php endif; ?></textarea>
+                    <textarea name="introduction" cols="38" rows="7"><?php if(old('introduction') == null): ?><?php echo e(Auth::guard('circle')->user()->introduction); ?><?php else: ?><?php echo e(old('introduction')); ?><?php endif; ?></textarea>
                 </div>
             </div>
             <div class="button">
                 <input type="submit" value="確認画面へ" class="button_1">
                 <br><br>
-                <input type="submit" name="back" value="マイページへ" class="button_1">
+                <a href="<?php echo e(route('circle.mypage')); ?>" class="button_2">マイページへ</a>    
             </div>
         </form>
     </div>
-</body>
-</html>
 </body>
 </html><?php /**PATH /Applications/MAMP/htdocs/meetup/resources/views/circle/mypage/profile.blade.php ENDPATH**/ ?>

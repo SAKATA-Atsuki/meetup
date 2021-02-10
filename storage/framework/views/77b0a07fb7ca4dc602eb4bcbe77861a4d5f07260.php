@@ -23,7 +23,7 @@
             <?php elseif(Auth::guard('circle')->check()): ?>
                 <p><?php echo e(Auth::guard('circle')->user()->name); ?>　様</p>
                 <div class="button">
-                    <a href="{{ route('circle.mypage', ['id' => Auth::guard('circle')->user()->id]) }}" class="button_3">マイページ</a>
+                    <a href="{{ route('circle.mypage') }}" class="button_3">マイページ</a>
                     <a href="<?php echo e(route('circle.logout')); ?>" class="button_4">ログアウト</a>    
                 </div>
             <?php else: ?>

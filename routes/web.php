@@ -92,6 +92,7 @@ Route::get('circle/mypage', 'Circle\Mypage\MypageController@index')->name('circl
 
 // circle.mypage.profile
 Route::get('circle/mypage/profile', 'Circle\Mypage\ProfileController@index')->name('circle.mypage.profile')->middleware(CircleMypage::class);
+Route::post('circle/mypage/profile/category', 'Circle\Mypage\ProfileController@category')->name('circle.mypage.profile.category')->middleware(CircleMypage::class);
 Route::post('circle/mypage/profile/check', 'Circle\Mypage\ProfileController@check')->name('circle.mypage.profile.check')->middleware(CircleMypage::class);
 Route::post('circle/mypage/profile/update', 'Circle\Mypage\ProfileController@update')->name('circle.mypage.profile.update')->middleware(CircleMypage::class);
 
