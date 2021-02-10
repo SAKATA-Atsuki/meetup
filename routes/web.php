@@ -109,3 +109,6 @@ Route::post('circle/mypage/password/update', 'Circle\Mypage\PasswordController@u
 // circle.mypage.withdrawal
 Route::get('circle/mypage/withdrawal', 'Circle\Mypage\WithdrawalController@index')->name('circle.mypage.withdrawal')->middleware(CircleMypage::class);
 Route::post('circle/mypage/withdrawal/delete', 'Circle\Mypage\WithdrawalController@delete')->name('circle.mypage.withdrawal.delete')->middleware(CircleMypage::class);
+
+// admin
+Route::get('admin', 'Admin\HomeController@index')->name('admin');

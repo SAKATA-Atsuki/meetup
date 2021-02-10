@@ -92,6 +92,18 @@ body {
                 border-radius: 100px;
                 padding: 5px 0;        
             }
+
+            .button_5 {
+                text-decoration: none;
+                text-align: center;
+                width: 200px;
+                font-size: 20px;
+                color: black;
+                background-color: pink;
+                border: black solid 2px;
+                border-radius: 100px;
+                padding: 5px 0;        
+            }
         }
 
         .form {
@@ -1331,7 +1343,7 @@ body {
             text-decoration: none;
             text-align: center;
             width: 300px;
-            height: 37px;
+            // height: 37px;
             font-size: 25px;
             color: white;
             background-color: rgb(154, 2, 0);
@@ -1801,7 +1813,7 @@ body {
             text-decoration: none;
             text-align: center;
             width: 300px;
-            height: 37px;
+            // height: 37px;
             font-size: 25px;
             color: white;
             background-color: rgb(154, 2, 0);
@@ -2109,5 +2121,73 @@ body {
             padding: 5px 0;        
             margin: 0 auto;
         }    
+    }
+}
+
+/* admin/login ---------------------------------------------------------------------------------------------------- */
+.admin_login_content {
+    text-align: center;
+
+    h1 {
+        font-weight: lighter;
+    }
+
+    .form {
+        display: flex;
+        width: 417px;
+        margin: 0 auto;
+        margin-bottom: 20px;
+        text-align: left;
+
+        .left {
+            width: 130px;
+        }
+
+        .right {
+            width: 287px;
+        }
+    }
+
+    .button {
+        margin: 50px 0;
+
+        .button_1 {
+            cursor: pointer;
+            outline: none;
+            width: 250px;
+            font-size: 25px;
+            color: white;
+            background-color: rgb(154, 2, 0);
+            border-color: gray;
+            border-radius: 100px;
+            padding: 5px 0;    
+        }
+    }
+}
+
+/* admin/index ---------------------------------------------------------------------------------------------------- */
+.admin_home_content {
+    display: flex;
+    justify-content: space-between;
+    width: 800px;
+    margin: 50px auto;
+
+    .buttons {
+        display: flex;
+        flex-direction: column;
+
+        .button {
+            text-decoration: none;
+            text-align: center;
+            width: 250px;
+            // height: 37px;
+            font-size: 25px;
+            color: white;
+            background-color: rgb(154, 2, 0);
+            border: gray solid 2px;
+            border-radius: 100px;
+            padding: 5px 0;        
+            margin-bottom: 30px;
+        }
     }
 }

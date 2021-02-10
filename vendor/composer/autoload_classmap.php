@@ -6,8 +6,11 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'AdminsTableSeeder' => $baseDir . '/database/seeds/AdminsTableSeeder.php',
     'App\\Console\\Kernel' => $baseDir . '/app/Console/Kernel.php',
     'App\\Exceptions\\Handler' => $baseDir . '/app/Exceptions/Handler.php',
+    'App\\Http\\Controllers\\Admin\\Auth\\LoginController' => $baseDir . '/app/Http/Controllers/Admin/Auth/LoginController.php',
+    'App\\Http\\Controllers\\Admin\\HomeController' => $baseDir . '/app/Http/Controllers/Admin/HomeController.php',
     'App\\Http\\Controllers\\Circle\\Auth\\ConfirmPasswordController' => $baseDir . '/app/Http/Controllers/Circle/Auth/ConfirmPasswordController.php',
     'App\\Http\\Controllers\\Circle\\Auth\\ForgotPasswordController' => $baseDir . '/app/Http/Controllers/Circle/Auth/ForgotPasswordController.php',
     'App\\Http\\Controllers\\Circle\\Auth\\LoginController' => $baseDir . '/app/Http/Controllers/Circle/Auth/LoginController.php',
@@ -58,6 +61,7 @@ return array(
     'App\\Http\\Middleware\\TrimStrings' => $baseDir . '/app/Http/Middleware/TrimStrings.php',
     'App\\Http\\Middleware\\TrustProxies' => $baseDir . '/app/Http/Middleware/TrustProxies.php',
     'App\\Http\\Middleware\\VerifyCsrfToken' => $baseDir . '/app/Http/Middleware/VerifyCsrfToken.php',
+    'App\\Http\\Requests\\AdminLoginRequest' => $baseDir . '/app/Http/Requests/AdminLoginRequest.php',
     'App\\Http\\Requests\\CircleLoginRequest' => $baseDir . '/app/Http/Requests/CircleLoginRequest.php',
     'App\\Http\\Requests\\CircleMypageEmailAuthRequest' => $baseDir . '/app/Http/Requests/CircleMypageEmailAuthRequest.php',
     'App\\Http\\Requests\\CircleMypageEmailRequest' => $baseDir . '/app/Http/Requests/CircleMypageEmailRequest.php',
@@ -78,6 +82,7 @@ return array(
     'App\\Http\\Requests\\ThreadRegisterRequest' => $baseDir . '/app/Http/Requests/ThreadRegisterRequest.php',
     'App\\Mail\\CircleEmailEditNotification' => $baseDir . '/app/Mail/CircleEmailEditNotification.php',
     'App\\Mail\\FreshmanEmailEditNotification' => $baseDir . '/app/Mail/FreshmanEmailEditNotification.php',
+    'App\\Models\\Admin' => $baseDir . '/app/Models/Admin.php',
     'App\\Models\\Campus' => $baseDir . '/app/Models/Campus.php',
     'App\\Models\\Circle' => $baseDir . '/app/Models/Circle.php',
     'App\\Models\\Circle_subcategory' => $baseDir . '/app/Models/Circle_subcategory.php',

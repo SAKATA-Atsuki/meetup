@@ -25,6 +25,8 @@ class RouteServiceProvider extends ServiceProvider
 
     public const TOP = '/';
 
+    public const ADMIN = '/admin';
+
     /**
      * Define your route model bindings, pattern filters, etc.
      *

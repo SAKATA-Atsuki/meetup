@@ -434,8 +434,11 @@ class ComposerStaticInit34016ffc5946e1819e4341f95a9b255f
     );
 
     public static $classMap = array (
+        'AdminsTableSeeder' => __DIR__ . '/../..' . '/database/seeds/AdminsTableSeeder.php',
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
+        'App\\Http\\Controllers\\Admin\\Auth\\LoginController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/Auth/LoginController.php',
+        'App\\Http\\Controllers\\Admin\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/HomeController.php',
         'App\\Http\\Controllers\\Circle\\Auth\\ConfirmPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Circle/Auth/ConfirmPasswordController.php',
         'App\\Http\\Controllers\\Circle\\Auth\\ForgotPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Circle/Auth/ForgotPasswordController.php',
         'App\\Http\\Controllers\\Circle\\Auth\\LoginController' => __DIR__ . '/../..' . '/app/Http/Controllers/Circle/Auth/LoginController.php',
@@ -486,6 +489,7 @@ class ComposerStaticInit34016ffc5946e1819e4341f95a9b255f
         'App\\Http\\Middleware\\TrimStrings' => __DIR__ . '/../..' . '/app/Http/Middleware/TrimStrings.php',
         'App\\Http\\Middleware\\TrustProxies' => __DIR__ . '/../..' . '/app/Http/Middleware/TrustProxies.php',
         'App\\Http\\Middleware\\VerifyCsrfToken' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyCsrfToken.php',
+        'App\\Http\\Requests\\AdminLoginRequest' => __DIR__ . '/../..' . '/app/Http/Requests/AdminLoginRequest.php',
         'App\\Http\\Requests\\CircleLoginRequest' => __DIR__ . '/../..' . '/app/Http/Requests/CircleLoginRequest.php',
         'App\\Http\\Requests\\CircleMypageEmailAuthRequest' => __DIR__ . '/../..' . '/app/Http/Requests/CircleMypageEmailAuthRequest.php',
         'App\\Http\\Requests\\CircleMypageEmailRequest' => __DIR__ . '/../..' . '/app/Http/Requests/CircleMypageEmailRequest.php',
@@ -506,6 +510,7 @@ class ComposerStaticInit34016ffc5946e1819e4341f95a9b255f
         'App\\Http\\Requests\\ThreadRegisterRequest' => __DIR__ . '/../..' . '/app/Http/Requests/ThreadRegisterRequest.php',
         'App\\Mail\\CircleEmailEditNotification' => __DIR__ . '/../..' . '/app/Mail/CircleEmailEditNotification.php',
         'App\\Mail\\FreshmanEmailEditNotification' => __DIR__ . '/../..' . '/app/Mail/FreshmanEmailEditNotification.php',
+        'App\\Models\\Admin' => __DIR__ . '/../..' . '/app/Models/Admin.php',
         'App\\Models\\Campus' => __DIR__ . '/../..' . '/app/Models/Campus.php',
         'App\\Models\\Circle' => __DIR__ . '/../..' . '/app/Models/Circle.php',
         'App\\Models\\Circle_subcategory' => __DIR__ . '/../..' . '/app/Models/Circle_subcategory.php',

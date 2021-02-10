@@ -1167,6 +1167,12 @@ class Router implements BindingRegistrar, RegistrarContract
         $this->get('circle/logout', 'Circle\Auth\LoginController@logout')->name('circle.logout');
         $this->post('circle/logout', 'Circle\Auth\LoginController@logout');
 
+        // admin
+        $this->get('admin/login', 'Admin\Auth\LoginController@showLoginForm')->name('admin.login');
+        $this->post('admin/login', 'Admin\Auth\LoginController@login');
+        $this->get('admin/logout', 'Admin\Auth\LoginController@logout')->name('admin.logout');
+        $this->post('admin/logout', 'Admin\Auth\LoginController@logout');
+
         // Registration Routes...
         if ($options['register'] ?? true) {
             // user
