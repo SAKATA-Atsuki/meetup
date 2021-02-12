@@ -125,3 +125,29 @@ Route::post('admin/campus/edit/check', 'Admin\CampusController@checkEdit')->name
 Route::post('admin/campus/edit/update', 'Admin\CampusController@update')->name('admin.campus.edit.update')->middleware('auth:admin');
 Route::get('admin/campus/delete', 'Admin\CampusController@getDelete')->name('admin.campus.delete')->middleware('auth:admin');
 Route::post('admin/campus/delete', 'Admin\CampusController@postDelete')->middleware('auth:admin');
+
+// admin.subcategory
+Route::get('admin/subcategory', 'Admin\SubcategoryController@index')->name('admin.subcategory')->middleware('auth:admin');
+Route::post('admin/subcategory', 'Admin\SubcategoryController@search')->middleware('auth:admin');
+Route::get('admin/subcategory/register', 'Admin\SubcategoryController@register')->name('admin.subcategory.register')->middleware('auth:admin');
+Route::post('admin/subcategory/register/check', 'Admin\SubcategoryController@checkRegister')->name('admin.subcategory.register.check')->middleware('auth:admin');
+Route::post('admin/subcategory/register/store', 'Admin\SubcategoryController@store')->name('admin.subcategory.register.store')->middleware('auth:admin');
+Route::get('admin/subcategory/detail', 'Admin\SubcategoryController@detail')->name('admin.subcategory.detail')->middleware('auth:admin');
+Route::get('admin/subcategory/edit', 'Admin\SubcategoryController@edit')->name('admin.subcategory.edit')->middleware('auth:admin');
+Route::post('admin/subcategory/edit/check', 'Admin\SubcategoryController@checkEdit')->name('admin.subcategory.edit.check')->middleware('auth:admin');
+Route::post('admin/subcategory/edit/update', 'Admin\SubcategoryController@update')->name('admin.subcategory.edit.update')->middleware('auth:admin');
+Route::get('admin/subcategory/delete', 'Admin\SubcategoryController@getDelete')->name('admin.subcategory.delete')->middleware('auth:admin');
+Route::post('admin/subcategory/delete', 'Admin\SubcategoryController@postDelete')->middleware('auth:admin');
+
+// admin.freshman
+Route::get('admin/freshman', 'Admin\FreshmanController@index')->name('admin.freshman')->middleware('auth:admin');
+Route::post('admin/freshman', 'Admin\FreshmanController@search')->middleware('auth:admin');
+Route::get('admin/freshman/register', 'Admin\FreshmanController@register')->name('admin.freshman.register')->middleware('auth:admin');
+Route::post('admin/freshman/register/check', 'Admin\FreshmanController@checkRegister')->name('admin.freshman.register.check')->middleware('auth:admin');
+Route::post('admin/freshman/register/store', 'Admin\FreshmanController@store')->name('admin.freshman.register.store')->middleware('auth:admin');
+Route::get('admin/freshman/detail', 'Admin\FreshmanController@detail')->name('admin.freshman.detail')->middleware('auth:admin');
+Route::get('admin/freshman/edit', 'Admin\FreshmanController@edit')->name('admin.freshman.edit')->middleware('auth:admin');
+Route::post('admin/freshman/edit/check', 'Admin\FreshmanController@checkEdit')->name('admin.freshman.edit.check')->middleware('auth:admin');
+Route::post('admin/freshman/edit/update', 'Admin\FreshmanController@update')->name('admin.freshman.edit.update')->middleware('auth:admin');
+Route::get('admin/freshman/delete', 'Admin\FreshmanController@getDelete')->name('admin.freshman.delete')->middleware('auth:admin');
+Route::post('admin/freshman/delete', 'Admin\FreshmanController@postDelete')->middleware('auth:admin');

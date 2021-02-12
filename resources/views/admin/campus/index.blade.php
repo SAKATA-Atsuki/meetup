@@ -41,6 +41,7 @@
             </div>    
             <div class="button">
                 <input type="hidden" name="page" value="1">
+                <input type="hidden" name="order" value="{{ $order }}">
                 <input type="submit" value="検索する" class="button_1">
             </div>
         </form>

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>管理画面</title>
+    <title>カテゴリ2削除</title>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 </head>
@@ -20,18 +20,18 @@
             </div>
         </div>
     </div>
-    <div class="admin_home_content">
-        <div class="buttons">
-            <a href="{{ route('admin.campus') }}" class="button">キャンパス一覧</a>
-            <a href="{{ route('admin.subcategory') }}" class="button">カテゴリ2一覧</a>
-            <a href="" class="button">新入生一覧</a>
-            <a href="" class="button">サークル一覧</a>
-        </div>
-        <div class="buttons">
-            <a href="" class="button">スレッド一覧</a>
-            <a href="" class="button">メッセージ一覧</a>
-            <a href="" class="button">お気に入り一覧</a>
-        </div>
+    <div class="admin_check_content">
+        <form action="{{ route('admin.subcategory.delete') }}" method="POST">
+            @csrf
+            <h1>カテゴリ2削除</h1>
+            <p>本当に削除しますか？</p>
+            <div class="button">
+                <input type="hidden" name="id" value="{{ $data['id'] }}">
+                <input type="submit" value="削除する" class="button_1">
+                <br><br>
+                <a href="{{ route('admin.subcategory', ['page' => $data['page']]) }}" class="button_2">カテゴリ2一覧へ</a>    
+            </div>    
+        </form>
     </div>
 </body>
 </html>
