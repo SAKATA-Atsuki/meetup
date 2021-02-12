@@ -42,6 +42,7 @@
             <form action="{{ route('admin.campus.register.store') }}" method="POST">
                 @csrf
                 <input type="hidden" name="page" value="{{ $data['page'] }}">
+                <input type="hidden" name="order" value="{{ $data['order'] }}">
                 <input type="hidden" name="name" value="{{ $data['name'] }}">
                 <input type="submit" value="登録する" class="button_1">
                 <br><br>

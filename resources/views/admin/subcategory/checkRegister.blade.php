@@ -52,6 +52,7 @@
             <form action="{{ route('admin.subcategory.register.store') }}" method="POST">
                 @csrf
                 <input type="hidden" name="page" value="{{ $data['page'] }}">
+                <input type="hidden" name="order" value="{{ $data['order'] }}">
                 <input type="hidden" name="circle_category_id" value="{{ $data['circle_category_id'] }}">
                 <input type="hidden" name="name" value="{{ $data['name'] }}">
                 <input type="submit" value="登録する" class="button_1">

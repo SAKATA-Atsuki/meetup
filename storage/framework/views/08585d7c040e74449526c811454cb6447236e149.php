@@ -95,6 +95,7 @@
                 <?php echo csrf_field(); ?>
                 <input type="hidden" name="id" value="<?php echo e($data['id']); ?>">
                 <input type="hidden" name="page" value="<?php echo e($data['page']); ?>">
+                <input type="hidden" name="order" value="<?php echo e($data['order']); ?>">
                 <input type="hidden" name="name_sei" value="<?php echo e($data['name_sei']); ?>">
                 <input type="hidden" name="name_mei" value="<?php echo e($data['name_mei']); ?>">
                 <input type="hidden" name="nickname" value="<?php echo e($data['nickname']); ?>">

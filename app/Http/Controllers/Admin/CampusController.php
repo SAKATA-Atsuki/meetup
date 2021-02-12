@@ -12,7 +12,7 @@ class CampusController extends Controller
     // 一覧表示
     public function index(Request $request)
     {
-        if ($request->has('page')) {
+        if ($request->has('order')) {
             if ($request->session()->exists('admin_campus_search')) {
                 $session_admin_campus_search = $request->session()->get('admin_campus_search');
             } else {
@@ -90,8 +90,9 @@ class CampusController extends Controller
     public function register(Request $request)
     {
         $page = $request->page;
+        $order = $request->order;
 
-        return view('admin.campus.register', compact('page'));
+        return view('admin.campus.register', compact('page', 'order'));
     }
 
     // 新規登録フォーム確認
@@ -106,13 +107,13 @@ class CampusController extends Controller
     public function store(Request $request)
     {
         if ($request->has('back')) {
-            return redirect()->route('admin.campus.register', ['page' => $request->page])->withInput($request->all());
+            return redirect()->route('admin.campus.register', ['page' => $request->page, 'order' => $request->order])->withInput($request->all());
         } else {
             $campus = new Campus;
             $campus->name = $request->name;
             $campus->save();
 
-            return redirect()->route('admin.campus', ['page' => $request->page]);
+            return redirect()->route('admin.campus', ['page' => $request->page, 'order' => $request->order]);
         }
     }
 
@@ -120,20 +121,22 @@ class CampusController extends Controller
     public function detail(Request $request)
     {
         $page = $request->page;
+        $order = $request->order;
 
         $campus = Campus::find($request->id);
 
-        return view('admin.campus.detail', compact('page', 'campus'));
+        return view('admin.campus.detail', compact('page', 'order', 'campus'));
     }
 
     // 編集フォーム表示
     public function edit(Request $request)
     {
         $page = $request->page;
+        $order = $request->order;
 
         $campus = Campus::find($request->id);
 
-        return view('admin.campus.edit', compact('page', 'campus'));
+        return view('admin.campus.edit', compact('page', 'order', 'campus'));
     }
 
     // 編集フォーム確認
@@ -148,13 +151,13 @@ class CampusController extends Controller
     public function update(Request $request)
     {
         if ($request->has('back')) {
-            return redirect()->route('admin.campus.edit', ['id' => $request->id, 'page' => $request->page])->withInput($request->all());
+            return redirect()->route('admin.campus.edit', ['id' => $request->id, 'page' => $request->page, 'order' => $request->order])->withInput($request->all());
         } else {
             $campus = Campus::find($request->id);
             $campus->name = $request->name;
             $campus->save();
 
-            return redirect()->route('admin.campus', ['page' => $request->page]);
+            return redirect()->route('admin.campus', ['page' => $request->page, 'order' => $request->order]);
         }
     }    
 
@@ -169,8 +172,10 @@ class CampusController extends Controller
     // 削除処理
     public function postDelete(Request $request)
     {
+        $order = $request->order;
+
         Campus::find($request->id)->delete();
 
-        return redirect()->route('admin.campus');
+        return redirect()->route('admin.campus', ['order' => $order]);
     }
 }

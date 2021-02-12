@@ -43,6 +43,7 @@
                 @csrf
                 <input type="hidden" name="id" value="{{ $data['id'] }}">
                 <input type="hidden" name="page" value="{{ $data['page'] }}">
+                <input type="hidden" name="order" value="{{ $data['order'] }}">
                 <input type="hidden" name="name" value="{{ $data['name'] }}">
                 <input type="submit" value="編集する" class="button_1">
                 <br><br>

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>キャンパス一覧</title>
+    <title>キャンパス削除</title>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
     <link rel="stylesheet" href="<?php echo e(asset('css/style.css')); ?>">
 </head>
@@ -27,9 +27,10 @@
             <p>本当に削除しますか？</p>
             <div class="button">
                 <input type="hidden" name="id" value="<?php echo e($data['id']); ?>">
+                <input type="hidden" name="order" value="<?php echo e($data['order']); ?>">
                 <input type="submit" value="削除する" class="button_1">
                 <br><br>
-                <a href="<?php echo e(route('admin.campus', ['page' => $data['page']])); ?>" class="button_2">キャンパス一覧へ</a>    
+                <a href="<?php echo e(route('admin.campus', ['page' => $data['page'], 'order' => $data['order']])); ?>" class="button_2">キャンパス一覧へ</a>    
             </div>    
         </form>
     </div>

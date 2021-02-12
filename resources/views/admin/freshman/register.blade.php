@@ -129,9 +129,10 @@
             </div>
             <div class="button">
                 <input type="hidden" name="page" value="{{ $page }}">
+                <input type="hidden" name="order" value="{{ $order }}">
                 <input type="submit" value="確認画面へ" class="button_1">
                 <br><br>
-                <a href="{{ route('admin.freshman', ['page' => $page]) }}" class="button_2">新入生一覧へ</a>    
+                <a href="{{ route('admin.freshman', ['page' => $page, 'order' => $order]) }}" class="button_2">新入生一覧へ</a>    
             </div>
         </form>
     </div>

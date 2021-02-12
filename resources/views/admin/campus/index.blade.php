@@ -47,7 +47,7 @@
         </form>
     </div>
     <div class="admin_campus_result">
-        <a href="{{ route('admin.campus.register', ['page' => $page]) }}" class="button_1">新規登録</a>    
+        <a href="{{ route('admin.campus.register', ['page' => $page, 'order' => $order]) }}" class="button_1">新規登録</a>    
         <div class="title">
             <span class="id">
                 ID
@@ -65,10 +65,10 @@
         @foreach ($campuses as $campus)
             <div class="content">
                 <span class="id">{{ $campus['id'] }}</span>
-                <a href="{{ route('admin.campus.detail', ['id' => $campus['id'], 'page' => $page]) }}" class="name">{{ $campus['name'] }}</a>
+                <a href="{{ route('admin.campus.detail', ['id' => $campus['id'], 'page' => $page, 'order' => $order]) }}" class="name">{{ $campus['name'] }}</a>
                 <span class="created_at">{{ $campus['created_at'] }}</span>
-                <a href="{{ route('admin.campus.edit', ['id' => $campus['id'], 'page' => $page]) }}" class="edit">編集</a>
-                <a href="{{ route('admin.campus.delete', ['id' => $campus['id'], 'page' => $page]) }}" class="delete">削除</a>
+                <a href="{{ route('admin.campus.edit', ['id' => $campus['id'], 'page' => $page, 'order' => $order]) }}" class="edit">編集</a>
+                <a href="{{ route('admin.campus.delete', ['id' => $campus['id'], 'page' => $page, 'order' => $order]) }}" class="delete">削除</a>
             </div>
         @endforeach
     </div>

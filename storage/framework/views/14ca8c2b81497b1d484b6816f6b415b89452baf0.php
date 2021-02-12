@@ -70,7 +70,7 @@
         </form>
     </div>
     <div class="admin_freshman_result">
-        <a href="<?php echo e(route('admin.freshman.register', ['page' => $page])); ?>" class="button_1">新規登録</a>    
+        <a href="<?php echo e(route('admin.freshman.register', ['page' => $page, 'order' => $order])); ?>" class="button_1">新規登録</a>    
         <div class="title">
             <span class="id">
                 ID
@@ -82,8 +82,8 @@
             </span>
             <span class="campus">キャンパス</span>
             <span class="name">氏名</span>
+            <span class="nickname">ニックネーム</span>
             <span class="gender">性別</span>
-            <span class="email">メールアドレス</span>
             <span class="created_at">登録日時</span>
             <span class="edit">編集</span>
             <span class="delete">削除</span>
@@ -92,16 +92,16 @@
             <div class="content">
                 <span class="id"><?php echo e($freshman['id']); ?></span>
                 <span class="campus"><?php echo e($freshman->getCampusName()); ?></span>
-                <a href="<?php echo e(route('admin.freshman.detail', ['id' => $freshman['id'], 'page' => $page])); ?>" class="name"><?php echo e($freshman['name_sei']); ?>　<?php echo e($freshman['name_mei']); ?></a>
+                <a href="<?php echo e(route('admin.freshman.detail', ['id' => $freshman['id'], 'page' => $page, 'order' => $order])); ?>" class="name"><?php echo e($freshman['name_sei']); ?>　<?php echo e($freshman['name_mei']); ?></a>
+                <span class="nickname"><?php echo e($freshman['nickname']); ?></span>
                 <span class="gender">
                     <?php $__currentLoopData = config('master.gender'); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $index => $value): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                         <?php if($freshman['gender'] == $index): ?> <?php echo e($value); ?> <?php endif; ?>
                     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                 </span>
-                <span class="email"><?php echo e($freshman['email']); ?></span>
                 <span class="created_at"><?php echo e($freshman['created_at']); ?></span>
-                <a href="<?php echo e(route('admin.freshman.edit', ['id' => $freshman['id'], 'page' => $page])); ?>" class="edit">編集</a>
-                <a href="<?php echo e(route('admin.freshman.delete', ['id' => $freshman['id'], 'page' => $page])); ?>" class="delete">削除</a>
+                <a href="<?php echo e(route('admin.freshman.edit', ['id' => $freshman['id'], 'page' => $page, 'order' => $order])); ?>" class="edit">編集</a>
+                <a href="<?php echo e(route('admin.freshman.delete', ['id' => $freshman['id'], 'page' => $page, 'order' => $order])); ?>" class="delete">削除</a>
             </div>
         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
     </div>

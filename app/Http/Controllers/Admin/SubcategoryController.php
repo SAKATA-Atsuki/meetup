@@ -12,7 +12,7 @@ class SubcategoryController extends Controller
     // 一覧表示
     public function index(Request $request)
     {
-        if ($request->has('page')) {
+        if ($request->has('order')) {
             if ($request->session()->exists('admin_subcategory_search')) {
                 $session_admin_subcategory_search = $request->session()->get('admin_subcategory_search');
             } else {
@@ -101,8 +101,9 @@ class SubcategoryController extends Controller
     public function register(Request $request)
     {
         $page = $request->page;
+        $order = $request->order;
 
-        return view('admin.subcategory.register', compact('page'));
+        return view('admin.subcategory.register', compact('page', 'order'));
     }
 
     // 新規登録フォーム確認
@@ -117,14 +118,14 @@ class SubcategoryController extends Controller
     public function store(Request $request)
     {
         if ($request->has('back')) {
-            return redirect()->route('admin.subcategory.register', ['page' => $request->page])->withInput($request->all());
+            return redirect()->route('admin.subcategory.register', ['page' => $request->page, 'order' => $request->order])->withInput($request->all());
         } else {
             $subcategory = new Circle_subcategory;
             $subcategory->circle_category_id = $request->circle_category_id;
             $subcategory->name = $request->name;
             $subcategory->save();
 
-            return redirect()->route('admin.subcategory', ['page' => $request->page]);
+            return redirect()->route('admin.subcategory', ['page' => $request->page, 'order' => $request->order]);
         }
     }
 
@@ -132,20 +133,22 @@ class SubcategoryController extends Controller
     public function detail(Request $request)
     {
         $page = $request->page;
+        $order = $request->order;
 
         $subcategory = Circle_subcategory::find($request->id);
 
-        return view('admin.subcategory.detail', compact('page', 'subcategory'));
+        return view('admin.subcategory.detail', compact('page', 'order', 'subcategory'));
     }
 
     // 編集フォーム表示
     public function edit(Request $request)
     {
         $page = $request->page;
+        $order = $request->order;
 
         $subcategory = Circle_subcategory::find($request->id);
 
-        return view('admin.subcategory.edit', compact('page', 'subcategory'));
+        return view('admin.subcategory.edit', compact('page', 'order', 'subcategory'));
     }
 
     // 編集フォーム確認
@@ -160,14 +163,14 @@ class SubcategoryController extends Controller
     public function update(Request $request)
     {
         if ($request->has('back')) {
-            return redirect()->route('admin.subcategory.edit', ['id' => $request->id, 'page' => $request->page])->withInput($request->all());
+            return redirect()->route('admin.subcategory.edit', ['id' => $request->id, 'page' => $request->page, 'order' => $request->order])->withInput($request->all());
         } else {
             $subcategory = Circle_subcategory::find($request->id);
             $subcategory->circle_category_id = $request->circle_category_id;
             $subcategory->name = $request->name;
             $subcategory->save();
 
-            return redirect()->route('admin.subcategory', ['page' => $request->page]);
+            return redirect()->route('admin.subcategory', ['page' => $request->page, 'order' => $request->order]);
         }
     }    
 
@@ -182,8 +185,10 @@ class SubcategoryController extends Controller
     // 削除処理
     public function postDelete(Request $request)
     {
+        $order = $request->order;
+
         Circle_subcategory::find($request->id)->delete();
 
-        return redirect()->route('admin.subcategory');
+        return redirect()->route('admin.subcategory', ['order' => $order]);
     }
 }

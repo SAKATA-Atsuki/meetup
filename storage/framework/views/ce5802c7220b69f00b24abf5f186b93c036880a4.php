@@ -49,7 +49,7 @@
             </div>
         </div>
         <div class="button">
-            <a href="<?php echo e(route('admin.subcategory', ['page' => $page])); ?>" class="button_2">カテゴリ2一覧へ</a>   
+            <a href="<?php echo e(route('admin.subcategory', ['page' => $page, 'order' => $order])); ?>" class="button_2">カテゴリ2一覧へ</a>   
         </div>
     </div>
 </body>

@@ -52,6 +52,7 @@
             <form action="<?php echo e(route('admin.subcategory.register.store')); ?>" method="POST">
                 <?php echo csrf_field(); ?>
                 <input type="hidden" name="page" value="<?php echo e($data['page']); ?>">
+                <input type="hidden" name="order" value="<?php echo e($data['order']); ?>">
                 <input type="hidden" name="circle_category_id" value="<?php echo e($data['circle_category_id']); ?>">
                 <input type="hidden" name="name" value="<?php echo e($data['name']); ?>">
                 <input type="submit" value="登録する" class="button_1">

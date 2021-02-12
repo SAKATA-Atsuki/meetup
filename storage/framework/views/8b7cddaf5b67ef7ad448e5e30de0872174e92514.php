@@ -43,6 +43,7 @@
                 <?php echo csrf_field(); ?>
                 <input type="hidden" name="id" value="<?php echo e($data['id']); ?>">
                 <input type="hidden" name="page" value="<?php echo e($data['page']); ?>">
+                <input type="hidden" name="order" value="<?php echo e($data['order']); ?>">
                 <input type="hidden" name="name" value="<?php echo e($data['name']); ?>">
                 <input type="submit" value="編集する" class="button_1">
                 <br><br>

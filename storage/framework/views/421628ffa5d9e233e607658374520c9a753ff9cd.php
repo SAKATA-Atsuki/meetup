@@ -57,7 +57,7 @@
         </form>
     </div>
     <div class="admin_subcategory_result">
-        <a href="<?php echo e(route('admin.subcategory.register', ['page' => $page])); ?>" class="button_1">新規登録</a>    
+        <a href="<?php echo e(route('admin.subcategory.register', ['page' => $page, 'order' => $order])); ?>" class="button_1">新規登録</a>    
         <div class="title">
             <span class="id">
                 ID
@@ -81,10 +81,10 @@
                         <?php if($subcategory['circle_category_id'] == $index): ?> <?php echo e($value); ?> <?php endif; ?>
                     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                 </span>
-                <a href="<?php echo e(route('admin.subcategory.detail', ['id' => $subcategory['id'], 'page' => $page])); ?>" class="name"><?php echo e($subcategory['name']); ?></a>
+                <a href="<?php echo e(route('admin.subcategory.detail', ['id' => $subcategory['id'], 'page' => $page, 'order' => $order])); ?>" class="name"><?php echo e($subcategory['name']); ?></a>
                 <span class="created_at"><?php echo e($subcategory['created_at']); ?></span>
-                <a href="<?php echo e(route('admin.subcategory.edit', ['id' => $subcategory['id'], 'page' => $page])); ?>" class="edit">編集</a>
-                <a href="<?php echo e(route('admin.subcategory.delete', ['id' => $subcategory['id'], 'page' => $page])); ?>" class="delete">削除</a>
+                <a href="<?php echo e(route('admin.subcategory.edit', ['id' => $subcategory['id'], 'page' => $page, 'order' => $order])); ?>" class="edit">編集</a>
+                <a href="<?php echo e(route('admin.subcategory.delete', ['id' => $subcategory['id'], 'page' => $page, 'order' => $order])); ?>" class="delete">削除</a>
             </div>
         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
     </div>

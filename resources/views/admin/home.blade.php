@@ -25,7 +25,7 @@
             <a href="{{ route('admin.campus') }}" class="button">キャンパス一覧</a>
             <a href="{{ route('admin.subcategory') }}" class="button">カテゴリ2一覧</a>
             <a href="{{ route('admin.freshman') }}" class="button">新入生一覧</a>
-            <a href="" class="button">サークル一覧</a>
+            <a href="{{ route('admin.circle') }}" class="button">サークル一覧</a>
         </div>
         <div class="buttons">
             <a href="" class="button">スレッド一覧</a>

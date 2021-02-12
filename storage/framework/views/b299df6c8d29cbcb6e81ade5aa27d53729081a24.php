@@ -80,9 +80,10 @@ unset($__errorArgs, $__bag); ?>
             <div class="button">
                 <input type="hidden" name="id" value="<?php echo e($subcategory['id']); ?>">
                 <input type="hidden" name="page" value="<?php echo e($page); ?>">
+                <input type="hidden" name="order" value="<?php echo e($order); ?>">
                 <input type="submit" value="確認画面へ" class="button_1">
                 <br><br>
-                <a href="<?php echo e(route('admin.subcategory', ['page' => $page])); ?>" class="button_2">カテゴリ2一覧へ</a>    
+                <a href="<?php echo e(route('admin.subcategory', ['page' => $page, 'order' => $order])); ?>" class="button_2">カテゴリ2一覧へ</a>    
             </div>
         </form>
     </div>

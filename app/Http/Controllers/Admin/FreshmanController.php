@@ -15,7 +15,7 @@ class FreshmanController extends Controller
     // 一覧表示
     public function index(Request $request)
     {
-        if ($request->has('page')) {
+        if ($request->has('order')) {
             if ($request->session()->exists('admin_freshman_search')) {
                 $session_admin_freshman_search = $request->session()->get('admin_freshman_search');
             } else {
@@ -138,10 +138,11 @@ class FreshmanController extends Controller
     public function register(Request $request)
     {
         $page = $request->page;
+        $order = $request->order;
 
         $campuses = Campus::all();
 
-        return view('admin.freshman.register', compact('page', 'campuses'));
+        return view('admin.freshman.register', compact('page', 'order', 'campuses'));
     }
 
     // 新規登録フォーム確認
@@ -158,7 +159,7 @@ class FreshmanController extends Controller
     public function store(Request $request)
     {
         if ($request->has('back')) {
-            return redirect()->route('admin.freshman.register', ['page' => $request->page])->withInput($request->all());
+            return redirect()->route('admin.freshman.register', ['page' => $request->page, 'order' => $request->order])->withInput($request->all());
         } else {
             $freshman = new Freshman;
             $freshman->name_sei = $request->name_sei;
@@ -171,7 +172,7 @@ class FreshmanController extends Controller
             $freshman->introduction = $request->introduction;
             $freshman->save();
 
-            return redirect()->route('admin.freshman', ['page' => $request->page]);
+            return redirect()->route('admin.freshman', ['page' => $request->page, 'order' => $request->order]);
         }
     }
 
@@ -179,22 +180,24 @@ class FreshmanController extends Controller
     public function detail(Request $request)
     {
         $page = $request->page;
+        $order = $request->order;
 
         $freshman = Freshman::find($request->id);
 
-        return view('admin.freshman.detail', compact('page', 'freshman'));
+        return view('admin.freshman.detail', compact('page', 'order', 'freshman'));
     }
 
     // 編集フォーム表示
     public function edit(Request $request)
     {
         $page = $request->page;
+        $order = $request->order;
 
         $campuses = Campus::all();
 
         $freshman = Freshman::find($request->id);
 
-        return view('admin.freshman.edit', compact('page', 'campuses', 'freshman'));
+        return view('admin.freshman.edit', compact('page', 'order', 'campuses', 'freshman'));
     }
 
     // 編集フォーム確認
@@ -211,7 +214,7 @@ class FreshmanController extends Controller
     public function update(Request $request)
     {
         if ($request->has('back')) {
-            return redirect()->route('admin.freshman.edit', ['id' => $request->id, 'page' => $request->page])->withInput($request->all());
+            return redirect()->route('admin.freshman.edit', ['id' => $request->id, 'page' => $request->page, 'order' => $request->order])->withInput($request->all());
         } else {
             $freshman = Freshman::find($request->id);
             $freshman->name_sei = $request->name_sei;
@@ -226,7 +229,7 @@ class FreshmanController extends Controller
             $freshman->introduction = $request->introduction;
             $freshman->save();
 
-            return redirect()->route('admin.freshman', ['page' => $request->page]);
+            return redirect()->route('admin.freshman', ['page' => $request->page, 'order' => $request->order]);
         }
     }    
 
@@ -241,8 +244,10 @@ class FreshmanController extends Controller
     // 削除処理
     public function postDelete(Request $request)
     {
+        $order = $request->order;
+
         Freshman::find($request->id)->delete();
 
-        return redirect()->route('admin.freshman');
+        return redirect()->route('admin.freshman', ['order' => $order]);
     }
 }

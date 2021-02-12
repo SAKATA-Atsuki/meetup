@@ -47,7 +47,7 @@
         </form>
     </div>
     <div class="admin_campus_result">
-        <a href="<?php echo e(route('admin.campus.register', ['page' => $page])); ?>" class="button_1">新規登録</a>    
+        <a href="<?php echo e(route('admin.campus.register', ['page' => $page, 'order' => $order])); ?>" class="button_1">新規登録</a>    
         <div class="title">
             <span class="id">
                 ID
@@ -65,10 +65,10 @@
         <?php $__currentLoopData = $campuses; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $campus): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
             <div class="content">
                 <span class="id"><?php echo e($campus['id']); ?></span>
-                <a href="<?php echo e(route('admin.campus.detail', ['id' => $campus['id'], 'page' => $page])); ?>" class="name"><?php echo e($campus['name']); ?></a>
+                <a href="<?php echo e(route('admin.campus.detail', ['id' => $campus['id'], 'page' => $page, 'order' => $order])); ?>" class="name"><?php echo e($campus['name']); ?></a>
                 <span class="created_at"><?php echo e($campus['created_at']); ?></span>
-                <a href="<?php echo e(route('admin.campus.edit', ['id' => $campus['id'], 'page' => $page])); ?>" class="edit">編集</a>
-                <a href="<?php echo e(route('admin.campus.delete', ['id' => $campus['id'], 'page' => $page])); ?>" class="delete">削除</a>
+                <a href="<?php echo e(route('admin.campus.edit', ['id' => $campus['id'], 'page' => $page, 'order' => $order])); ?>" class="edit">編集</a>
+                <a href="<?php echo e(route('admin.campus.delete', ['id' => $campus['id'], 'page' => $page, 'order' => $order])); ?>" class="delete">削除</a>
             </div>
         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
     </div>

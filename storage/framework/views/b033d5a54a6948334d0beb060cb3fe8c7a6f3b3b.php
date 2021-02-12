@@ -91,7 +91,7 @@
             </div>
         </div>
         <div class="button">
-            <a href="<?php echo e(route('admin.freshman', ['page' => $page])); ?>" class="button_2">新入生一覧へ</a>   
+            <a href="<?php echo e(route('admin.freshman', ['page' => $page, 'order' => $order])); ?>" class="button_2">新入生一覧へ</a>   
         </div>
     </div>
 </body>

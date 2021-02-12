@@ -151,3 +151,17 @@ Route::post('admin/freshman/edit/check', 'Admin\FreshmanController@checkEdit')->
 Route::post('admin/freshman/edit/update', 'Admin\FreshmanController@update')->name('admin.freshman.edit.update')->middleware('auth:admin');
 Route::get('admin/freshman/delete', 'Admin\FreshmanController@getDelete')->name('admin.freshman.delete')->middleware('auth:admin');
 Route::post('admin/freshman/delete', 'Admin\FreshmanController@postDelete')->middleware('auth:admin');
+
+// admin.circle
+Route::get('admin/circle', 'Admin\CircleController@index')->name('admin.circle')->middleware('auth:admin');
+Route::post('admin/circle', 'Admin\CircleController@search')->middleware('auth:admin');
+Route::post('admin/circle/category', 'Admin\CircleController@category')->name('admin.circle.category')->middleware('auth:admin');
+Route::get('admin/circle/register', 'Admin\CircleController@register')->name('admin.circle.register')->middleware('auth:admin');
+Route::post('admin/circle/register/check', 'Admin\CircleController@checkRegister')->name('admin.circle.register.check')->middleware('auth:admin');
+Route::post('admin/circle/register/store', 'Admin\CircleController@store')->name('admin.circle.register.store')->middleware('auth:admin');
+Route::get('admin/circle/detail', 'Admin\CircleController@detail')->name('admin.circle.detail')->middleware('auth:admin');
+Route::get('admin/circle/edit', 'Admin\CircleController@edit')->name('admin.circle.edit')->middleware('auth:admin');
+Route::post('admin/circle/edit/check', 'Admin\CircleController@checkEdit')->name('admin.circle.edit.check')->middleware('auth:admin');
+Route::post('admin/circle/edit/update', 'Admin\CircleController@update')->name('admin.circle.edit.update')->middleware('auth:admin');
+Route::get('admin/circle/delete', 'Admin\CircleController@getDelete')->name('admin.circle.delete')->middleware('auth:admin');
+Route::post('admin/circle/delete', 'Admin\CircleController@postDelete')->middleware('auth:admin');

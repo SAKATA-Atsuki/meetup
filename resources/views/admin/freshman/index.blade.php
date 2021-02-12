@@ -70,7 +70,7 @@
         </form>
     </div>
     <div class="admin_freshman_result">
-        <a href="{{ route('admin.freshman.register', ['page' => $page]) }}" class="button_1">新規登録</a>    
+        <a href="{{ route('admin.freshman.register', ['page' => $page, 'order' => $order]) }}" class="button_1">新規登録</a>    
         <div class="title">
             <span class="id">
                 ID
@@ -82,8 +82,8 @@
             </span>
             <span class="campus">キャンパス</span>
             <span class="name">氏名</span>
+            <span class="nickname">ニックネーム</span>
             <span class="gender">性別</span>
-            <span class="email">メールアドレス</span>
             <span class="created_at">登録日時</span>
             <span class="edit">編集</span>
             <span class="delete">削除</span>
@@ -92,16 +92,16 @@
             <div class="content">
                 <span class="id">{{ $freshman['id'] }}</span>
                 <span class="campus">{{ $freshman->getCampusName() }}</span>
-                <a href="{{ route('admin.freshman.detail', ['id' => $freshman['id'], 'page' => $page]) }}" class="name">{{ $freshman['name_sei'] }}　{{ $freshman['name_mei'] }}</a>
+                <a href="{{ route('admin.freshman.detail', ['id' => $freshman['id'], 'page' => $page, 'order' => $order]) }}" class="name">{{ $freshman['name_sei'] }}　{{ $freshman['name_mei'] }}</a>
+                <span class="nickname">{{ $freshman['nickname'] }}</span>
                 <span class="gender">
                     @foreach (config('master.gender') as $index => $value)
                         @if ($freshman['gender'] == $index) {{ $value }} @endif
                     @endforeach
                 </span>
-                <span class="email">{{ $freshman['email'] }}</span>
                 <span class="created_at">{{ $freshman['created_at'] }}</span>
-                <a href="{{ route('admin.freshman.edit', ['id' => $freshman['id'], 'page' => $page]) }}" class="edit">編集</a>
-                <a href="{{ route('admin.freshman.delete', ['id' => $freshman['id'], 'page' => $page]) }}" class="delete">削除</a>
+                <a href="{{ route('admin.freshman.edit', ['id' => $freshman['id'], 'page' => $page, 'order' => $order]) }}" class="edit">編集</a>
+                <a href="{{ route('admin.freshman.delete', ['id' => $freshman['id'], 'page' => $page, 'order' => $order]) }}" class="delete">削除</a>
             </div>
         @endforeach
     </div>

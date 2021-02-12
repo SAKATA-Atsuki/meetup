@@ -27,9 +27,10 @@
             <p>本当に削除しますか？</p>
             <div class="button">
                 <input type="hidden" name="id" value="<?php echo e($data['id']); ?>">
+                <input type="hidden" name="order" value="<?php echo e($data['order']); ?>">
                 <input type="submit" value="削除する" class="button_1">
                 <br><br>
-                <a href="<?php echo e(route('admin.freshman', ['page' => $data['page']])); ?>" class="button_2">新入生一覧へ</a>    
+                <a href="<?php echo e(route('admin.freshman', ['page' => $data['page'], 'order' => $data['order']])); ?>" class="button_2">新入生一覧へ</a>    
             </div>    
         </form>
     </div>

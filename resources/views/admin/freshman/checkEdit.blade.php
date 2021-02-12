@@ -95,6 +95,7 @@
                 @csrf
                 <input type="hidden" name="id" value="{{ $data['id'] }}">
                 <input type="hidden" name="page" value="{{ $data['page'] }}">
+                <input type="hidden" name="order" value="{{ $data['order'] }}">
                 <input type="hidden" name="name_sei" value="{{ $data['name_sei'] }}">
                 <input type="hidden" name="name_mei" value="{{ $data['name_mei'] }}">
                 <input type="hidden" name="nickname" value="{{ $data['nickname'] }}">
