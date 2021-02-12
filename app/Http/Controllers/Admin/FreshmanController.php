@@ -4,9 +4,11 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Http\Requests\AdminSubcategoryRequest;
+use App\Http\Requests\FreshmanRegisterRequest;
+use App\Http\Requests\AdminFreshmanRequest;
 use App\Models\Campus;
 use App\Models\Freshman;
+use Illuminate\Support\Facades\Hash;
 
 class FreshmanController extends Controller
 {
@@ -14,19 +16,21 @@ class FreshmanController extends Controller
     public function index(Request $request)
     {
         if ($request->has('page')) {
-            if ($request->session()->exists('admin_subcategory_search')) {
-                $session_admin_subcategory_search = $request->session()->get('admin_subcategory_search');
+            if ($request->session()->exists('admin_freshman_search')) {
+                $session_admin_freshman_search = $request->session()->get('admin_freshman_search');
             } else {
-                $session_admin_subcategory_search['id'] = '';
-                $session_admin_subcategory_search['circle_category_id'] = '';
-                $session_admin_subcategory_search['free'] = '';
+                $session_admin_freshman_search['id'] = '';
+                $session_admin_freshman_search['campus_id'] = '';
+                $session_admin_freshman_search['gender'] = '';
+                $session_admin_freshman_search['free'] = '';
             }
         } else {
-            $request->session()->forget('admin_subcategory_search');
+            $request->session()->forget('admin_freshman_search');
             
-            $session_admin_subcategory_search['id'] = '';
-            $session_admin_subcategory_search['circle_category_id'] = '';
-            $session_admin_subcategory_search['free'] = '';
+            $session_admin_freshman_search['id'] = '';
+            $session_admin_freshman_search['campus_id'] = '';
+            $session_admin_freshman_search['gender'] = '';
+            $session_admin_freshman_search['free'] = '';
         }
 
         if (isset($request->page)) {
@@ -41,20 +45,36 @@ class FreshmanController extends Controller
             $order = 1;
         }
 
+        $campuses = Campus::all();
+
         if ($order == 1) {
-            $subcategories = Circle_subcategory::where('id', 'like', '%' . $session_admin_subcategory_search['id'] . '%')
-                                ->where('circle_category_id', 'like', '%' . $session_admin_subcategory_search['circle_category_id'] . '%')
-                                ->where('name', 'like', '%' . $session_admin_subcategory_search['free'] . '%')
+            $freshmen = Freshman::where('id', 'like', '%' . $session_admin_freshman_search['id'] . '%')
+                                ->where('campus_id', 'like', '%' . $session_admin_freshman_search['campus_id'] . '%')
+                                ->where('gender', 'like', '%' . $session_admin_freshman_search['gender'] . '%')
+                                ->where(function($query) use($session_admin_freshman_search) {
+                                    $query->where('name_sei', 'like', '%' . $session_admin_freshman_search['free'] . '%')
+                                            ->orWhere('name_mei', 'like', '%' . $session_admin_freshman_search['free'] . '%')
+                                            ->orWhere('nickname', 'like', '%' . $session_admin_freshman_search['free'] . '%')
+                                            ->orWhere('email', 'like', '%' . $session_admin_freshman_search['free'] . '%')
+                                            ->orWhere('introduction', 'like', '%' . $session_admin_freshman_search['free'] . '%');
+                                })
                                 ->simplePaginate(10);
         } else {
-            $subcategories = Circle_subcategory::where('id', 'like', '%' . $session_admin_subcategory_search['id'] . '%')
-                                ->where('circle_category_id', 'like', '%' . $session_admin_subcategory_search['circle_category_id'] . '%')
-                                ->where('name', 'like', '%' . $session_admin_subcategory_search['free'] . '%')
+            $freshmen = Freshman::where('id', 'like', '%' . $session_admin_freshman_search['id'] . '%')
+                                ->where('campus_id', 'like', '%' . $session_admin_freshman_search['campus_id'] . '%')
+                                ->where('gender', 'like', '%' . $session_admin_freshman_search['gender'] . '%')
+                                ->where(function($query) use($session_admin_freshman_search) {
+                                    $query->where('name_sei', 'like', '%' . $session_admin_freshman_search['free'] . '%')
+                                            ->orWhere('name_mei', 'like', '%' . $session_admin_freshman_search['free'] . '%')
+                                            ->orWhere('nickname', 'like', '%' . $session_admin_freshman_search['free'] . '%')
+                                            ->orWhere('email', 'like', '%' . $session_admin_freshman_search['free'] . '%')
+                                            ->orWhere('introduction', 'like', '%' . $session_admin_freshman_search['free'] . '%');
+                                })
                                 ->orderBy('id', 'desc')
                                 ->simplePaginate(10);
         }
 
-        return view('admin.freshman.index', compact('session_admin_subcategory_search', 'page', 'order', 'subcategories'));
+        return view('admin.freshman.index', compact('session_admin_freshman_search', 'page', 'order', 'campuses', 'freshmen'));
     }
 
     // 検索結果表示
@@ -62,13 +82,13 @@ class FreshmanController extends Controller
     {
         $data = $request->all();
 
-        if (isset($data['circle_category_id'])) {
+        if (isset($data['gender'])) {
         } else {
-            $data['circle_category_id'] = '';
+            $data['gender'] = '';
         }
 
-        $request->session()->put('admin_subcategory_search', $data);
-        $session_admin_subcategory_search = $request->session()->get('admin_subcategory_search');
+        $request->session()->put('admin_freshman_search', $data);
+        $session_admin_freshman_search = $request->session()->get('admin_freshman_search');
 
         if (isset($request->page)) {
             $page = $request->page;
@@ -82,20 +102,36 @@ class FreshmanController extends Controller
             $order = 1;
         }
 
+        $campuses = Campus::all();
+
         if ($order == 1) {
-            $subcategories = Circle_subcategory::where('id', 'like', '%' . $session_admin_subcategory_search['id'] . '%')
-                                ->where('circle_category_id', 'like', '%' . $session_admin_subcategory_search['circle_category_id'] . '%')
-                                ->where('name', 'like', '%' . $session_admin_subcategory_search['free'] . '%')
+            $freshmen = Freshman::where('id', 'like', '%' . $session_admin_freshman_search['id'] . '%')
+                                ->where('campus_id', 'like', '%' . $session_admin_freshman_search['campus_id'] . '%')
+                                ->where('gender', 'like', '%' . $session_admin_freshman_search['gender'] . '%')
+                                ->where(function($query) use($session_admin_freshman_search) {
+                                    $query->where('name_sei', 'like', '%' . $session_admin_freshman_search['free'] . '%')
+                                            ->orWhere('name_mei', 'like', '%' . $session_admin_freshman_search['free'] . '%')
+                                            ->orWhere('nickname', 'like', '%' . $session_admin_freshman_search['free'] . '%')
+                                            ->orWhere('email', 'like', '%' . $session_admin_freshman_search['free'] . '%')
+                                            ->orWhere('introduction', 'like', '%' . $session_admin_freshman_search['free'] . '%');
+                                })
                                 ->simplePaginate(10);
         } else {
-            $subcategories = Circle_subcategory::where('id', 'like', '%' . $session_admin_subcategory_search['id'] . '%')
-                                ->where('circle_category_id', 'like', '%' . $session_admin_subcategory_search['circle_category_id'] . '%')
-                                ->where('name', 'like', '%' . $session_admin_subcategory_search['free'] . '%')
+            $freshmen = Freshman::where('id', 'like', '%' . $session_admin_freshman_search['id'] . '%')
+                                ->where('campus_id', 'like', '%' . $session_admin_freshman_search['campus_id'] . '%')
+                                ->where('gender', 'like', '%' . $session_admin_freshman_search['gender'] . '%')
+                                ->where(function($query) use($session_admin_freshman_search) {
+                                    $query->where('name_sei', 'like', '%' . $session_admin_freshman_search['free'] . '%')
+                                            ->orWhere('name_mei', 'like', '%' . $session_admin_freshman_search['free'] . '%')
+                                            ->orWhere('nickname', 'like', '%' . $session_admin_freshman_search['free'] . '%')
+                                            ->orWhere('email', 'like', '%' . $session_admin_freshman_search['free'] . '%')
+                                            ->orWhere('introduction', 'like', '%' . $session_admin_freshman_search['free'] . '%');
+                                })
                                 ->orderBy('id', 'desc')
                                 ->simplePaginate(10);
         }
 
-        return view('admin.freshman.index', compact('session_admin_subcategory_search', 'page', 'order', 'subcategories'));
+        return view('admin.freshman.index', compact('session_admin_freshman_search', 'page', 'order', 'campuses', 'freshmen'));
     }
 
     // 新規登録フォーム表示
@@ -103,15 +139,19 @@ class FreshmanController extends Controller
     {
         $page = $request->page;
 
-        return view('admin.freshman.register', compact('page'));
+        $campuses = Campus::all();
+
+        return view('admin.freshman.register', compact('page', 'campuses'));
     }
 
     // 新規登録フォーム確認
-    public function checkRegister(AdminSubcategoryRequest $request)
+    public function checkRegister(FreshmanRegisterRequest $request)
     {
         $data = $request->all();
 
-        return view('admin.freshman.checkRegister', compact('data'));
+        $campus = Campus::find($data['campus_id']);
+
+        return view('admin.freshman.checkRegister', compact('data', 'campus'));
     }
 
     // 新規登録処理
@@ -120,10 +160,16 @@ class FreshmanController extends Controller
         if ($request->has('back')) {
             return redirect()->route('admin.freshman.register', ['page' => $request->page])->withInput($request->all());
         } else {
-            $subcategory = new Circle_subcategory;
-            $subcategory->circle_category_id = $request->circle_category_id;
-            $subcategory->name = $request->name;
-            $subcategory->save();
+            $freshman = new Freshman;
+            $freshman->name_sei = $request->name_sei;
+            $freshman->name_mei = $request->name_mei;
+            $freshman->nickname = $request->nickname;
+            $freshman->gender = $request->gender;
+            $freshman->campus_id = $request->campus_id;
+            $freshman->email = $request->email;
+            $freshman->password = Hash::make($request->password);
+            $freshman->introduction = $request->introduction;
+            $freshman->save();
 
             return redirect()->route('admin.freshman', ['page' => $request->page]);
         }
@@ -134,9 +180,9 @@ class FreshmanController extends Controller
     {
         $page = $request->page;
 
-        $subcategory = Circle_subcategory::find($request->id);
+        $freshman = Freshman::find($request->id);
 
-        return view('admin.freshman.detail', compact('page', 'subcategory'));
+        return view('admin.freshman.detail', compact('page', 'freshman'));
     }
 
     // 編集フォーム表示
@@ -144,17 +190,21 @@ class FreshmanController extends Controller
     {
         $page = $request->page;
 
-        $subcategory = Circle_subcategory::find($request->id);
+        $campuses = Campus::all();
 
-        return view('admin.freshman.edit', compact('page', 'subcategory'));
+        $freshman = Freshman::find($request->id);
+
+        return view('admin.freshman.edit', compact('page', 'campuses', 'freshman'));
     }
 
     // 編集フォーム確認
-    public function checkEdit(AdminSubcategoryRequest $request)
+    public function checkEdit(AdminFreshmanRequest $request)
     {
         $data = $request->all();
 
-        return view('admin.freshman.checkEdit', compact('data'));
+        $campus = Campus::find($data['campus_id']);
+
+        return view('admin.freshman.checkEdit', compact('data', 'campus'));
     }
 
     // 編集処理
@@ -163,10 +213,18 @@ class FreshmanController extends Controller
         if ($request->has('back')) {
             return redirect()->route('admin.freshman.edit', ['id' => $request->id, 'page' => $request->page])->withInput($request->all());
         } else {
-            $subcategory = Circle_subcategory::find($request->id);
-            $subcategory->circle_category_id = $request->circle_category_id;
-            $subcategory->name = $request->name;
-            $subcategory->save();
+            $freshman = Freshman::find($request->id);
+            $freshman->name_sei = $request->name_sei;
+            $freshman->name_mei = $request->name_mei;
+            $freshman->nickname = $request->nickname;
+            $freshman->gender = $request->gender;
+            $freshman->campus_id = $request->campus_id;
+            $freshman->email = $request->email;
+            if ($request->password != '') {
+                $freshman->password = Hash::make($request->password);
+            }
+            $freshman->introduction = $request->introduction;
+            $freshman->save();
 
             return redirect()->route('admin.freshman', ['page' => $request->page]);
         }
@@ -183,7 +241,7 @@ class FreshmanController extends Controller
     // 削除処理
     public function postDelete(Request $request)
     {
-        Circle_subcategory::find($request->id)->delete();
+        Freshman::find($request->id)->delete();
 
         return redirect()->route('admin.freshman');
     }
