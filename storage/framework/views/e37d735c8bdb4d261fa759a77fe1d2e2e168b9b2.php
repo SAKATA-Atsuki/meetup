@@ -65,7 +65,7 @@
         <span><?php echo e($circle->getCircleSubcategoryName()); ?></span>
     </div>
     <div class="circle_thread_search">
-        <form action="" method="POST">
+        <form action="<?php echo e(route('circle.thread')); ?>" method="POST">
             <?php echo csrf_field(); ?>
             <div class="form">
                 <div class="left">
@@ -76,6 +76,8 @@
                 </div>
             </div>    
             <div class="button">
+                <input type="hidden" name="id" value="<?php echo e($circle['id']); ?>">
+                <input type="hidden" name="pg" value="<?php echo e($pg); ?>">
                 <input type="hidden" name="page" value="1">
                 <input type="submit" value="検索する" class="button_1">
             </div>

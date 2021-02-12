@@ -63,11 +63,6 @@ class ThreadController extends Controller
 
         $data = $request->all();
 
-        if (isset($data['title'])) {
-        } else {
-            $data['title'] = '';
-        }
-
         $request->session()->put('circle_thread_search', $data);
         $session_circle_thread_search = $request->session()->get('circle_thread_search');
 

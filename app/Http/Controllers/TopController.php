@@ -54,21 +54,9 @@ class TopController extends Controller
     {
         $data = $request->all();
 
-        if (isset($data['name'])) {
-        } else {
-            $data['name'] = '';
-        }
-        if (isset($data['campus_id'])) {
-        } else {
-            $data['campus_id'] = '';
-        }
         if (isset($data['circle_category_id'])) {
         } else {
             $data['circle_category_id'] = '';
-        }
-        if (isset($data['circle_subcategory_id'])) {
-        } else {
-            $data['circle_subcategory_id'] = '';
         }
 
         $request->session()->put('top_search', $data);

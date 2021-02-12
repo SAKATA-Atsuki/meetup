@@ -112,3 +112,16 @@ Route::post('circle/mypage/withdrawal/delete', 'Circle\Mypage\WithdrawalControll
 
 // admin
 Route::get('admin', 'Admin\HomeController@index')->name('admin');
+
+// admin.campus
+Route::get('admin/campus', 'Admin\CampusController@index')->name('admin.campus')->middleware('auth:admin');
+Route::post('admin/campus', 'Admin\CampusController@search')->middleware('auth:admin');
+Route::get('admin/campus/register', 'Admin\CampusController@register')->name('admin.campus.register')->middleware('auth:admin');
+Route::post('admin/campus/register/check', 'Admin\CampusController@checkRegister')->name('admin.campus.register.check')->middleware('auth:admin');
+Route::post('admin/campus/register/store', 'Admin\CampusController@store')->name('admin.campus.register.store')->middleware('auth:admin');
+Route::get('admin/campus/detail', 'Admin\CampusController@detail')->name('admin.campus.detail')->middleware('auth:admin');
+Route::get('admin/campus/edit', 'Admin\CampusController@edit')->name('admin.campus.edit')->middleware('auth:admin');
+Route::post('admin/campus/edit/check', 'Admin\CampusController@checkEdit')->name('admin.campus.edit.check')->middleware('auth:admin');
+Route::post('admin/campus/edit/update', 'Admin\CampusController@update')->name('admin.campus.edit.update')->middleware('auth:admin');
+Route::get('admin/campus/delete', 'Admin\CampusController@getDelete')->name('admin.campus.delete')->middleware('auth:admin');
+Route::post('admin/campus/delete', 'Admin\CampusController@postDelete')->middleware('auth:admin');

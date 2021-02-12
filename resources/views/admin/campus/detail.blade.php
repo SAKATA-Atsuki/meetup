@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>管理画面</title>
+    <title>キャンパス詳細</title>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 </head>
@@ -20,17 +20,26 @@
             </div>
         </div>
     </div>
-    <div class="admin_home_content">
-        <div class="buttons">
-            <a href="{{ route('admin.campus') }}" class="button">キャンパス一覧</a>
-            <a href="" class="button">カテゴリ2一覧</a>
-            <a href="" class="button">新入生一覧</a>
-            <a href="" class="button">サークル一覧</a>
+    <div class="admin_check_content">
+        <h1>キャンパス詳細</h1>
+        <div class="check">
+            <div class="left">
+                <span>ID</span>
+            </div>
+            <div class="right">
+                <span>{{ $campus['id'] }}</span>
+            </div>
         </div>
-        <div class="buttons">
-            <a href="" class="button">スレッド一覧</a>
-            <a href="" class="button">メッセージ一覧</a>
-            <a href="" class="button">お気に入り一覧</a>
+        <div class="check">
+            <div class="left">
+                <span>キャンパス名</span>
+            </div>
+            <div class="right">
+                <span>{{ $campus['name'] }}</span>
+            </div>
+        </div>
+        <div class="button">
+            <a href="{{ route('admin.campus', ['page' => $page]) }}" class="button_2">キャンパス一覧へ</a>   
         </div>
     </div>
 </body>
