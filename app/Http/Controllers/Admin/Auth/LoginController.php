@@ -68,7 +68,7 @@ class LoginController extends Controller
         return 'login_id';
     }
 
-    // ログアウト
+    // ログアウト処理
     public function logout(Request $request)
     {
         $this->guard()->logout();

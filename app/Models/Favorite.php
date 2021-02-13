@@ -33,4 +33,14 @@ class Favorite extends Model
     {
         return $this->circle->circle_subcategory_id;
     }
+
+    public function freshman()
+    {
+        return $this->belongsTo('App\Models\Freshman');
+    }
+
+    public function getFreshmanNickname()
+    {
+        return $this->freshman->nickname;
+    }
 }

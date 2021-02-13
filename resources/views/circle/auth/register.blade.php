@@ -41,7 +41,7 @@
             })
         })
     </script>
-    <title>サークル登録フォーム</title>
+    <title>サークル登録</title>
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 </head>
 <body>

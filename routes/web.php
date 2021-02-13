@@ -183,6 +183,5 @@ Route::post('admin/message/delete', 'Admin\MessageController@postDelete')->middl
 // admin.favorite
 Route::get('admin/favorite', 'Admin\FavoriteController@index')->name('admin.favorite')->middleware('auth:admin');
 Route::post('admin/favorite', 'Admin\FavoriteController@search')->middleware('auth:admin');
-Route::get('admin/favorite/detail', 'Admin\FavoriteController@detail')->name('admin.favorite.detail')->middleware('auth:admin');
 Route::get('admin/favorite/delete', 'Admin\FavoriteController@getDelete')->name('admin.favorite.delete')->middleware('auth:admin');
 Route::post('admin/favorite/delete', 'Admin\FavoriteController@postDelete')->middleware('auth:admin');

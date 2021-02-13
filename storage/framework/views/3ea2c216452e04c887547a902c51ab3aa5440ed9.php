@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>管理画面</title>
+    <title>お気に入り削除</title>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
     <link rel="stylesheet" href="<?php echo e(asset('css/style.css')); ?>">
 </head>
@@ -20,18 +20,19 @@
             </div>
         </div>
     </div>
-    <div class="admin_home_content">
-        <div class="buttons">
-            <a href="<?php echo e(route('admin.campus')); ?>" class="button">キャンパス一覧</a>
-            <a href="<?php echo e(route('admin.subcategory')); ?>" class="button">カテゴリ2一覧</a>
-            <a href="<?php echo e(route('admin.freshman')); ?>" class="button">新入生一覧</a>
-            <a href="<?php echo e(route('admin.circle')); ?>" class="button">サークル一覧</a>
-        </div>
-        <div class="buttons">
-            <a href="<?php echo e(route('admin.thread')); ?>" class="button">スレッド一覧</a>
-            <a href="<?php echo e(route('admin.message')); ?>" class="button">メッセージ一覧</a>
-            <a href="<?php echo e(route('admin.favorite')); ?>" class="button">お気に入り一覧</a>
-        </div>
+    <div class="admin_check_content">
+        <form action="<?php echo e(route('admin.favorite.delete')); ?>" method="POST">
+            <?php echo csrf_field(); ?>
+            <h1>お気に入り削除</h1>
+            <p>本当に削除しますか？</p>
+            <div class="button">
+                <input type="hidden" name="id" value="<?php echo e($data['id']); ?>">
+                <input type="hidden" name="order" value="<?php echo e($data['order']); ?>">
+                <input type="submit" value="削除する" class="button_1">
+                <br><br>
+                <a href="<?php echo e(route('admin.favorite', ['page' => $data['page'], 'order' => $data['order']])); ?>" class="button_2">お気に入り一覧へ</a>    
+            </div>    
+        </form>
     </div>
 </body>
-</html><?php /**PATH /Applications/MAMP/htdocs/meetup/resources/views/admin/home.blade.php ENDPATH**/ ?>
+</html><?php /**PATH /Applications/MAMP/htdocs/meetup/resources/views/admin/favorite/delete.blade.php ENDPATH**/ ?>
