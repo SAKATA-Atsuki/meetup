@@ -33,6 +33,16 @@
             </div>    
             <div class="form">
                 <div class="left">
+                    <span>性別</span>
+                </div>
+                <div class="right">
+                    <?php $__currentLoopData = config('master.gender'); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $index => $value): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                        <input type="radio" name="gender" value="<?php echo e($index); ?>" <?php if($session_admin_freshman_search['gender'] == $index): ?> checked <?php endif; ?>><?php echo e($value); ?>　
+                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                </div>
+            </div>    
+            <div class="form">
+                <div class="left">
                     <span>キャンパス</span>
                 </div>
                 <div class="right">
@@ -42,16 +52,6 @@
                             <option value="<?php echo e($campus['id']); ?>" <?php if($session_admin_freshman_search['campus_id'] == $campus['id']): ?> selected <?php endif; ?>><?php echo e($campus['name']); ?></option>
                         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                     </select>
-                </div>
-            </div>    
-            <div class="form">
-                <div class="left">
-                    <span>性別</span>
-                </div>
-                <div class="right">
-                    <?php $__currentLoopData = config('master.gender'); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $index => $value): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                        <input type="radio" name="gender" value="<?php echo e($index); ?>" <?php if($session_admin_freshman_search['gender'] == $index): ?> checked <?php endif; ?>><?php echo e($value); ?>　
-                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                 </div>
             </div>    
             <div class="form">
@@ -80,10 +80,10 @@
                     <a href="<?php echo e(route('admin.freshman', ['page' => $page, 'order' => 1])); ?>"><i class="far fa-caret-square-down"></i></a>
                 <?php endif; ?>
             </span>
-            <span class="campus">キャンパス</span>
             <span class="name">氏名</span>
             <span class="nickname">ニックネーム</span>
             <span class="gender">性別</span>
+            <span class="campus">キャンパス</span>
             <span class="created_at">登録日時</span>
             <span class="edit">編集</span>
             <span class="delete">削除</span>
@@ -91,7 +91,6 @@
         <?php $__currentLoopData = $freshmen; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $freshman): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
             <div class="content">
                 <span class="id"><?php echo e($freshman['id']); ?></span>
-                <span class="campus"><?php echo e($freshman->getCampusName()); ?></span>
                 <a href="<?php echo e(route('admin.freshman.detail', ['id' => $freshman['id'], 'page' => $page, 'order' => $order])); ?>" class="name"><?php echo e($freshman['name_sei']); ?>　<?php echo e($freshman['name_mei']); ?></a>
                 <span class="nickname"><?php echo e($freshman['nickname']); ?></span>
                 <span class="gender">
@@ -99,6 +98,7 @@
                         <?php if($freshman['gender'] == $index): ?> <?php echo e($value); ?> <?php endif; ?>
                     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                 </span>
+                <span class="campus"><?php echo e($freshman->getCampusName()); ?></span>
                 <span class="created_at"><?php echo e($freshman['created_at']); ?></span>
                 <a href="<?php echo e(route('admin.freshman.edit', ['id' => $freshman['id'], 'page' => $page, 'order' => $order])); ?>" class="edit">編集</a>
                 <a href="<?php echo e(route('admin.freshman.delete', ['id' => $freshman['id'], 'page' => $page, 'order' => $order])); ?>" class="delete">削除</a>

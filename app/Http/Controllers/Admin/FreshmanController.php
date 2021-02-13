@@ -20,16 +20,16 @@ class FreshmanController extends Controller
                 $session_admin_freshman_search = $request->session()->get('admin_freshman_search');
             } else {
                 $session_admin_freshman_search['id'] = '';
-                $session_admin_freshman_search['campus_id'] = '';
                 $session_admin_freshman_search['gender'] = '';
+                $session_admin_freshman_search['campus_id'] = '';
                 $session_admin_freshman_search['free'] = '';
             }
         } else {
             $request->session()->forget('admin_freshman_search');
             
             $session_admin_freshman_search['id'] = '';
-            $session_admin_freshman_search['campus_id'] = '';
             $session_admin_freshman_search['gender'] = '';
+            $session_admin_freshman_search['campus_id'] = '';
             $session_admin_freshman_search['free'] = '';
         }
 
@@ -49,8 +49,8 @@ class FreshmanController extends Controller
 
         if ($order == 1) {
             $freshmen = Freshman::where('id', 'like', '%' . $session_admin_freshman_search['id'] . '%')
-                                ->where('campus_id', 'like', '%' . $session_admin_freshman_search['campus_id'] . '%')
                                 ->where('gender', 'like', '%' . $session_admin_freshman_search['gender'] . '%')
+                                ->where('campus_id', 'like', '%' . $session_admin_freshman_search['campus_id'] . '%')
                                 ->where(function($query) use($session_admin_freshman_search) {
                                     $query->where('name_sei', 'like', '%' . $session_admin_freshman_search['free'] . '%')
                                             ->orWhere('name_mei', 'like', '%' . $session_admin_freshman_search['free'] . '%')
@@ -61,8 +61,8 @@ class FreshmanController extends Controller
                                 ->simplePaginate(10);
         } else {
             $freshmen = Freshman::where('id', 'like', '%' . $session_admin_freshman_search['id'] . '%')
-                                ->where('campus_id', 'like', '%' . $session_admin_freshman_search['campus_id'] . '%')
                                 ->where('gender', 'like', '%' . $session_admin_freshman_search['gender'] . '%')
+                                ->where('campus_id', 'like', '%' . $session_admin_freshman_search['campus_id'] . '%')
                                 ->where(function($query) use($session_admin_freshman_search) {
                                     $query->where('name_sei', 'like', '%' . $session_admin_freshman_search['free'] . '%')
                                             ->orWhere('name_mei', 'like', '%' . $session_admin_freshman_search['free'] . '%')
@@ -106,8 +106,8 @@ class FreshmanController extends Controller
 
         if ($order == 1) {
             $freshmen = Freshman::where('id', 'like', '%' . $session_admin_freshman_search['id'] . '%')
-                                ->where('campus_id', 'like', '%' . $session_admin_freshman_search['campus_id'] . '%')
                                 ->where('gender', 'like', '%' . $session_admin_freshman_search['gender'] . '%')
+                                ->where('campus_id', 'like', '%' . $session_admin_freshman_search['campus_id'] . '%')
                                 ->where(function($query) use($session_admin_freshman_search) {
                                     $query->where('name_sei', 'like', '%' . $session_admin_freshman_search['free'] . '%')
                                             ->orWhere('name_mei', 'like', '%' . $session_admin_freshman_search['free'] . '%')
@@ -118,8 +118,8 @@ class FreshmanController extends Controller
                                 ->simplePaginate(10);
         } else {
             $freshmen = Freshman::where('id', 'like', '%' . $session_admin_freshman_search['id'] . '%')
-                                ->where('campus_id', 'like', '%' . $session_admin_freshman_search['campus_id'] . '%')
                                 ->where('gender', 'like', '%' . $session_admin_freshman_search['gender'] . '%')
+                                ->where('campus_id', 'like', '%' . $session_admin_freshman_search['campus_id'] . '%')
                                 ->where(function($query) use($session_admin_freshman_search) {
                                     $query->where('name_sei', 'like', '%' . $session_admin_freshman_search['free'] . '%')
                                             ->orWhere('name_mei', 'like', '%' . $session_admin_freshman_search['free'] . '%')

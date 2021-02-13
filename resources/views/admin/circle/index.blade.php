@@ -133,10 +133,10 @@
                     <a href="{{ route('admin.circle', ['page' => $page, 'order' => 1]) }}"><i class="far fa-caret-square-down"></i></a>
                 @endif
             </span>
+            <span class="name">サークル名</span>
             <span class="campus">キャンパス</span>
             <span class="category">カテゴリ1</span>
             <span class="subcategory">カテゴリ2</span>
-            <span class="name">サークル名</span>
             <span class="created_at">登録日時</span>
             <span class="edit">編集</span>
             <span class="delete">削除</span>
@@ -144,6 +144,7 @@
         @foreach ($circles as $circle)
             <div class="content">
                 <span class="id">{{ $circle['id'] }}</span>
+                <a href="{{ route('admin.circle.detail', ['id' => $circle['id'], 'page' => $page, 'order' => $order]) }}" class="name">{{ $circle['name'] }}</a>
                 <span class="campus">{{ $circle->getCampusName() }}</span>
                 <span class="category">
                     @foreach (config('master.circle_category') as $index => $value)
@@ -151,7 +152,6 @@
                     @endforeach
                 </span>
                 <span class="subcategory">{{ $circle->getCircleSubcategoryName() }}</span>
-                <a href="{{ route('admin.circle.detail', ['id' => $circle['id'], 'page' => $page, 'order' => $order]) }}" class="name">{{ $circle['name'] }}</a>
                 <span class="created_at">{{ $circle['created_at'] }}</span>
                 <a href="{{ route('admin.circle.edit', ['id' => $circle['id'], 'page' => $page, 'order' => $order]) }}" class="edit">編集</a>
                 <a href="{{ route('admin.circle.delete', ['id' => $circle['id'], 'page' => $page, 'order' => $order]) }}" class="delete">削除</a>

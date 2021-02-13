@@ -133,10 +133,10 @@
                     <a href="<?php echo e(route('admin.circle', ['page' => $page, 'order' => 1])); ?>"><i class="far fa-caret-square-down"></i></a>
                 <?php endif; ?>
             </span>
+            <span class="name">サークル名</span>
             <span class="campus">キャンパス</span>
             <span class="category">カテゴリ1</span>
             <span class="subcategory">カテゴリ2</span>
-            <span class="name">サークル名</span>
             <span class="created_at">登録日時</span>
             <span class="edit">編集</span>
             <span class="delete">削除</span>
@@ -144,6 +144,7 @@
         <?php $__currentLoopData = $circles; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $circle): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
             <div class="content">
                 <span class="id"><?php echo e($circle['id']); ?></span>
+                <a href="<?php echo e(route('admin.circle.detail', ['id' => $circle['id'], 'page' => $page, 'order' => $order])); ?>" class="name"><?php echo e($circle['name']); ?></a>
                 <span class="campus"><?php echo e($circle->getCampusName()); ?></span>
                 <span class="category">
                     <?php $__currentLoopData = config('master.circle_category'); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $index => $value): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
@@ -151,7 +152,6 @@
                     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                 </span>
                 <span class="subcategory"><?php echo e($circle->getCircleSubcategoryName()); ?></span>
-                <a href="<?php echo e(route('admin.circle.detail', ['id' => $circle['id'], 'page' => $page, 'order' => $order])); ?>" class="name"><?php echo e($circle['name']); ?></a>
                 <span class="created_at"><?php echo e($circle['created_at']); ?></span>
                 <a href="<?php echo e(route('admin.circle.edit', ['id' => $circle['id'], 'page' => $page, 'order' => $order])); ?>" class="edit">編集</a>
                 <a href="<?php echo e(route('admin.circle.delete', ['id' => $circle['id'], 'page' => $page, 'order' => $order])); ?>" class="delete">削除</a>

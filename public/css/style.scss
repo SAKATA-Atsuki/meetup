@@ -2537,17 +2537,17 @@ body {
         }
     }
 
-    .category {
-        width: 100px;
-        border-right: solid 1px black;
-    }
-
     .name {
         width: 550px;
         border-right: solid 1px black;
         text-decoration: none;
     }
-    
+
+    .category {
+        width: 100px;
+        border-right: solid 1px black;
+    }
+
     .created_at {
         width: 200px;
         border-right: solid 1px black;
@@ -2610,11 +2610,6 @@ body {
         }
     }
 
-    .campus {
-        width: 100px;
-        border-right: solid 1px black;
-    }
-
     .name {
         width: 250px;
         border-right: solid 1px black;
@@ -2629,6 +2624,11 @@ body {
 
     .gender {
         width: 50px;
+        border-right: solid 1px black;
+    }
+
+    .campus {
+        width: 100px;
         border-right: solid 1px black;
     }
     
@@ -2694,6 +2694,12 @@ body {
         }
     }
 
+    .name {
+        width: 250px;
+        border-right: solid 1px black;
+        text-decoration: none;
+    }
+
     .campus {
         width: 100px;
         border-right: solid 1px black;
@@ -2708,12 +2714,6 @@ body {
         width: 200px;
         border-right: solid 1px black;
     }
-
-    .name {
-        width: 250px;
-        border-right: solid 1px black;
-        text-decoration: none;
-    }
     
     .created_at {
         width: 200px;
@@ -2724,6 +2724,65 @@ body {
         width: 50px;
         border-right: solid 1px black;
         text-decoration: none;
+    }
+
+    .delete {
+        width: 50px;
+        text-decoration: none;
+    }
+}
+
+/* admin/thread/index ---------------------------------------------------------------------------------------------------- */
+.admin_thread_result {
+    width: 1000px;
+    margin: 0 auto;
+    margin-top: 50px;
+    text-align: center;
+
+    .title {
+        display: flex;
+        border-top: solid 2px black;
+        border-left: solid 2px black;
+        border-right: solid 2px black;
+        background-color: rgb(154, 2, 0);
+        color: white;
+    }
+
+    .content {
+        display: flex;
+        border-top: solid 1px black;    
+        border-left: solid 2px black;
+        border-right: solid 2px black;
+    }
+
+    .id {
+        width: 50px;
+        border-right: solid 1px black;
+
+        a {
+            color: white;
+        }
+    }
+
+    .thread_title {
+        width: 200px;
+        border-right: solid 1px black;
+        text-decoration: none;
+    }
+
+    .circle {
+        width: 250px;
+        border-right: solid 1px black;
+    }
+
+    .author {
+        width: 250px;
+        border-right: solid 1px black;
+    }
+    
+    .created_at {
+        width: 200px;
+        border-right: solid 1px black;
     }
 
     .delete {

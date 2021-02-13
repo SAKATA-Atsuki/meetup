@@ -165,3 +165,10 @@ Route::post('admin/circle/edit/check', 'Admin\CircleController@checkEdit')->name
 Route::post('admin/circle/edit/update', 'Admin\CircleController@update')->name('admin.circle.edit.update')->middleware('auth:admin');
 Route::get('admin/circle/delete', 'Admin\CircleController@getDelete')->name('admin.circle.delete')->middleware('auth:admin');
 Route::post('admin/circle/delete', 'Admin\CircleController@postDelete')->middleware('auth:admin');
+
+// admin.thread
+Route::get('admin/thread', 'Admin\ThreadController@index')->name('admin.thread')->middleware('auth:admin');
+Route::post('admin/thread', 'Admin\ThreadController@search')->middleware('auth:admin');
+Route::get('admin/thread/detail', 'Admin\ThreadController@detail')->name('admin.thread.detail')->middleware('auth:admin');
+Route::get('admin/thread/delete', 'Admin\ThreadController@getDelete')->name('admin.thread.delete')->middleware('auth:admin');
+Route::post('admin/thread/delete', 'Admin\ThreadController@postDelete')->middleware('auth:admin');

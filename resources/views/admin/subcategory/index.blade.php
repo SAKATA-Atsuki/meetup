@@ -67,8 +67,8 @@
                     <a href="{{ route('admin.subcategory', ['page' => $page, 'order' => 1]) }}"><i class="far fa-caret-square-down"></i></a>
                 @endif
             </span>
-            <span class="category">カテゴリ1</span>
             <span class="name">名前</span>
+            <span class="category">カテゴリ1</span>
             <span class="created_at">登録日時</span>
             <span class="edit">編集</span>
             <span class="delete">削除</span>
@@ -76,12 +76,12 @@
         @foreach ($subcategories as $subcategory)
             <div class="content">
                 <span class="id">{{ $subcategory['id'] }}</span>
+                <a href="{{ route('admin.subcategory.detail', ['id' => $subcategory['id'], 'page' => $page, 'order' => $order]) }}" class="name">{{ $subcategory['name'] }}</a>
                 <span class="category">
                     @foreach (config('master.circle_category') as $index => $value)
                         @if ($subcategory['circle_category_id'] == $index) {{ $value }} @endif
                     @endforeach
                 </span>
-                <a href="{{ route('admin.subcategory.detail', ['id' => $subcategory['id'], 'page' => $page, 'order' => $order]) }}" class="name">{{ $subcategory['name'] }}</a>
                 <span class="created_at">{{ $subcategory['created_at'] }}</span>
                 <a href="{{ route('admin.subcategory.edit', ['id' => $subcategory['id'], 'page' => $page, 'order' => $order]) }}" class="edit">編集</a>
                 <a href="{{ route('admin.subcategory.delete', ['id' => $subcategory['id'], 'page' => $page, 'order' => $order]) }}" class="delete">削除</a>

@@ -67,8 +67,8 @@
                     <a href="<?php echo e(route('admin.subcategory', ['page' => $page, 'order' => 1])); ?>"><i class="far fa-caret-square-down"></i></a>
                 <?php endif; ?>
             </span>
-            <span class="category">カテゴリ1</span>
             <span class="name">名前</span>
+            <span class="category">カテゴリ1</span>
             <span class="created_at">登録日時</span>
             <span class="edit">編集</span>
             <span class="delete">削除</span>
@@ -76,12 +76,12 @@
         <?php $__currentLoopData = $subcategories; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $subcategory): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
             <div class="content">
                 <span class="id"><?php echo e($subcategory['id']); ?></span>
+                <a href="<?php echo e(route('admin.subcategory.detail', ['id' => $subcategory['id'], 'page' => $page, 'order' => $order])); ?>" class="name"><?php echo e($subcategory['name']); ?></a>
                 <span class="category">
                     <?php $__currentLoopData = config('master.circle_category'); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $index => $value): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                         <?php if($subcategory['circle_category_id'] == $index): ?> <?php echo e($value); ?> <?php endif; ?>
                     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                 </span>
-                <a href="<?php echo e(route('admin.subcategory.detail', ['id' => $subcategory['id'], 'page' => $page, 'order' => $order])); ?>" class="name"><?php echo e($subcategory['name']); ?></a>
                 <span class="created_at"><?php echo e($subcategory['created_at']); ?></span>
                 <a href="<?php echo e(route('admin.subcategory.edit', ['id' => $subcategory['id'], 'page' => $page, 'order' => $order])); ?>" class="edit">編集</a>
                 <a href="<?php echo e(route('admin.subcategory.delete', ['id' => $subcategory['id'], 'page' => $page, 'order' => $order])); ?>" class="delete">削除</a>

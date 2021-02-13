@@ -33,6 +33,16 @@
             </div>    
             <div class="form">
                 <div class="left">
+                    <span>性別</span>
+                </div>
+                <div class="right">
+                    @foreach (config('master.gender') as $index => $value)
+                        <input type="radio" name="gender" value="{{ $index }}" @if ($session_admin_freshman_search['gender'] == $index) checked @endif>{{ $value }}　
+                    @endforeach
+                </div>
+            </div>    
+            <div class="form">
+                <div class="left">
                     <span>キャンパス</span>
                 </div>
                 <div class="right">
@@ -42,16 +52,6 @@
                             <option value="{{ $campus['id'] }}" @if ($session_admin_freshman_search['campus_id'] == $campus['id']) selected @endif>{{ $campus['name'] }}</option>
                         @endforeach
                     </select>
-                </div>
-            </div>    
-            <div class="form">
-                <div class="left">
-                    <span>性別</span>
-                </div>
-                <div class="right">
-                    @foreach (config('master.gender') as $index => $value)
-                        <input type="radio" name="gender" value="{{ $index }}" @if ($session_admin_freshman_search['gender'] == $index) checked @endif>{{ $value }}　
-                    @endforeach
                 </div>
             </div>    
             <div class="form">
@@ -80,10 +80,10 @@
                     <a href="{{ route('admin.freshman', ['page' => $page, 'order' => 1]) }}"><i class="far fa-caret-square-down"></i></a>
                 @endif
             </span>
-            <span class="campus">キャンパス</span>
             <span class="name">氏名</span>
             <span class="nickname">ニックネーム</span>
             <span class="gender">性別</span>
+            <span class="campus">キャンパス</span>
             <span class="created_at">登録日時</span>
             <span class="edit">編集</span>
             <span class="delete">削除</span>
@@ -91,7 +91,6 @@
         @foreach ($freshmen as $freshman)
             <div class="content">
                 <span class="id">{{ $freshman['id'] }}</span>
-                <span class="campus">{{ $freshman->getCampusName() }}</span>
                 <a href="{{ route('admin.freshman.detail', ['id' => $freshman['id'], 'page' => $page, 'order' => $order]) }}" class="name">{{ $freshman['name_sei'] }}　{{ $freshman['name_mei'] }}</a>
                 <span class="nickname">{{ $freshman['nickname'] }}</span>
                 <span class="gender">
@@ -99,6 +98,7 @@
                         @if ($freshman['gender'] == $index) {{ $value }} @endif
                     @endforeach
                 </span>
+                <span class="campus">{{ $freshman->getCampusName() }}</span>
                 <span class="created_at">{{ $freshman['created_at'] }}</span>
                 <a href="{{ route('admin.freshman.edit', ['id' => $freshman['id'], 'page' => $page, 'order' => $order]) }}" class="edit">編集</a>
                 <a href="{{ route('admin.freshman.delete', ['id' => $freshman['id'], 'page' => $page, 'order' => $order]) }}" class="delete">削除</a>
