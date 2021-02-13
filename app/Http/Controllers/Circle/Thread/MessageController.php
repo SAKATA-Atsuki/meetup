@@ -73,8 +73,16 @@ class MessageController extends Controller
         return redirect()->route('circle.thread.message', ['id' => $request->id, 'pg' => $request->pg, 'thread_id' => $request->thread_id, 'page' => $request->page]);
     }    
 
-    // メッセージ削除
-    public function delete(Request $request)
+    // メッセージ削除確認
+    public function getDelete(Request $request)
+    {
+        $data = $request->all();
+
+        return view('circle.thread.deleteMessage', compact('data'));
+    }
+
+    // メッセージ削除処理
+    public function postDelete(Request $request)
     {
         Message::find($request->message_id)->delete();
 

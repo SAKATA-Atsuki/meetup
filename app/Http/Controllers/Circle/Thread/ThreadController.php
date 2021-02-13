@@ -164,8 +164,16 @@ class ThreadController extends Controller
         return redirect()->route('circle.thread', ['id' => $request->id, 'pg' => $request->pg]);
     }
 
-    // スレッド削除
-    public function delete(Request $request)
+    // スレッド削除確認
+    public function getDelete(Request $request)
+    {
+        $data = $request->all();
+
+        return view('circle.thread.deleteThread', compact('data'));
+    }
+
+    // スレッド削除処理
+    public function postDelete(Request $request)
     {
         Thread::find($request->thread_id)->delete();
         Message::where('thread_id', $request->thread_id)->delete();

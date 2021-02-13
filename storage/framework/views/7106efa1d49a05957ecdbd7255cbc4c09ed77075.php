@@ -70,12 +70,12 @@
                 <span class="title"><?php echo e($thread['title']); ?></span>
                 <?php if(Auth::guard('freshman')->check()): ?>
                     <?php if(Auth::guard('freshman')->user()->id == $thread['freshman_id']): ?>
-                        <a href="<?php echo e(route('circle.thread.delete', ['id' => $circle['id'], 'pg' => $pg, 'thread_id' => $thread['id'], 'freshman_id' => $thread['freshman_id']])); ?>" class="trash"><i class="fas fa-trash-alt"></i></a>
+                        <a href="<?php echo e(route('circle.thread.delete', ['id' => $circle['id'], 'pg' => $pg, 'thread_id' => $thread['id'], 'page' => $page, 'freshman_id' => $thread['freshman_id']])); ?>" class="trash"><i class="fas fa-trash-alt"></i></a>
                     <?php endif; ?>
                 <?php endif; ?>
                 <?php if(Auth::guard('circle')->check()): ?>
                     <?php if(Auth::guard('circle')->user()->id == $thread['circle_id']): ?>
-                        <a href="<?php echo e(route('circle.thread.delete', ['id' => $circle['id'], 'pg' => $pg, 'thread_id' => $thread['id']])); ?>" class="trash"><i class="fas fa-trash-alt"></i></a>
+                        <a href="<?php echo e(route('circle.thread.delete', ['id' => $circle['id'], 'pg' => $pg, 'thread_id' => $thread['id'], 'page' => $page])); ?>" class="trash"><i class="fas fa-trash-alt"></i></a>
                     <?php endif; ?>
                 <?php endif; ?>
             </div>

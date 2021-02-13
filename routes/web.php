@@ -44,7 +44,8 @@ Route::get('circle/thread/register', 'Circle\Thread\ThreadController@register')-
 Route::get('circle/thread/register/favorite', 'Circle\Thread\ThreadController@registerFavorite')->name('circle.thread.register.favorite')->middleware(FreshmanLogin::class);
 Route::get('circle/thread/register/unfavorite', 'Circle\Thread\ThreadController@registerUnfavorite')->name('circle.thread.register.unfavorite')->middleware(FreshmanLogin::class);
 Route::post('circle/thread/register/store', 'Circle\Thread\ThreadController@store')->name('circle.thread.register.store')->middleware(CreateThreadAndMessage::class);
-Route::get('circle/thread/delete', 'Circle\Thread\ThreadController@delete')->name('circle.thread.delete')->middleware(DeleteThreadAndMessage::class);
+Route::get('circle/thread/delete', 'Circle\Thread\ThreadController@getDelete')->name('circle.thread.delete')->middleware(DeleteThreadAndMessage::class);
+Route::post('circle/thread/delete', 'Circle\Thread\ThreadController@postDelete');
 Route::get('circle/thread/freshman', 'Circle\Thread\ThreadController@freshman')->name('circle.thread.freshman');
 
 // circle.thread.message
@@ -52,7 +53,8 @@ Route::get('circle/thread/message', 'Circle\Thread\MessageController@index')->na
 Route::get('circle/thread/message/favorite', 'Circle\Thread\MessageController@favorite')->name('circle.thread.message.favorite')->middleware(FreshmanLogin::class);
 Route::get('circle/thread/message/unfavorite', 'Circle\Thread\MessageController@unfavorite')->name('circle.thread.message.unfavorite')->middleware(FreshmanLogin::class);
 Route::post('circle/thread/message/store', 'Circle\Thread\MessageController@store')->name('circle.thread.message.store')->middleware(CreateThreadAndMessage::class);
-Route::get('circle/thread/message/delete', 'Circle\Thread\MessageController@delete')->name('circle.thread.message.delete')->middleware(DeleteThreadAndMessage::class);
+Route::get('circle/thread/message/delete', 'Circle\Thread\MessageController@getDelete')->name('circle.thread.message.delete')->middleware(DeleteThreadAndMessage::class);
+Route::post('circle/thread/message/delete', 'Circle\Thread\MessageController@postDelete');
 Route::get('circle/thread/message/freshman', 'Circle\Thread\MessageController@freshman')->name('circle.thread.message.freshman');
 
 // freshman.mypage
