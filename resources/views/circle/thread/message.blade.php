@@ -84,7 +84,11 @@
                 <br>
                 <span>作成日時　{{ $thread['created_at'] }}</span>
             @else
-                <span>作成者　<a href="{{ route('circle.thread.message.freshman', ['id' => $circle['id'], 'pg' => $pg, 'thread_id' => $thread['id'], 'page' => $page, 'freshman_id' => $thread['freshman_id']]) }}" class="freshman">{{ $thread->getFreshmanNickname() }}</a></span>
+                @if (App\Models\Freshman::find($thread['freshman_id']))
+                    <span>作成者　<a href="{{ route('circle.thread.message.freshman', ['id' => $circle['id'], 'pg' => $pg, 'thread_id' => $thread['id'], 'page' => $page, 'freshman_id' => $thread['freshman_id']]) }}" class="freshman">{{ $thread->getFreshmanNickname() }}</a></span>
+                @else
+                    <span>作成者　<span class="freshman">{{ $thread->getFreshmanNickname() }}</span></span>
+                @endif
                 <br>
                 <span>作成日時　{{ $thread['created_at'] }}</span>
             @endif    
@@ -98,7 +102,11 @@
                         @if ($message['freshman_id'] == null)
                             <span class="circle">{{ $message->getCircleName() }}</span>
                         @else
-                            <a href="{{ route('circle.thread.message.freshman', ['id' => $circle['id'], 'pg' => $pg, 'thread_id' => $thread['id'], 'page' => $page, 'freshman_id' => $message['freshman_id']]) }}" class="freshman">{{ $message->getFreshmanNickname() }}</a>
+                            @if (App\Models\Freshman::find($message['freshman_id']))
+                                <a href="{{ route('circle.thread.message.freshman', ['id' => $circle['id'], 'pg' => $pg, 'thread_id' => $thread['id'], 'page' => $page, 'freshman_id' => $message['freshman_id']]) }}" class="freshman">{{ $message->getFreshmanNickname() }}</a>
+                            @else
+                                <span class="freshman">{{ $message->getFreshmanNickname() }}</span>
+                            @endif
                         @endif    
                         @if (Auth::guard('freshman')->check())
                             @if (Auth::guard('freshman')->user()->id == $message['freshman_id'])

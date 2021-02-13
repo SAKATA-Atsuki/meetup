@@ -13,7 +13,7 @@ class Message extends Model
 
     public function freshman()
     {
-        return $this->belongsTo('App\Models\Freshman');
+        return $this->belongsTo('App\Models\Freshman')->withTrashed();
     }
 
     public function getFreshmanNickname()

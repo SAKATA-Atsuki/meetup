@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Thread;
+use App\Models\Message;
 
 class ThreadController extends Controller
 {
@@ -116,6 +117,7 @@ class ThreadController extends Controller
         $order = $request->order;
 
         Thread::find($request->id)->delete();
+        Message::where('thread_id', $request->id)->delete();
 
         return redirect()->route('admin.thread', ['order' => $order]);
     }

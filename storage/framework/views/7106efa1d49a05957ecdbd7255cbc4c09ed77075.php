@@ -84,7 +84,11 @@
                 <br>
                 <span>作成日時　<?php echo e($thread['created_at']); ?></span>
             <?php else: ?>
-                <span>作成者　<a href="<?php echo e(route('circle.thread.message.freshman', ['id' => $circle['id'], 'pg' => $pg, 'thread_id' => $thread['id'], 'page' => $page, 'freshman_id' => $thread['freshman_id']])); ?>" class="freshman"><?php echo e($thread->getFreshmanNickname()); ?></a></span>
+                <?php if(App\Models\Freshman::find($thread['freshman_id'])): ?>
+                    <span>作成者　<a href="<?php echo e(route('circle.thread.message.freshman', ['id' => $circle['id'], 'pg' => $pg, 'thread_id' => $thread['id'], 'page' => $page, 'freshman_id' => $thread['freshman_id']])); ?>" class="freshman"><?php echo e($thread->getFreshmanNickname()); ?></a></span>
+                <?php else: ?>
+                    <span>作成者　<span class="freshman"><?php echo e($thread->getFreshmanNickname()); ?></span></span>
+                <?php endif; ?>
                 <br>
                 <span>作成日時　<?php echo e($thread['created_at']); ?></span>
             <?php endif; ?>    
@@ -98,7 +102,11 @@
                         <?php if($message['freshman_id'] == null): ?>
                             <span class="circle"><?php echo e($message->getCircleName()); ?></span>
                         <?php else: ?>
-                            <a href="<?php echo e(route('circle.thread.message.freshman', ['id' => $circle['id'], 'pg' => $pg, 'thread_id' => $thread['id'], 'page' => $page, 'freshman_id' => $message['freshman_id']])); ?>" class="freshman"><?php echo e($message->getFreshmanNickname()); ?></a>
+                            <?php if(App\Models\Freshman::find($message['freshman_id'])): ?>
+                                <a href="<?php echo e(route('circle.thread.message.freshman', ['id' => $circle['id'], 'pg' => $pg, 'thread_id' => $thread['id'], 'page' => $page, 'freshman_id' => $message['freshman_id']])); ?>" class="freshman"><?php echo e($message->getFreshmanNickname()); ?></a>
+                            <?php else: ?>
+                                <span class="freshman"><?php echo e($message->getFreshmanNickname()); ?></span>
+                            <?php endif; ?>
                         <?php endif; ?>    
                         <?php if(Auth::guard('freshman')->check()): ?>
                             <?php if(Auth::guard('freshman')->user()->id == $message['freshman_id']): ?>

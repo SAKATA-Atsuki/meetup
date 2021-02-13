@@ -8,6 +8,7 @@ use App\Http\Requests\FreshmanRegisterRequest;
 use App\Http\Requests\AdminFreshmanRequest;
 use App\Models\Campus;
 use App\Models\Freshman;
+use App\Models\Favorite;
 use Illuminate\Support\Facades\Hash;
 
 class FreshmanController extends Controller
@@ -247,6 +248,7 @@ class FreshmanController extends Controller
         $order = $request->order;
 
         Freshman::find($request->id)->delete();
+        Favorite::where('freshman_id', $request->id)->delete();
 
         return redirect()->route('admin.freshman', ['order' => $order]);
     }

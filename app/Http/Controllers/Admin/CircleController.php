@@ -9,6 +9,9 @@ use App\Http\Requests\AdminCircleRequest;
 use App\Models\Campus;
 use App\Models\Circle_subcategory;
 use App\Models\Circle;
+use App\Models\Thread;
+use App\Models\Message;
+use App\Models\Favorite;
 use Illuminate\Support\Facades\Hash;
 
 class CircleController extends Controller
@@ -269,6 +272,9 @@ class CircleController extends Controller
         $order = $request->order;
 
         Circle::find($request->id)->delete();
+        Thread::where('circle_id', $request->id)->delete();
+        Message::where('circle_id', $request->id)->delete();
+        Favorite::where('circle_id', $request->id)->delete();
 
         return redirect()->route('admin.circle', ['order' => $order]);
     }

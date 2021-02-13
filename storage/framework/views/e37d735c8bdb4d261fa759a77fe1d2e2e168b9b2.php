@@ -111,7 +111,11 @@
                 <?php if($thread['freshman_id'] == null): ?>
                     <p class="author circle"><?php echo e($thread->getCircleName()); ?></p>
                 <?php else: ?>
-                    <p class="author"><a href="<?php echo e(route('circle.thread.freshman', ['id' => $circle['id'], 'pg' => $pg, 'page' => $page, 'freshman_id' => $thread['freshman_id']])); ?>" class="freshman"><?php echo e($thread->getFreshmanNickname()); ?></a></p>
+                    <?php if(App\Models\Freshman::find($thread['freshman_id'])): ?>
+                        <p class="author"><a href="<?php echo e(route('circle.thread.freshman', ['id' => $circle['id'], 'pg' => $pg, 'page' => $page, 'freshman_id' => $thread['freshman_id']])); ?>" class="freshman"><?php echo e($thread->getFreshmanNickname()); ?></a></p>
+                    <?php else: ?>
+                        <p class="author freshman"><?php echo e($thread->getFreshmanNickname()); ?></p>
+                    <?php endif; ?>
                 <?php endif; ?>
             </div>
         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>

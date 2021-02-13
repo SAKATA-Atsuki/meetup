@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>新入生登録フォーム</title>
+    <title>新入生登録</title>
     <link rel="stylesheet" href="<?php echo e(asset('css/style.css')); ?>">
 </head>
 <body>
@@ -87,7 +87,6 @@
                 <input type="hidden" name="campus_id" value="<?php echo e($data['campus_id']); ?>">
                 <input type="hidden" name="email" value="<?php echo e($data['email']); ?>">
                 <input type="hidden" name="password" value="<?php echo e($data['password']); ?>">
-                <input type="hidden" name="password_check" value="<?php echo e($data['password']); ?>">
                 <input type="hidden" name="introduction" value="<?php echo e($data['introduction']); ?>">
                 <input type="submit" value="登録する" class="button_1">
                 <br><br>

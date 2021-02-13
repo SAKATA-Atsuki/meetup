@@ -17,13 +17,13 @@
             <?php if(Auth::guard('freshman')->check()): ?>
                 <p><?php echo e(Auth::guard('freshman')->user()->name_sei . Auth::guard('freshman')->user()->name_mei); ?>　様</p>
                 <div class="button">
-                    <a href="{{ route('freshman.mypage') }}" class="button_1">マイページ</a>
+                    <a href="<?php echo e(route('freshman.mypage')); ?>" class="button_1">マイページ</a>
                     <a href="<?php echo e(route('freshman.logout')); ?>" class="button_2">ログアウト</a>    
                 </div>
             <?php elseif(Auth::guard('circle')->check()): ?>
                 <p><?php echo e(Auth::guard('circle')->user()->name); ?>　様</p>
                 <div class="button">
-                    <a href="{{ route('circle.mypage') }}" class="button_3">マイページ</a>
+                    <a href="<?php echo e(route('circle.mypage')); ?>" class="button_3">マイページ</a>
                     <a href="<?php echo e(route('circle.logout')); ?>" class="button_4">ログアウト</a>    
                 </div>
             <?php else: ?>

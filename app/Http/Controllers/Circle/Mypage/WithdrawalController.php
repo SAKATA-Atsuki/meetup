@@ -5,6 +5,9 @@ namespace App\Http\Controllers\Circle\Mypage;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Models\Thread;
+use App\Models\Message;
+use App\Models\Favorite;
 
 class WithdrawalController extends Controller
 {
@@ -18,6 +21,9 @@ class WithdrawalController extends Controller
     public function delete(Request $request)
     {
         Auth::guard('circle')->user()->delete();
+        Thread::where('circle_id', Auth::guard('circle')->user()->id)->delete();
+        Message::where('circle_id', Auth::guard('circle')->user()->id)->delete();
+        Favorite::where('circle_id', Auth::guard('circle')->user()->id)->delete();
 
         return redirect()->route('top');
     }

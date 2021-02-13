@@ -9,6 +9,7 @@ use App\Models\Circle;
 use App\Models\Favorite;
 use App\Models\Thread;
 use App\Models\Freshman;
+use App\Models\Message;
 use Illuminate\Support\Facades\Auth;
 
 class ThreadController extends Controller
@@ -167,6 +168,7 @@ class ThreadController extends Controller
     public function delete(Request $request)
     {
         Thread::find($request->thread_id)->delete();
+        Message::where('thread_id', $request->thread_id)->delete();
 
         return redirect()->route('circle.thread', ['id' => $request->id, 'pg' => $request->pg]);
     }

@@ -110,7 +110,11 @@
                 @if ($thread['freshman_id'] == null)
                     <p class="author circle">{{ $thread->getCircleName() }}</p>
                 @else
-                    <p class="author"><a href="{{ route('circle.thread.freshman', ['id' => $circle['id'], 'pg' => $pg, 'page' => $page, 'freshman_id' => $thread['freshman_id']]) }}" class="freshman">{{ $thread->getFreshmanNickname() }}</a></p>
+                    @if (App\Models\Freshman::find($thread['freshman_id']))
+                        <p class="author"><a href="{{ route('circle.thread.freshman', ['id' => $circle['id'], 'pg' => $pg, 'page' => $page, 'freshman_id' => $thread['freshman_id']]) }}" class="freshman">{{ $thread->getFreshmanNickname() }}</a></p>
+                    @else
+                        <p class="author freshman">{{ $thread->getFreshmanNickname() }}</p>
+                    @endif
                 @endif
             </div>
         @endforeach
