@@ -73,7 +73,13 @@
         @foreach ($messages as $message)
             <div class="content">
                 <span class="id">{{ $message['id'] }}</span>
-                <a href="{{ route('admin.message.detail', ['id' => $message['id'], 'page' => $page, 'order' => $order]) }}" class="message">{{ $message['content'] }}</a>
+                <a href="{{ route('admin.message.detail', ['id' => $message['id'], 'page' => $page, 'order' => $order]) }}" class="message">
+                    @if (mb_strlen($message['content']) > 13)
+                        {{ mb_substr($message['content'], 0, 13) }}…
+                    @else
+                        {{ $message['content'] }}
+                    @endif
+                </a>
                 <span class="thread_title">{{ $message->getThreadTitle() }}</span>
                 @if ($message['freshman_id'] == null)
                     <span class="author">{{ $message->getCircleName() }}</span>

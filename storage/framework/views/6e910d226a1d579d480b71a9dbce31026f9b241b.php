@@ -73,7 +73,14 @@
         <?php $__currentLoopData = $messages; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $message): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
             <div class="content">
                 <span class="id"><?php echo e($message['id']); ?></span>
-                <a href="<?php echo e(route('admin.message.detail', ['id' => $message['id'], 'page' => $page, 'order' => $order])); ?>" class="message"><?php echo e($message['content']); ?></a>
+                <a href="<?php echo e(route('admin.message.detail', ['id' => $message['id'], 'page' => $page, 'order' => $order])); ?>" class="message">
+                    <?php if(mb_strlen($message['content']) > 13): ?>
+                        <?php echo e(mb_substr($message['content'], 0, 13)); ?>…
+                    <?php else: ?>
+                        <?php echo e($message['content']); ?>
+
+                    <?php endif; ?>
+                </a>
                 <span class="thread_title"><?php echo e($message->getThreadTitle()); ?></span>
                 <?php if($message['freshman_id'] == null): ?>
                     <span class="author"><?php echo e($message->getCircleName()); ?></span>
