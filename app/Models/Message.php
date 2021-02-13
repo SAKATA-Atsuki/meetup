@@ -35,4 +35,9 @@ class Message extends Model
     {
         return $this->belongsTo('App\Models\Thread');
     }
+
+    public function getThreadTitle()
+    {
+        return $this->thread->title;
+    }
 }

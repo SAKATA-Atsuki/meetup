@@ -172,3 +172,17 @@ Route::post('admin/thread', 'Admin\ThreadController@search')->middleware('auth:a
 Route::get('admin/thread/detail', 'Admin\ThreadController@detail')->name('admin.thread.detail')->middleware('auth:admin');
 Route::get('admin/thread/delete', 'Admin\ThreadController@getDelete')->name('admin.thread.delete')->middleware('auth:admin');
 Route::post('admin/thread/delete', 'Admin\ThreadController@postDelete')->middleware('auth:admin');
+
+// admin.message
+Route::get('admin/message', 'Admin\MessageController@index')->name('admin.message')->middleware('auth:admin');
+Route::post('admin/message', 'Admin\MessageController@search')->middleware('auth:admin');
+Route::get('admin/message/detail', 'Admin\MessageController@detail')->name('admin.message.detail')->middleware('auth:admin');
+Route::get('admin/message/delete', 'Admin\MessageController@getDelete')->name('admin.message.delete')->middleware('auth:admin');
+Route::post('admin/message/delete', 'Admin\MessageController@postDelete')->middleware('auth:admin');
+
+// admin.favorite
+Route::get('admin/favorite', 'Admin\FavoriteController@index')->name('admin.favorite')->middleware('auth:admin');
+Route::post('admin/favorite', 'Admin\FavoriteController@search')->middleware('auth:admin');
+Route::get('admin/favorite/detail', 'Admin\FavoriteController@detail')->name('admin.favorite.detail')->middleware('auth:admin');
+Route::get('admin/favorite/delete', 'Admin\FavoriteController@getDelete')->name('admin.favorite.delete')->middleware('auth:admin');
+Route::post('admin/favorite/delete', 'Admin\FavoriteController@postDelete')->middleware('auth:admin');
