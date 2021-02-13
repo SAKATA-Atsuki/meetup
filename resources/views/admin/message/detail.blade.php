@@ -35,7 +35,7 @@
                 <span>メッセージ</span>
             </div>
             <div class="right">
-                <span>{{ $message['content'] }}</span>
+                <span>{!! nl2br(e($message['content'])) !!}</span>
             </div>
         </div>
         <div class="check">
