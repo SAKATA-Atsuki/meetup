@@ -1385,6 +1385,44 @@ body {
   padding: 5px 0;
 }
 
+/* circle/thread/delete ---------------------------------------------------------------------------------------------------- */
+.circle_thread_delete_content {
+  text-align: center;
+}
+
+.circle_thread_delete_content h1 {
+  font-weight: lighter;
+}
+
+.circle_thread_delete_content .button {
+  margin: 50px 0;
+}
+
+.circle_thread_delete_content .button .button_1 {
+  cursor: pointer;
+  outline: none;
+  width: 250px;
+  font-size: 25px;
+  color: white;
+  background-color: #9a0200;
+  border-color: gray;
+  border-radius: 100px;
+  padding: 5px 0;
+}
+
+.circle_thread_delete_content .button .button_2 {
+  display: block;
+  text-decoration: none;
+  width: 246px;
+  font-size: 25px;
+  color: white;
+  background-color: #9a0200;
+  border: gray solid 2px;
+  border-radius: 100px;
+  padding: 5px 0;
+  margin: 0 auto;
+}
+
 /* freshman/mypage/index ---------------------------------------------------------------------------------------------------- */
 .freshman_mypage_content {
   width: 800px;

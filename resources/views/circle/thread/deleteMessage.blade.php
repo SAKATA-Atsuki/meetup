@@ -44,7 +44,7 @@
             @endif
         </div>
     </div>
-    <div class="admin_check_content">
+    <div class="circle_thread_delete_content">
         <form action="{{ route('circle.thread.message.delete') }}" method="POST">
             @csrf
             <h1>メッセージ削除</h1>

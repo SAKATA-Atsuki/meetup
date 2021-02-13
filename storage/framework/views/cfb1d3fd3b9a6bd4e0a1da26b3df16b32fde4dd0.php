@@ -44,7 +44,7 @@
             <?php endif; ?>
         </div>
     </div>
-    <div class="admin_check_content">
+    <div class="circle_thread_delete_content">
         <form action="<?php echo e(route('circle.thread.message.delete')); ?>" method="POST">
             <?php echo csrf_field(); ?>
             <h1>メッセージ削除</h1>
