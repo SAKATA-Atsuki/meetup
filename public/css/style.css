@@ -1657,6 +1657,7 @@ body {
   cursor: pointer;
   outline: none;
   width: 250px;
+  height: 52px;
   font-size: 25px;
   color: black;
   background-color: lightgreen;
