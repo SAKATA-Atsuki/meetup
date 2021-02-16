@@ -1660,7 +1660,7 @@ body {
   font-size: 25px;
   color: black;
   background-color: lightgreen;
-  border-color: green;
+  border: green solid 2px;
   border-radius: 100px;
   padding: 5px 0;
 }
