@@ -56,8 +56,8 @@ return [
     */
 
     'from' => [
-        'address' => env('MAIL_FROM_ADDRESS', 'sakata0604.hhnk@gmail.com'),
-        'name' => env('MAIL_FROM_NAME', 'meetup'),
+        'address' => env('MAIL_FROM_ADDRESS', 'ritsumeikan.meetup@gmail.com'),
+        'name' => env('MAIL_FROM_NAME', '立命館大学 - 新入生・サークル交流サイト'),
     ],
 
     /*

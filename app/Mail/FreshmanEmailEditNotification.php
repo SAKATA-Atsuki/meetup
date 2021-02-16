@@ -30,7 +30,7 @@ class FreshmanEmailEditNotification extends Mailable
      */
     public function build()
     {
-        return $this->subject('立命館大学 - 新入生・サークル交流サイト')
+        return $this->subject('メールアドレス変更')
                     ->view('freshman.mypage.text')
                     ->with(['auth_code' => $this->auth_code]);
     }

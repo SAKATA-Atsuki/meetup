@@ -43,7 +43,7 @@ class FreshmanPasswordResetNotification extends Notification
     public function toMail($notifiable)
     {
         return (new MailMessage)
-                    ->subject('立命館大学 - 新入生・サークル交流サイト')
+                    ->subject('パスワードリセット')
                     ->view('freshman.auth.passwords.text', ['url' => url(route('freshman.password.reset', ['token' => $this->token, 'email' => $notifiable->getEmailForPasswordReset()], false))]);
     }
 
