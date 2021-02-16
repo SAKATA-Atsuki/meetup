@@ -24,7 +24,7 @@ class CircleMypageEmailRequest extends FormRequest
     public function rules()
     {
         return [
-            'email' => 'required|max:200|email|unique:circles'
+            'email' => 'required|max:200|email|unique:circles|ends_with:ed.ritsumei.ac.jp'
         ];
     }
 
@@ -34,7 +34,8 @@ class CircleMypageEmailRequest extends FormRequest
             'email.required' => '※入力してください',
             'email.max' => "※200文字以内で入力してください",
             'email.email' => '※正しい形式で入力してください',
-            'email.unique' => '※このメールアドレスは既に登録されています'
+            'email.unique' => '※このメールアドレスは既に登録されています',
+            'email.ends_with' => '※立命館大学から発行されたメールアドレスを入力してください'
         ];
     }
 }

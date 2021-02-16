@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>サークルパスワードリセットフォーム</title>
+    <title>サークルパスワードリセット</title>
     <link rel="stylesheet" href="<?php echo e(asset('css/style.css')); ?>">
 </head>
 <body>
@@ -27,7 +27,7 @@
                     <span>メールアドレス</span>
                 </div>
                 <div class="right">
-                    <input type="text" name="email" value="<?php echo e(old('email')); ?>" size="39">
+                    <input type="text" name="email" value="<?php echo e(old('email')); ?>" size="39" placeholder="ab0123cd@ed.ritsumei.ac.jp">
                     <?php $__errorArgs = ['email'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :

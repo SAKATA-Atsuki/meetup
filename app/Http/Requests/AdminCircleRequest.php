@@ -31,7 +31,7 @@ class AdminCircleRequest extends FormRequest
                 'campus_id' => 'required',
                 'circle_category_id' => 'required',
                 'circle_subcategory_id' => 'required',
-                'email' => ['required', 'max:200', 'email', Rule::unique('circles')->ignore($this->id)],
+                'email' => ['required', 'max:200', 'email', Rule::unique('circles')->ignore($this->id), 'ends_with:ed.ritsumei.ac.jp'],
             ];    
         } else {
             return [
@@ -39,7 +39,7 @@ class AdminCircleRequest extends FormRequest
                 'campus_id' => 'required',
                 'circle_category_id' => 'required',
                 'circle_subcategory_id' => 'required',
-                'email' => ['required', 'max:200', 'email', Rule::unique('circles')->ignore($this->id)],
+                'email' => ['required', 'max:200', 'email', Rule::unique('circles')->ignore($this->id), 'ends_with:ed.ritsumei.ac.jp'],
                 'password' => ['required', 'min:8', 'max:20', new Hankaku],
                 'password_check' => ['required', 'min:8', 'max:20', new Hankaku, 'same:password']
             ];    
@@ -58,6 +58,7 @@ class AdminCircleRequest extends FormRequest
             'email.max' => "※200文字以内で入力してください",
             'email.email' => '※正しい形式で入力してください',
             'email.unique' => '※このメールアドレスは既に登録されています',
+            'email.ends_with' => '※立命館大学から発行されたメールアドレスを入力してください',
             'password.required' => '※入力してください',
             'password.min' => '※8〜20文字で入力してください',
             'password.max' => '※8〜20文字で入力してください',

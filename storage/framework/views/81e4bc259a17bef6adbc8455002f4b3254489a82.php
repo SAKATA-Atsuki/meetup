@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>サークル登録フォーム</title>
+    <title>サークル登録</title>
     <link rel="stylesheet" href="<?php echo e(asset('css/style.css')); ?>">
 </head>
 <body>
@@ -58,7 +58,7 @@
                 <span>メールアドレス</span>
             </div>
             <div class="right">
-                <span><?php echo e($data['email']); ?></span>
+                <span><?php echo e($data['rainbow_id']); ?>@ed.ritsumei.ac.jp</span>
             </div>
         </div>
         <div class="check">
@@ -84,7 +84,7 @@
                 <input type="hidden" name="campus_id" value="<?php echo e($data['campus_id']); ?>">
                 <input type="hidden" name="circle_category_id" value="<?php echo e($data['circle_category_id']); ?>">
                 <input type="hidden" name="circle_subcategory_id" value="<?php echo e($data['circle_subcategory_id']); ?>">
-                <input type="hidden" name="email" value="<?php echo e($data['email']); ?>">
+                <input type="hidden" name="rainbow_id" value="<?php echo e($data['rainbow_id']); ?>">
                 <input type="hidden" name="password" value="<?php echo e($data['password']); ?>">
                 <input type="hidden" name="introduction" value="<?php echo e($data['introduction']); ?>">
                 <input type="submit" value="登録する" class="button_1">

@@ -161,7 +161,7 @@ unset($__errorArgs, $__bag); ?>
                     <span>メールアドレス</span>
                 </div>
                 <div class="right">
-                    <input type="text" name="email" value="<?php echo e(old('email')); ?>" size="39">
+                    <input type="text" name="email" value="<?php echo e(old('email')); ?>" size="39" placeholder="ab0123cd@ed.ritsumei.ac.jp">
                     <?php $__errorArgs = ['email'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
