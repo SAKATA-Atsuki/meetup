@@ -18,7 +18,7 @@ class CreateFavoritesTable extends Migration
             $table->integer('freshman_id')->comment('新入生ID');
             $table->integer('circle_id')->comment('サークルID');
             $table->timestamp('created_at')->nullable($value = true)->comment('登録日時');
-            $table->timestamp('updated_at')->nullable($value = true)->comment('編集日時');
+            $table->timestamp('updated_at')->nullable($value = true)->comment('更新日時');
             $table->softDeletes()->comment('削除日時');
         });
     }

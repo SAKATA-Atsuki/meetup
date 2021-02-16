@@ -24,7 +24,7 @@ class CreateCirclesTable extends Migration
             $table->text('introduction')->nullable($value = true)->comment('サークル紹介');
             $table->integer('auth_code')->nullable($value = true)->comment('認証コード');
             $table->timestamp('created_at')->nullable($value = true)->comment('登録日時');
-            $table->timestamp('updated_at')->nullable($value = true)->comment('編集日時');
+            $table->timestamp('updated_at')->nullable($value = true)->comment('更新日時');
             $table->softDeletes()->comment('削除日時');
         });
     }
