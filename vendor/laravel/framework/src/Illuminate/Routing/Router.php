@@ -1252,9 +1252,9 @@ class Router implements BindingRegistrar, RegistrarContract
      */
     public function emailVerification()
     {
-        $this->get('user/email/verify', 'User\Auth\VerificationController@show')->name('user.verification.notice');
-        $this->get('user/email/verify/{id}/{hash}', 'User\Auth\VerificationController@verify')->name('user.verification.verify');
-        $this->post('user/email/resend', 'User\Auth\VerificationController@resend')->name('user.verification.resend');
+        $this->get('user/email/verify', 'User\Auth\VerificationController@show')->name('verification.notice');
+        $this->get('user/email/verify/{id}/{hash}', 'User\Auth\VerificationController@verify')->name('verification.verify');
+        $this->post('user/email/resend', 'User\Auth\VerificationController@resend')->name('verification.resend');
     }
 
     /**
