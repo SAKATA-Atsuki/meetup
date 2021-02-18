@@ -122,87 +122,6 @@ body {
   padding: 5px 0;
 }
 
-.header .right .form {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.header .right .form .freshman .button {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  margin-right: 10px;
-  margin-top: 0;
-}
-
-.header .right .form .freshman .button .button_1 {
-  text-decoration: none;
-  text-align: center;
-  width: 200px;
-  font-size: 20px;
-  color: black;
-  background-color: lightgreen;
-  border: black solid 2px;
-  border-radius: 100px;
-  padding: 5px 0;
-  margin: 5px 0;
-}
-
-.header .right .form .freshman .button .button_2 {
-  text-decoration: none;
-  text-align: center;
-  width: 200px;
-  font-size: 20px;
-  color: black;
-  background-color: lightgreen;
-  border: black solid 2px;
-  border-radius: 100px;
-  padding: 5px 0;
-  margin-bottom: 5px;
-}
-
-.header .right .form .circle .button {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  margin-top: 0;
-}
-
-.header .right .form .circle .button .button_1 {
-  text-decoration: none;
-  text-align: center;
-  width: 200px;
-  font-size: 20px;
-  color: black;
-  background-color: lightblue;
-  border: black solid 2px;
-  border-radius: 100px;
-  padding: 5px 0;
-  margin: 5px 0;
-}
-
-.header .right .form .circle .button .button_2 {
-  text-decoration: none;
-  text-align: center;
-  width: 200px;
-  font-size: 20px;
-  color: black;
-  background-color: lightblue;
-  border: black solid 2px;
-  border-radius: 100px;
-  padding: 5px 0;
-  margin-bottom: 5px;
-}
-
 .top_search {
   text-align: center;
   background-color: white;
@@ -372,6 +291,53 @@ body {
 
 .top_result .button .pagination li:last-child a {
   border-radius: 0 40px 40px 0;
+}
+
+.top_content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 800px;
+  margin: 100px auto;
+}
+
+.top_content .buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.top_content .buttons .button_1 {
+  text-decoration: none;
+  text-align: center;
+  width: 250px;
+  font-size: 25px;
+  color: black;
+  background-color: lightgreen;
+  border: green solid 2px;
+  border-radius: 100px;
+  padding: 5px 0;
+  margin-bottom: 30px;
+}
+
+.top_content .buttons .button_2 {
+  text-decoration: none;
+  text-align: center;
+  width: 250px;
+  font-size: 25px;
+  color: black;
+  background-color: lightblue;
+  border: blue solid 2px;
+  border-radius: 100px;
+  padding: 5px 0;
+  margin-bottom: 30px;
 }
 
 /* freshman/register ---------------------------------------------------------------------------------------------------- */

@@ -6,7 +6,7 @@ use App\Providers\RouteServiceProvider;
 use Closure;
 use Illuminate\Support\Facades\Auth;
 
-class CircleMypage
+class Login
 {
     /**
      * Handle an incoming request.
@@ -17,7 +17,7 @@ class CircleMypage
      */
     public function handle($request, Closure $next)
     {
-        if (Auth::guard('circle')->check()) {
+        if (Auth::guard('freshman')->check() || Auth::guard('circle')->check()) {
             return $next($request);
         } else {
             return redirect(RouteServiceProvider::TOP);

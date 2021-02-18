@@ -109,79 +109,6 @@ body {
                 padding: 5px 0;        
             }
         }
-
-        .form {
-            display: flex;
-
-            .freshman {
-                .button {
-                    display: flex;
-                    flex-direction: column;
-                    margin-right: 10px;
-                    margin-top: 0;
-        
-                    .button_1 {
-                        text-decoration: none;
-                        text-align: center;
-                        width: 200px;
-                        font-size: 20px;
-                        color: black;
-                        background-color: lightgreen;
-                        border: black solid 2px;
-                        border-radius: 100px;
-                        padding: 5px 0;
-                        margin: 5px 0;
-                    }
-        
-                    .button_2 {
-                        text-decoration: none;
-                        text-align: center;
-                        width: 200px;
-                        font-size: 20px;
-                        color: black;
-                        background-color: lightgreen;
-                        border: black solid 2px;
-                        border-radius: 100px;
-                        padding: 5px 0;
-                        margin-bottom: 5px;
-                    }
-                }
-            }
-    
-            .circle {
-                .button {
-                    display: flex;
-                    flex-direction: column;
-                    margin-top: 0;
-        
-                    .button_1 {
-                        text-decoration: none;
-                        text-align: center;
-                        width: 200px;
-                        font-size: 20px;
-                        color: black;
-                        background-color: lightblue;
-                        border: black solid 2px;
-                        border-radius: 100px;
-                        padding: 5px 0;
-                        margin: 5px 0;
-                    }
-        
-                    .button_2 {
-                        text-decoration: none;
-                        text-align: center;
-                        width: 200px;
-                        font-size: 20px;
-                        color: black;
-                        background-color: lightblue;
-                        border: black solid 2px;
-                        border-radius: 100px;
-                        padding: 5px 0;
-                        margin-bottom: 5px;
-                    }
-                }
-            }    
-        }
     }
 }
 
@@ -345,6 +272,44 @@ body {
                     }
                 }
             }
+        }
+    }
+}
+
+.top_content {
+    display: flex;
+    justify-content: space-between;
+    width: 800px;
+    margin: 100px auto;
+
+    .buttons {
+        display: flex;
+        flex-direction: column;
+
+        .button_1 {
+            text-decoration: none;
+            text-align: center;
+            width: 250px;
+            font-size: 25px;
+            color: black;
+            background-color: lightgreen;
+            border: green solid 2px;
+            border-radius: 100px;
+            padding: 5px 0;
+            margin-bottom: 30px;
+        }
+
+        .button_2 {
+            text-decoration: none;
+            text-align: center;
+            width: 250px;
+            font-size: 25px;
+            color: black;
+            background-color: lightblue;
+            border: blue solid 2px;
+            border-radius: 100px;
+            padding: 5px 0;
+            margin-bottom: 30px;
         }
     }
 }
