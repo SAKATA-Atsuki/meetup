@@ -14,9 +14,9 @@ class AdminsTableSeeder extends Seeder
     public function run()
     {
         DB::table('admins')->insert([
-            'login_id' => 'admin',
+            'login_id' => 'rm0183rs',
             'name' => '坂田淳樹',
-            'password' => Hash::make('admin')
+            'password' => Hash::make('Zny0e0Pt')
         ]);
     }
 }
