@@ -1182,12 +1182,16 @@ class Router implements BindingRegistrar, RegistrarContract
             // freshman
             $this->get('freshman/register', 'Freshman\Auth\RegisterController@showRegistrationForm')->name('freshman.register');
             $this->post('freshman/register', 'Freshman\Auth\RegisterController@register');
+            $this->post('freshman/register/send', 'Freshman\Auth\RegisterController@send')->name('freshman.register.send');
+            $this->get('freshman/register/auth', 'Freshman\Auth\RegisterController@auth')->name('freshman.register.auth');
             $this->post('freshman/register/store', 'Freshman\Auth\RegisterController@store')->name('freshman.register.store');
             
             // circle
             $this->get('circle/register', 'Circle\Auth\RegisterController@showRegistrationForm')->name('circle.register');
             $this->post('circle/register/category', 'Circle\Auth\RegisterController@category')->name('circle.register.category');
             $this->post('circle/register', 'Circle\Auth\RegisterController@register');
+            $this->post('circle/register/send', 'Circle\Auth\RegisterController@send')->name('circle.register.send');
+            $this->get('circle/register/auth', 'Circle\Auth\RegisterController@auth')->name('circle.register.auth');
             $this->post('circle/register/store', 'Circle\Auth\RegisterController@store')->name('circle.register.store');
         }
 

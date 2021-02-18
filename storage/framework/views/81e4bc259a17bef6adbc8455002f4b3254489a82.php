@@ -58,7 +58,7 @@
                 <span>メールアドレス</span>
             </div>
             <div class="right">
-                <span><?php echo e($data['rainbow_id']); ?>@ed.ritsumei.ac.jp</span>
+                <span><?php echo e($data['email']); ?></span>
             </div>
         </div>
         <div class="check">
@@ -78,16 +78,16 @@
             </div>
         </div>
         <div class="button">
-            <form action="<?php echo e(route('circle.register.store')); ?>" method="POST">
+            <form action="<?php echo e(route('circle.register.send')); ?>" method="POST">
                 <?php echo csrf_field(); ?>
                 <input type="hidden" name="name" value="<?php echo e($data['name']); ?>">
                 <input type="hidden" name="campus_id" value="<?php echo e($data['campus_id']); ?>">
                 <input type="hidden" name="circle_category_id" value="<?php echo e($data['circle_category_id']); ?>">
                 <input type="hidden" name="circle_subcategory_id" value="<?php echo e($data['circle_subcategory_id']); ?>">
-                <input type="hidden" name="rainbow_id" value="<?php echo e($data['rainbow_id']); ?>">
+                <input type="hidden" name="email" value="<?php echo e($data['email']); ?>">
                 <input type="hidden" name="password" value="<?php echo e($data['password']); ?>">
                 <input type="hidden" name="introduction" value="<?php echo e($data['introduction']); ?>">
-                <input type="submit" value="登録する" class="button_1">
+                <input type="submit" value="認証メール送信" class="button_1">
                 <br><br>
                 <input type="submit" name="back" value="前に戻る" class="button_1">
             </form>

@@ -466,6 +466,63 @@ body {
   padding: 5px 0;
 }
 
+/* freshman/auth ---------------------------------------------------------------------------------------------------- */
+.freshman_auth_content {
+  text-align: center;
+}
+
+.freshman_auth_content h1 {
+  font-weight: lighter;
+}
+
+.freshman_auth_content .form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 417px;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.freshman_auth_content .form .left {
+  width: 130px;
+}
+
+.freshman_auth_content .form .right {
+  width: 287px;
+}
+
+.freshman_auth_content .button {
+  margin: 50px 0;
+}
+
+.freshman_auth_content .button .button_1 {
+  cursor: pointer;
+  outline: none;
+  width: 250px;
+  height: 52px;
+  font-size: 25px;
+  color: black;
+  background-color: lightgreen;
+  border: green solid 2px;
+  border-radius: 100px;
+  padding: 5px 0;
+}
+
+.freshman_auth_content .button .button_2 {
+  display: block;
+  text-decoration: none;
+  width: 246px;
+  font-size: 25px;
+  color: black;
+  background-color: lightgreen;
+  border: green solid 2px;
+  border-radius: 100px;
+  padding: 5px 0;
+  margin: 0 auto;
+}
+
 /* freshman/login ---------------------------------------------------------------------------------------------------- */
 .freshman_login_content {
   text-align: center;
@@ -709,6 +766,63 @@ body {
   border: blue solid 2px;
   border-radius: 100px;
   padding: 5px 0;
+}
+
+/* circle/auth ---------------------------------------------------------------------------------------------------- */
+.circle_auth_content {
+  text-align: center;
+}
+
+.circle_auth_content h1 {
+  font-weight: lighter;
+}
+
+.circle_auth_content .form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 417px;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.circle_auth_content .form .left {
+  width: 130px;
+}
+
+.circle_auth_content .form .right {
+  width: 287px;
+}
+
+.circle_auth_content .button {
+  margin: 50px 0;
+}
+
+.circle_auth_content .button .button_1 {
+  cursor: pointer;
+  outline: none;
+  width: 250px;
+  height: 52px;
+  font-size: 25px;
+  color: black;
+  background-color: lightblue;
+  border: blue solid 2px;
+  border-radius: 100px;
+  padding: 5px 0;
+}
+
+.circle_auth_content .button .button_2 {
+  display: block;
+  text-decoration: none;
+  width: 246px;
+  font-size: 25px;
+  color: black;
+  background-color: lightblue;
+  border: blue solid 2px;
+  border-radius: 100px;
+  padding: 5px 0;
+  margin: 0 auto;
 }
 
 /* circle/login ---------------------------------------------------------------------------------------------------- */

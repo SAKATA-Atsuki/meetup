@@ -78,7 +78,7 @@
             </div>
         </div>
         <div class="button">
-            <form action="<?php echo e(route('freshman.register.store')); ?>" method="POST">
+            <form action="<?php echo e(route('freshman.register.send')); ?>" method="POST">
                 <?php echo csrf_field(); ?>
                 <input type="hidden" name="name_sei" value="<?php echo e($data['name_sei']); ?>">
                 <input type="hidden" name="name_mei" value="<?php echo e($data['name_mei']); ?>">
@@ -88,7 +88,7 @@
                 <input type="hidden" name="email" value="<?php echo e($data['email']); ?>">
                 <input type="hidden" name="password" value="<?php echo e($data['password']); ?>">
                 <input type="hidden" name="introduction" value="<?php echo e($data['introduction']); ?>">
-                <input type="submit" value="登録する" class="button_1">
+                <input type="submit" value="認証メール送信" class="button_1">
                 <br><br>
                 <input type="submit" name="back" value="前に戻る" class="button_1">
             </form>

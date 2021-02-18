@@ -78,7 +78,7 @@
             </div>
         </div>
         <div class="button">
-            <form action="{{ route('circle.register.store') }}" method="POST">
+            <form action="{{ route('circle.register.send') }}" method="POST">
                 @csrf
                 <input type="hidden" name="name" value="{{ $data['name'] }}">
                 <input type="hidden" name="campus_id" value="{{ $data['campus_id'] }}">
@@ -87,7 +87,7 @@
                 <input type="hidden" name="email" value="{{ $data['email'] }}">
                 <input type="hidden" name="password" value="{{ $data['password'] }}">
                 <input type="hidden" name="introduction" value="{{ $data['introduction'] }}">
-                <input type="submit" value="登録する" class="button_1">
+                <input type="submit" value="認証メール送信" class="button_1">
                 <br><br>
                 <input type="submit" name="back" value="前に戻る" class="button_1">
             </form>

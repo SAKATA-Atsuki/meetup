@@ -13,7 +13,10 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\Request;
 use App\Http\Requests\CircleRegisterRequest;
+use App\Http\Requests\CircleEmailAuthRequest;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\CircleEmailEditNotification;
 
 class RegisterController extends Controller
 {
@@ -81,26 +84,56 @@ class RegisterController extends Controller
         return view('circle.auth.check', compact('data', 'campus', 'circle_subcategory'));
     }
 
-    // サークル登録
-    public function store(Request $request)
+    // 認証メール送信
+    public function send(Request $request)
     {
         if ($request->has('back')) {
             return redirect()->route('circle.register')->withInput($request->all());
         } else {
-            $circle = new Circle;
-            $circle->name = $request->name;
-            $circle->campus_id = $request->campus_id;
-            $circle->circle_category_id = $request->circle_category_id;
-            $circle->circle_subcategory_id = $request->circle_subcategory_id;
-            $circle->email = $request->email;
-            $circle->password = Hash::make($request->password);
-            $circle->introduction = $request->introduction;
-            $circle->save();
+            $auth_code = (int) str_pad(mt_Rand(0, 999999), 6, '0', STR_PAD_LEFT);
 
+            Mail::to($request->email)->send(new CircleEmailEditNotification($auth_code));
+    
+            $data = $request->all();
+            $data['auth_code'] = $auth_code;
+            $request->session()->put('circle_register', $data);
+    
+            return redirect()->route('circle.register.auth');
+        }
+    }
+
+    // 認証コード確認
+    public function auth(Request $request)
+    {
+        return view('circle.auth.auth');
+    }
+
+    // 新入生登録
+    public function store(CircleEmailAuthRequest $request)
+    {
+        $session_circle_register = $request->session()->get('circle_register');
+
+        if ($request->auth_code == $session_circle_register['auth_code']) {
+            $circle = new Circle;
+            $circle->name = $session_circle_register['name'];
+            $circle->campus_id = $session_circle_register['campus_id'];
+            $circle->circle_category_id = $session_circle_register['circle_category_id'];
+            $circle->circle_subcategory_id = $session_circle_register['circle_subcategory_id'];
+            $circle->email = $session_circle_register['email'];
+            $circle->password = Hash::make($session_circle_register['password']);
+            $circle->introduction = $session_circle_register['introduction'];
+            $circle->save();
+    
+            $request->session()->forget('circle_register');
+    
             $this->guard()->login($circle);
 
             return $this->registered($request, $circle)
                             ?: redirect($this->redirectPath());
+        } else {
+            $errors = ['auth_code' => '※認証コードが正しくありません'];
+            
+            return redirect()->route('circle.register.auth')->withInput()->withErrors($errors);
         }
     }
 
