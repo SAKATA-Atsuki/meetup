@@ -289,7 +289,7 @@
         'database' => 'meetup',
         'username' => 'meetup_user',
         'password' => 'Zny0e0Pt',
-        'unix_socket' => '',
+        'unix_socket' => '/Applications/MAMP/tmp/mysql/mysql.sock',
         'charset' => 'utf8mb4',
         'collation' => 'utf8mb4_unicode_ci',
         'prefix' => '',
