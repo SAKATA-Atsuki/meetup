@@ -15,7 +15,7 @@ use App\Http\Requests\FreshmanRegisterRequest;
 use App\Http\Requests\FreshmanEmailAuthRequest;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
-use App\Mail\FreshmanEmailEditNotification;
+use App\Mail\FreshmanRegisterNotification;
 
 class RegisterController extends Controller
 {
@@ -74,7 +74,7 @@ class RegisterController extends Controller
         } else {
             $auth_code = (int) str_pad(mt_Rand(0, 999999), 6, '0', STR_PAD_LEFT);
 
-            Mail::to($request->email)->send(new FreshmanEmailEditNotification($auth_code));
+            Mail::to($request->email)->send(new FreshmanRegisterNotification($auth_code));
     
             $data = $request->all();
             $data['auth_code'] = $auth_code;

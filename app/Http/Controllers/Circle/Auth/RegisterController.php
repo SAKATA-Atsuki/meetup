@@ -16,7 +16,7 @@ use App\Http\Requests\CircleRegisterRequest;
 use App\Http\Requests\CircleEmailAuthRequest;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
-use App\Mail\CircleEmailEditNotification;
+use App\Mail\CircleRegisterNotification;
 
 class RegisterController extends Controller
 {
@@ -92,7 +92,7 @@ class RegisterController extends Controller
         } else {
             $auth_code = (int) str_pad(mt_Rand(0, 999999), 6, '0', STR_PAD_LEFT);
 
-            Mail::to($request->email)->send(new CircleEmailEditNotification($auth_code));
+            Mail::to($request->email)->send(new CircleRegisterNotification($auth_code));
     
             $data = $request->all();
             $data['auth_code'] = $auth_code;
