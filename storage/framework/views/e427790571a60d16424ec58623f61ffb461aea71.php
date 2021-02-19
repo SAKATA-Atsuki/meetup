@@ -40,8 +40,7 @@ unset($__errorArgs, $__bag); ?>
             </div>    
             <div class="button">
                 <input type="submit" value="登録する" class="button_1">
-                <br><br>
-                <a href="<?php echo e(route('freshman.mypage')); ?>" class="button_2">マイページへ</a>    
+                
             </div>
         </form>
     </div>

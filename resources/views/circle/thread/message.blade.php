@@ -36,8 +36,10 @@
             @if (Auth::guard('freshman')->check())
                 @if (count($favorite) == 0)
                     <a href="{{ route('circle.thread.message.favorite', ['id' => $circle['id'], 'pg' => $pg, 'thread_id' => $thread['id'], 'page' => $page]) }}" class="button_2"><i class="far fa-heart"></i> お気に入り追加</a>
+                    <a href="{{ route('circle.thread.message.favorite', ['id' => $circle['id'], 'pg' => $pg, 'thread_id' => $thread['id'], 'page' => $page]) }}" class="button_4"><i class="far fa-heart"></i></a>
                 @else
                     <a href="{{ route('circle.thread.message.unfavorite', ['id' => $circle['id'], 'pg' => $pg, 'thread_id' => $thread['id'], 'page' => $page]) }}" class="button_3"><i class="fas fa-heart"></i> お気に入り済み</a>
+                    <a href="{{ route('circle.thread.message.unfavorite', ['id' => $circle['id'], 'pg' => $pg, 'thread_id' => $thread['id'], 'page' => $page]) }}" class="button_4"><i class="fas fa-heart"></i></a>
                 @endif
             @endif
         </div>
@@ -117,7 +119,8 @@
             <form action="{{ route('circle.thread.message.store') }}" method="POST">
                 @csrf
                 <div class="form">
-                    <textarea name="content" cols="133" rows="10"></textarea>
+                    <textarea name="content" cols="133" rows="10" class="textarea1"></textarea>
+                    <textarea name="content" cols="41" rows="10" class="textarea2"></textarea>
                     @error('content')
                         <p class="error">{{ $message }}</p>
                     @enderror

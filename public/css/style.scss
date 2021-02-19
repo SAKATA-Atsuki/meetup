@@ -22,11 +22,19 @@ body {
     display: flex;
     justify-content: space-between;
     height: 103px;
+    @media (max-width:1010px) {
+        display: block;
+        height: auto;
+        padding: 10px;
+    }            
 
     .left {
         margin-left: 20px;
         display: flex;
         align-items: center;
+        @media (max-width:1010px) {
+            margin-left: 0;
+        }                
 
         a {
             text-decoration: none;
@@ -40,6 +48,9 @@ body {
 
     .right {
         margin-right: 20px;
+        @media (max-width:1010px) {
+            margin-right: 0;
+        }                
 
         p {
             color: white;
@@ -49,6 +60,9 @@ body {
         .button {
             display: flex;
             margin-top: -2px;
+            @media (max-width:1010px) {
+                justify-content: flex-end;
+            }                
 
             .button_1 {
                 text-decoration: none;
@@ -123,6 +137,10 @@ body {
     margin-top: 50px;
     padding: 50px 0;
     border: black solid 1px;
+    @media (max-width:1010px) {
+        width: 300px;
+        padding: 25px 0;
+    }        
 
     .form {
         display: flex;
@@ -130,6 +148,10 @@ body {
         margin: 0 auto;
         margin-bottom: 20px;
         text-align: left;
+        @media (max-width:1010px) {
+            display: block;
+            width: 287px;
+        }        
 
         .left {
             width: 130px;
@@ -165,6 +187,9 @@ body {
 .top_result {
     width: 950px;
     margin: 50px auto;
+    @media (max-width:1010px) {
+        width: 300px;
+    }        
 
     .title {
         display: flex;
@@ -186,18 +211,30 @@ body {
 
     .name {
         width: 300px;
+        @media (max-width:1010px) {
+            width: 250px;
+        }            
     }
 
     .campus {
         width: 200px;
+        @media (max-width:1010px) {
+            display: none;
+        }            
     }
 
     .circle_category {
         width: 200px;
+        @media (max-width:1010px) {
+            display: none;
+        }            
     }
 
     .circle_subcategory {
         width: 200px;
+        @media (max-width:1010px) {
+            display: none;
+        }            
     }
 
     .button {
@@ -887,6 +924,9 @@ body {
 .circle_content {
     width: 1000px;
     margin: 50px auto;
+    @media (max-width:1010px) {
+        width: 300px;
+    }        
 
     .button_1 {
         display: block;
@@ -899,6 +939,10 @@ body {
         border: gray solid 2px;
         border-radius: 100px;
         padding: 5px 0;        
+        @media (max-width:1010px) {
+            width: 200px;
+            font-size: 20px;
+        }                  
     }
 
     .name {
@@ -909,6 +953,9 @@ body {
         span {
             font-size: 31px;
             width: 750px;
+            @media (max-width:1010px) {
+                width: 250px;
+            }                    
         }
 
         .button_2 {
@@ -921,7 +968,10 @@ body {
             background-color: pink;
             border: gray solid 2px;
             border-radius: 100px;
-            padding: 5px 0;        
+            padding: 5px 0;  
+            @media (max-width:1010px) {
+                display: none;
+            }                         
         }    
 
         .button_3 {
@@ -934,20 +984,46 @@ body {
             background-color: pink;
             border: gray solid 2px;
             border-radius: 100px;
-            padding: 5px 0;        
+            padding: 5px 0;    
+            @media (max-width:1010px) {
+                display: none;
+            }                       
+        }    
+
+        .button_4 {
+            text-decoration: none;
+            text-align: center;
+            width: 42px;
+            height: 31px;
+            font-size: 20px;
+            color: red;
+            background-color: pink;
+            border: gray solid 2px;
+            border-radius: 100px;
+            padding: 5px 0;   
+            display: none;
+            @media (max-width:1010px) {
+                display: block;
+            }                        
         }    
     }
 
     .introduction {
         margin-top: 35px;
         display: flex;
+        @media (max-width:1010px) {
+            flex-direction: column;
+        }                
 
         .title {
             width: 115px;
         }
 
         .content {
-            width: 885px;
+            width: 835px;
+            @media (max-width:1010px) {
+                width: 300px;
+            }                    
         }
     }
 
@@ -974,6 +1050,9 @@ body {
 .circle_thread_content {
     width: 1000px;
     margin: 50px auto;
+    @media (max-width:1010px) {
+        width: 300px;
+    }        
 
     .button_1 {
         display: block;
@@ -986,6 +1065,10 @@ body {
         border: gray solid 2px;
         border-radius: 100px;
         padding: 5px 0;        
+        @media (max-width:1010px) {
+            width: 200px;
+            font-size: 20px;
+        }                  
     }
 
     .name {
@@ -996,6 +1079,9 @@ body {
         span {
             font-size: 31px;
             width: 750px;
+            @media (max-width:1010px) {
+                width: 250px;
+            }                    
         }
 
         .button_2 {
@@ -1009,6 +1095,9 @@ body {
             border: gray solid 2px;
             border-radius: 100px;
             padding: 5px 0;        
+            @media (max-width:1010px) {
+                display: none;
+            }                         
         }    
 
         .button_3 {
@@ -1022,6 +1111,26 @@ body {
             border: gray solid 2px;
             border-radius: 100px;
             padding: 5px 0;        
+            @media (max-width:1010px) {
+                display: none;
+            }                         
+        }    
+
+        .button_4 {
+            text-decoration: none;
+            text-align: center;
+            width: 42px;
+            height: 31px;
+            font-size: 20px;
+            color: red;
+            background-color: pink;
+            border: gray solid 2px;
+            border-radius: 100px;
+            padding: 5px 0;   
+            display: none;
+            @media (max-width:1010px) {
+                display: block;
+            }                        
         }    
     }
 }
@@ -1034,6 +1143,10 @@ body {
     margin-top: 50px;
     padding: 50px 0;
     border: black solid 1px;
+    @media (max-width:1010px) {
+        width: 300px;
+        padding: 25px 0;
+    }        
 
     .form {
         display: flex;
@@ -1041,6 +1154,10 @@ body {
         margin: 0 auto;
         margin-bottom: 20px;
         text-align: left;
+        @media (max-width:1010px) {
+            display: block;
+            width: 287px;
+        }        
 
         .left {
             width: 150px;
@@ -1072,6 +1189,9 @@ body {
 .circle_thread_result {
     width: 1000px;
     margin: 50px auto;
+    @media (max-width:1010px) {
+        width: 300px;
+    }        
 
     .button_1 {
         display: block;
@@ -1085,6 +1205,10 @@ body {
         border-radius: 100px;
         padding: 5px 0;        
         margin-bottom: 20px;
+        @media (max-width:1010px) {
+            width: 200px;
+            font-size: 20px;
+        }                  
     }
 
     .title {
@@ -1116,14 +1240,23 @@ body {
 
     .thread_title {
         width: 450px;
+        @media (max-width:1010px) {
+            width: 250px;
+        }            
     }
 
     .number {
         width: 200px;
+        @media (max-width:1010px) {
+            display: none;
+        }            
     }
 
     .author {
         width: 300px;
+        @media (max-width:1010px) {
+            display: none;
+        }            
     }
 
     .button {
@@ -1209,6 +1342,9 @@ body {
 .circle_thread_register_content {
     width: 1000px;
     margin: 50px auto;
+    @media (max-width:1010px) {
+        width: 300px;
+    }        
 
     .button_1 {
         display: block;
@@ -1220,7 +1356,11 @@ body {
         background-color: rgb(154, 2, 0);
         border: gray solid 2px;
         border-radius: 100px;
-        padding: 5px 0;        
+        padding: 5px 0;     
+        @media (max-width:1010px) {
+            width: 200px;
+            font-size: 20px;
+        }                     
     }
 
     .name {
@@ -1231,6 +1371,9 @@ body {
         span {
             font-size: 31px;
             width: 750px;
+            @media (max-width:1010px) {
+                width: 250px;
+            }                    
         }
 
         .button_2 {
@@ -1244,6 +1387,9 @@ body {
             border: gray solid 2px;
             border-radius: 100px;
             padding: 5px 0;        
+            @media (max-width:1010px) {
+                display: none;
+            }                         
         }    
 
         .button_3 {
@@ -1256,7 +1402,27 @@ body {
             background-color: pink;
             border: gray solid 2px;
             border-radius: 100px;
-            padding: 5px 0;        
+            padding: 5px 0;       
+            @media (max-width:1010px) {
+                display: none;
+            }                          
+        }    
+
+        .button_4 {
+            text-decoration: none;
+            text-align: center;
+            width: 42px;
+            height: 31px;
+            font-size: 20px;
+            color: red;
+            background-color: pink;
+            border: gray solid 2px;
+            border-radius: 100px;
+            padding: 5px 0;   
+            display: none;
+            @media (max-width:1010px) {
+                display: block;
+            }                        
         }    
     }
 }
@@ -1265,6 +1431,10 @@ body {
     display: flex;
     width: 437px;
     margin: 0 auto;
+    @media (max-width:1010px) {
+        display: block;
+        width: 287px;
+    }        
 
     .left {
         width: 150px;
@@ -1297,6 +1467,9 @@ body {
 .circle_thread_message_content {
     width: 1000px;
     margin: 50px auto;
+    @media (max-width:1010px) {
+        width: 300px;
+    }        
 
     .button_1 {
         display: block;
@@ -1308,7 +1481,11 @@ body {
         background-color: rgb(154, 2, 0);
         border: gray solid 2px;
         border-radius: 100px;
-        padding: 5px 0;        
+        padding: 5px 0;       
+        @media (max-width:1010px) {
+            width: 200px;
+            font-size: 20px;
+        }                      
     }
 
     .name {
@@ -1319,6 +1496,9 @@ body {
         span {
             font-size: 31px;
             width: 750px;
+            @media (max-width:1010px) {
+                width: 250px;
+            }                    
         }
 
         .button_2 {
@@ -1331,7 +1511,10 @@ body {
             background-color: pink;
             border: gray solid 2px;
             border-radius: 100px;
-            padding: 5px 0;        
+            padding: 5px 0;    
+            @media (max-width:1010px) {
+                display: none;
+            }                             
         }    
 
         .button_3 {
@@ -1344,7 +1527,27 @@ body {
             background-color: pink;
             border: gray solid 2px;
             border-radius: 100px;
-            padding: 5px 0;        
+            padding: 5px 0;       
+            @media (max-width:1010px) {
+                display: none;
+            }                          
+        }    
+
+        .button_4 {
+            text-decoration: none;
+            text-align: center;
+            width: 42px;
+            height: 31px;
+            font-size: 20px;
+            color: red;
+            background-color: pink;
+            border: gray solid 2px;
+            border-radius: 100px;
+            padding: 5px 0;   
+            display: none;
+            @media (max-width:1010px) {
+                display: block;
+            }                        
         }    
     }
 }
@@ -1358,7 +1561,10 @@ body {
     .content {
         width: 1000px;
         margin: 10px auto;
-
+        @media (max-width:1010px) {
+            width: 300px;
+        }        
+    
         .top {
             display: flex;
             justify-content: space-between;
@@ -1389,6 +1595,9 @@ body {
     width: 1000px;
     margin: 0 auto;
     margin-bottom: 50px;
+    @media (max-width:1010px) {
+        width: 300px;
+    }        
 
     .content {
         border-bottom: black solid 1px;
@@ -1421,6 +1630,19 @@ body {
     .form {
         text-align: center;
         margin-top: 50px;
+
+        .textarea1 {
+            @media (max-width:1010px) {
+                display: none;
+            }                
+        }
+
+        .textarea2 {
+            display: none;
+            @media (max-width:1010px) {
+                display: block;
+            }                
+        }
 
         p {
             margin-left: 25px;
@@ -1492,6 +1714,10 @@ body {
     margin-top: 50px;
     display: flex;
     justify-content: space-between;
+    @media (max-width:1010px) {
+        width: 287px;
+        display: block;
+    }                
 
     .profile {
         text-align: center;
@@ -1502,6 +1728,10 @@ body {
             margin: 0 auto;
             margin-bottom: 20px;
             text-align: left;
+            @media (max-width:1010px) {
+                display: block;
+                width: 287px;
+            }        
     
             .left {
                 width: 130px;
@@ -1528,6 +1758,12 @@ body {
             border-radius: 100px;
             padding: 5px 0;        
             margin-bottom: 30px;
+            @media (max-width:1010px) {
+                width: 250px;
+                font-size: 20px;
+                margin: 0 auto;
+                margin-bottom: 25px;
+            }        
         }    
     }
 }
@@ -1536,6 +1772,9 @@ body {
 .freshman_mypage_favorite_content {
     width: 950px;
     margin: 50px auto;
+    @media (max-width:1010px) {
+        width: 300px;
+    }        
 
     .button_1 {
         display: block;
@@ -1549,6 +1788,10 @@ body {
         border-radius: 100px;
         padding: 5px 0;        
         margin-bottom: 42px;
+        @media (max-width:1010px) {
+            width: 200px;
+            font-size: 20px;
+        }            
     }
 
     .title {
@@ -1571,18 +1814,30 @@ body {
 
     .name {
         width: 300px;
+        @media (max-width:1010px) {
+            width: 250px;
+        }            
     }
 
     .campus {
         width: 200px;
+        @media (max-width:1010px) {
+            display: none;
+        }            
     }
 
     .circle_category {
         width: 200px;
+        @media (max-width:1010px) {
+            display: none;
+        }            
     }
 
     .circle_subcategory {
         width: 200px;
+        @media (max-width:1010px) {
+            display: none;
+        }            
     }
 }
 
@@ -1590,6 +1845,9 @@ body {
 .freshman_mypage_circle_content {
     width: 950px;
     margin: 50px auto;
+    @media (max-width:1010px) {
+        width: 300px;
+    }        
 
     .button_1 {
         display: block;
@@ -1601,7 +1859,11 @@ body {
         background-color: rgb(154, 2, 0);
         border: gray solid 2px;
         border-radius: 100px;
-        padding: 5px 0;        
+        padding: 5px 0;  
+        @media (max-width:1010px) {
+            width: 200px;
+            font-size: 20px;
+        }                  
     }
 
     .name {
@@ -1612,6 +1874,9 @@ body {
         span {
             font-size: 31px;
             width: 700px;
+            @media (max-width:1010px) {
+                width: 250px;
+            }                    
         }
 
         .button_2 {
@@ -1624,7 +1889,10 @@ body {
             background-color: pink;
             border: gray solid 2px;
             border-radius: 100px;
-            padding: 5px 0;        
+            padding: 5px 0;     
+            @media (max-width:1010px) {
+                display: none;
+            }                   
         }    
 
         .button_3 {
@@ -1637,13 +1905,36 @@ body {
             background-color: pink;
             border: gray solid 2px;
             border-radius: 100px;
-            padding: 5px 0;        
+            padding: 5px 0;   
+            @media (max-width:1010px) {
+                display: none;
+            }                        
+        }    
+
+        .button_4 {
+            text-decoration: none;
+            text-align: center;
+            width: 42px;
+            height: 31px;
+            font-size: 20px;
+            color: red;
+            background-color: pink;
+            border: gray solid 2px;
+            border-radius: 100px;
+            padding: 5px 0;   
+            display: none;
+            @media (max-width:1010px) {
+                display: block;
+            }                        
         }    
     }
 
     .introduction {
         margin-top: 35px;
         display: flex;
+        @media (max-width:1010px) {
+            flex-direction: column;
+        }                
 
         .title {
             width: 115px;
@@ -1651,6 +1942,9 @@ body {
 
         .content {
             width: 835px;
+            @media (max-width:1010px) {
+                width: 300px;
+            }                    
         }
     }
 }
@@ -1669,6 +1963,10 @@ body {
         margin: 0 auto;
         margin-bottom: 20px;
         text-align: left;
+        @media (max-width:1010px) {
+            display: block;
+            width: 287px;
+        }        
 
         .left {
             width: 130px;
@@ -1728,6 +2026,10 @@ body {
         margin: 0 auto;
         margin-bottom: 20px;
         text-align: left;
+        @media (max-width:1010px) {
+            display: block;
+            width: 287px;
+        }        
 
         .left {
             width: 130px;
@@ -1770,6 +2072,10 @@ body {
         margin: 0 auto;
         margin-bottom: 20px;
         text-align: left;
+        @media (max-width:1010px) {
+            display: block;
+            width: 287px;
+        }        
 
         .left {
             width: 190px;
@@ -1825,6 +2131,10 @@ body {
         margin: 0 auto;
         margin-bottom: 20px;
         text-align: left;
+        @media (max-width:1010px) {
+            display: block;
+            width: 287px;
+        }        
 
         .left {
             width: 130px;
@@ -1880,6 +2190,10 @@ body {
         margin: 0 auto;
         margin-bottom: 20px;
         text-align: left;
+        @media (max-width:1010px) {
+            display: block;
+            width: 287px;
+        }        
 
         .left {
             width: 130px;
@@ -1967,6 +2281,10 @@ body {
     margin-top: 50px;
     display: flex;
     justify-content: space-between;
+    @media (max-width:1010px) {
+        width: 287px;
+        display: block;
+    }                
 
     .profile {
         text-align: center;
@@ -1977,7 +2295,11 @@ body {
             margin: 0 auto;
             margin-bottom: 20px;
             text-align: left;
-    
+            @media (max-width:1010px) {
+                display: block;
+                width: 287px;
+            }        
+
             .left {
                 width: 130px;
             }
@@ -2003,6 +2325,12 @@ body {
             border-radius: 100px;
             padding: 5px 0;        
             margin-bottom: 30px;
+            @media (max-width:1010px) {
+                width: 250px;
+                font-size: 20px;
+                margin: 0 auto;
+                margin-bottom: 25px;
+            }        
         }    
     }
 }
@@ -2021,6 +2349,10 @@ body {
         margin: 0 auto;
         margin-bottom: 20px;
         text-align: left;
+        @media (max-width:1010px) {
+            display: block;
+            width: 287px;
+        }        
 
         .left {
             width: 130px;
@@ -2080,6 +2412,10 @@ body {
         margin: 0 auto;
         margin-bottom: 20px;
         text-align: left;
+        @media (max-width:1010px) {
+            display: block;
+            width: 287px;
+        }        
 
         .left {
             width: 130px;
@@ -2122,6 +2458,10 @@ body {
         margin: 0 auto;
         margin-bottom: 20px;
         text-align: left;
+        @media (max-width:1010px) {
+            display: block;
+            width: 287px;
+        }        
 
         .left {
             width: 190px;
@@ -2177,6 +2517,10 @@ body {
         margin: 0 auto;
         margin-bottom: 20px;
         text-align: left;
+        @media (max-width:1010px) {
+            display: block;
+            width: 287px;
+        }        
 
         .left {
             width: 130px;
@@ -2232,6 +2576,10 @@ body {
         margin: 0 auto;
         margin-bottom: 20px;
         text-align: left;
+        @media (max-width:1010px) {
+            display: block;
+            width: 287px;
+        }        
 
         .left {
             width: 130px;

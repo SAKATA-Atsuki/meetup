@@ -26,8 +26,10 @@
             <span><?php echo e($circle['name']); ?></span>
             <?php if(count($favorite) == 0): ?>
                 <a href="<?php echo e(route('freshman.mypage.favorite.circle.favorite', ['id' => $circle['id']])); ?>" class="button_2"><i class="far fa-heart"></i> お気に入り追加</a>
+                <a href="<?php echo e(route('freshman.mypage.favorite.circle.favorite', ['id' => $circle['id']])); ?>" class="button_4"><i class="far fa-heart"></i></a>
             <?php else: ?>
                 <a href="<?php echo e(route('freshman.mypage.favorite.circle.unfavorite', ['id' => $circle['id']])); ?>" class="button_3"><i class="fas fa-heart"></i> お気に入り済み</a>
+                <a href="<?php echo e(route('freshman.mypage.favorite.circle.unfavorite', ['id' => $circle['id']])); ?>" class="button_4"><i class="fas fa-heart"></i></a>
             <?php endif; ?>
         </div>
         <span><?php echo e($circle->getCampusName()); ?></span>

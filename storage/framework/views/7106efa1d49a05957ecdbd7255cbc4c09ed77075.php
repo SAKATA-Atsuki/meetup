@@ -26,21 +26,6 @@
                     <a href="<?php echo e(route('circle.mypage')); ?>" class="button_3">マイページ</a>
                     <a href="<?php echo e(route('circle.logout')); ?>" class="button_4">ログアウト</a>    
                 </div>
-            <?php else: ?>
-                <div class="form">
-                    <div class="freshman">
-                        <div class="button">
-                            <a href="<?php echo e(route('freshman.login')); ?>" class="button_1">新入生ログイン</a>
-                            <a href="<?php echo e(route('freshman.register')); ?>" class="button_2">新入生登録</a>    
-                        </div>    
-                    </div>
-                    <div class="circle">
-                        <div class="button">
-                            <a href="<?php echo e(route('circle.login')); ?>" class="button_1">サークルログイン</a>
-                            <a href="<?php echo e(route('circle.register')); ?>" class="button_2">サークル登録</a>    
-                        </div>    
-                    </div>    
-                </div>
             <?php endif; ?>
         </div>
     </div>
@@ -51,8 +36,10 @@
             <?php if(Auth::guard('freshman')->check()): ?>
                 <?php if(count($favorite) == 0): ?>
                     <a href="<?php echo e(route('circle.thread.message.favorite', ['id' => $circle['id'], 'pg' => $pg, 'thread_id' => $thread['id'], 'page' => $page])); ?>" class="button_2"><i class="far fa-heart"></i> お気に入り追加</a>
+                    <a href="<?php echo e(route('circle.thread.message.favorite', ['id' => $circle['id'], 'pg' => $pg, 'thread_id' => $thread['id'], 'page' => $page])); ?>" class="button_4"><i class="far fa-heart"></i></a>
                 <?php else: ?>
                     <a href="<?php echo e(route('circle.thread.message.unfavorite', ['id' => $circle['id'], 'pg' => $pg, 'thread_id' => $thread['id'], 'page' => $page])); ?>" class="button_3"><i class="fas fa-heart"></i> お気に入り済み</a>
+                    <a href="<?php echo e(route('circle.thread.message.unfavorite', ['id' => $circle['id'], 'pg' => $pg, 'thread_id' => $thread['id'], 'page' => $page])); ?>" class="button_4"><i class="fas fa-heart"></i></a>
                 <?php endif; ?>
             <?php endif; ?>
         </div>
@@ -132,7 +119,8 @@
             <form action="<?php echo e(route('circle.thread.message.store')); ?>" method="POST">
                 <?php echo csrf_field(); ?>
                 <div class="form">
-                    <textarea name="content" cols="133" rows="10"></textarea>
+                    <textarea name="content" cols="133" rows="10" class="textarea1"></textarea>
+                    <textarea name="content" cols="41" rows="10" class="textarea2"></textarea>
                     <?php $__errorArgs = ['content'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :

@@ -36,8 +36,10 @@
             <?php if(Auth::guard('freshman')->check()): ?>
                 <?php if(count($favorite) == 0): ?>
                     <a href="<?php echo e(route('circle.favorite', ['id' => $circle['id'], 'pg' => $pg])); ?>" class="button_2"><i class="far fa-heart"></i> お気に入り追加</a>
+                    <a href="<?php echo e(route('circle.favorite', ['id' => $circle['id'], 'pg' => $pg])); ?>" class="button_4"><i class="far fa-heart"></i></a>
                 <?php else: ?>
                     <a href="<?php echo e(route('circle.unfavorite', ['id' => $circle['id'], 'pg' => $pg])); ?>" class="button_3"><i class="fas fa-heart"></i> お気に入り済み</a>
+                    <a href="<?php echo e(route('circle.unfavorite', ['id' => $circle['id'], 'pg' => $pg])); ?>" class="button_4"><i class="fas fa-heart"></i></a>
                 <?php endif; ?>
             <?php endif; ?>
         </div>

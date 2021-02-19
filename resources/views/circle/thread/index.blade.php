@@ -36,8 +36,10 @@
             @if (Auth::guard('freshman')->check())
                 @if (count($favorite) == 0)
                     <a href="{{ route('circle.thread.favorite', ['id' => $circle['id'], 'pg' => $pg, 'page' => $page]) }}" class="button_2"><i class="far fa-heart"></i> お気に入り追加</a>
+                    <a href="{{ route('circle.thread.favorite', ['id' => $circle['id'], 'pg' => $pg, 'page' => $page]) }}" class="button_4"><i class="far fa-heart"></i></a>
                 @else
                     <a href="{{ route('circle.thread.unfavorite', ['id' => $circle['id'], 'pg' => $pg, 'page' => $page]) }}" class="button_3"><i class="fas fa-heart"></i> お気に入り済み</a>
+                    <a href="{{ route('circle.thread.unfavorite', ['id' => $circle['id'], 'pg' => $pg, 'page' => $page]) }}" class="button_4"><i class="fas fa-heart"></i></a>
                 @endif
             @endif
         </div>

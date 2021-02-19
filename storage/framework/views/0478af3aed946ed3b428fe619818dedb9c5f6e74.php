@@ -37,7 +37,7 @@
                     <span>変更後のメールアドレス</span>
                 </div>
                 <div class="right">
-                    <input type="text" name="email" value="<?php echo e(old('email')); ?>" size="39" placeholder="ab0123cd@ed.ritsumei.ac.jp">
+                    <input type="text" name="email" value="<?php echo e(old('email')); ?>" size="39">
                     <?php $__errorArgs = ['email'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :

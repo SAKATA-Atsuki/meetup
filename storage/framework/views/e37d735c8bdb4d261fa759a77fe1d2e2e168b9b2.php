@@ -26,21 +26,6 @@
                     <a href="<?php echo e(route('circle.mypage')); ?>" class="button_3">マイページ</a>
                     <a href="<?php echo e(route('circle.logout')); ?>" class="button_4">ログアウト</a>    
                 </div>
-            <?php else: ?>
-                <div class="form">
-                    <div class="freshman">
-                        <div class="button">
-                            <a href="<?php echo e(route('freshman.login')); ?>" class="button_1">新入生ログイン</a>
-                            <a href="<?php echo e(route('freshman.register')); ?>" class="button_2">新入生登録</a>    
-                        </div>    
-                    </div>
-                    <div class="circle">
-                        <div class="button">
-                            <a href="<?php echo e(route('circle.login')); ?>" class="button_1">サークルログイン</a>
-                            <a href="<?php echo e(route('circle.register')); ?>" class="button_2">サークル登録</a>    
-                        </div>    
-                    </div>    
-                </div>
             <?php endif; ?>
         </div>
     </div>
@@ -51,8 +36,10 @@
             <?php if(Auth::guard('freshman')->check()): ?>
                 <?php if(count($favorite) == 0): ?>
                     <a href="<?php echo e(route('circle.thread.favorite', ['id' => $circle['id'], 'pg' => $pg, 'page' => $page])); ?>" class="button_2"><i class="far fa-heart"></i> お気に入り追加</a>
+                    <a href="<?php echo e(route('circle.thread.favorite', ['id' => $circle['id'], 'pg' => $pg, 'page' => $page])); ?>" class="button_4"><i class="far fa-heart"></i></a>
                 <?php else: ?>
                     <a href="<?php echo e(route('circle.thread.unfavorite', ['id' => $circle['id'], 'pg' => $pg, 'page' => $page])); ?>" class="button_3"><i class="fas fa-heart"></i> お気に入り済み</a>
+                    <a href="<?php echo e(route('circle.thread.unfavorite', ['id' => $circle['id'], 'pg' => $pg, 'page' => $page])); ?>" class="button_4"><i class="fas fa-heart"></i></a>
                 <?php endif; ?>
             <?php endif; ?>
         </div>

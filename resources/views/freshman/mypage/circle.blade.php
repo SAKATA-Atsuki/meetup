@@ -26,8 +26,10 @@
             <span>{{ $circle['name'] }}</span>
             @if (count($favorite) == 0)
                 <a href="{{ route('freshman.mypage.favorite.circle.favorite', ['id' => $circle['id']]) }}" class="button_2"><i class="far fa-heart"></i> お気に入り追加</a>
+                <a href="{{ route('freshman.mypage.favorite.circle.favorite', ['id' => $circle['id']]) }}" class="button_4"><i class="far fa-heart"></i></a>
             @else
                 <a href="{{ route('freshman.mypage.favorite.circle.unfavorite', ['id' => $circle['id']]) }}" class="button_3"><i class="fas fa-heart"></i> お気に入り済み</a>
+                <a href="{{ route('freshman.mypage.favorite.circle.unfavorite', ['id' => $circle['id']]) }}" class="button_4"><i class="fas fa-heart"></i></a>
             @endif
         </div>
         <span>{{ $circle->getCampusName() }}</span>

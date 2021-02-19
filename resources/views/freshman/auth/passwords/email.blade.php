@@ -27,7 +27,7 @@
                     <span>メールアドレス</span>
                 </div>
                 <div class="right">
-                    <input type="text" name="email" value="{{ old('email') }}" size="39" placeholder="ab0123cd@ed.ritsumei.ac.jp">
+                    <input type="text" name="email" value="{{ old('email') }}" size="39">
                     @error('email')
                         <p class="error">{{ $message }}</p>
                     @enderror
