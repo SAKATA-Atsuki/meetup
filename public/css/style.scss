@@ -32,6 +32,9 @@ body {
             text-decoration: none;
             color: white;
             font-size: 25px;    
+            @media (max-width:1010px) {
+                font-size: 15px;
+            }        
         }
     }
 
@@ -281,6 +284,11 @@ body {
     justify-content: space-between;
     width: 800px;
     margin: 100px auto;
+    @media (max-width:1010px) {
+        display: block;
+        width: 250px;
+        margin: 50px auto;
+    }
 
     .buttons {
         display: flex;
@@ -328,6 +336,10 @@ body {
         margin: 0 auto;
         margin-bottom: 20px;
         text-align: left;
+        @media (max-width:1010px) {
+            display: block;
+            width: 287px;
+        }        
 
         .left {
             width: 130px;
@@ -374,6 +386,10 @@ body {
         margin: 0 auto;
         margin-bottom: 20px;
         text-align: left;
+        @media (max-width:1010px) {
+            display: block;
+            width: 287px;
+        }        
 
         .left {
             width: 130px;
@@ -416,6 +432,10 @@ body {
         margin: 0 auto;
         margin-bottom: 20px;
         text-align: left;
+        @media (max-width:1010px) {
+            display: block;
+            width: 287px;
+        }        
 
         .left {
             width: 130px;
@@ -471,6 +491,10 @@ body {
         margin: 0 auto;
         margin-bottom: 20px;
         text-align: left;
+        @media (max-width:1010px) {
+            display: block;
+            width: 287px;
+        }        
 
         .left {
             width: 130px;
@@ -517,6 +541,10 @@ body {
         margin: 0 auto;
         margin-bottom: 20px;
         text-align: left;
+        @media (max-width:1010px) {
+            display: block;
+            width: 287px;
+        }        
 
         .left {
             width: 130px;
@@ -618,6 +646,10 @@ body {
         margin: 0 auto;
         margin-bottom: 20px;
         text-align: left;
+        @media (max-width:1010px) {
+            display: block;
+            width: 287px;
+        }        
 
         .left {
             width: 130px;
@@ -664,6 +696,10 @@ body {
         margin: 0 auto;
         margin-bottom: 20px;
         text-align: left;
+        @media (max-width:1010px) {
+            display: block;
+            width: 287px;
+        }        
 
         .left {
             width: 130px;
@@ -706,6 +742,10 @@ body {
         margin: 0 auto;
         margin-bottom: 20px;
         text-align: left;
+        @media (max-width:1010px) {
+            display: block;
+            width: 287px;
+        }        
 
         .left {
             width: 130px;
@@ -761,6 +801,10 @@ body {
         margin: 0 auto;
         margin-bottom: 20px;
         text-align: left;
+        @media (max-width:1010px) {
+            display: block;
+            width: 287px;
+        }        
 
         .left {
             width: 130px;
@@ -807,6 +851,10 @@ body {
         margin: 0 auto;
         margin-bottom: 20px;
         text-align: left;
+        @media (max-width:1010px) {
+            display: block;
+            width: 287px;
+        }        
 
         .left {
             width: 130px;

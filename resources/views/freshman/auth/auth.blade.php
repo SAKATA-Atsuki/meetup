@@ -33,8 +33,8 @@
             </div>    
             <div class="button">
                 <input type="submit" value="登録する" class="button_1">
-                <br><br>
-                <a href="{{ route('freshman.mypage') }}" class="button_2">マイページへ</a>    
+                {{-- <br><br>
+                <a href="{{ route('freshman.mypage') }}" class="button_2">マイページへ</a>     --}}
             </div>
         </form>
     </div>
