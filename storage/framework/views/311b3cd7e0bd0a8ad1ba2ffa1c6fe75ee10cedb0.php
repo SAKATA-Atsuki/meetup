@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="google-site-verification" content="0fKXNAUFii0sAWjxThf7uocRVAxGZD507XQhKypEXKY" />
     <meta name="csrf-token" content="<?php echo e(csrf_token()); ?>">
     <script src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
     <script type="text/javascript">
@@ -44,6 +45,7 @@
     </script>
     <title>立命館大学 - 新入生・サークル交流サイト</title>
     <link rel="stylesheet" href="<?php echo e(asset('css/style.css')); ?>">
+    <link rel="shortcut icon" href="<?php echo e(asset("ritsumeikan.jpeg")); ?>" type="image/x-icon">
 </head>
 <body>
     <?php if(Auth::guard('freshman')->check() || Auth::guard('circle')->check()): ?>

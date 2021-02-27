@@ -45,6 +45,7 @@
     </script>
     <title>立命館大学 - 新入生・サークル交流サイト</title>
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <link rel="shortcut icon" href="{{ asset("ritsumeikan.jpeg") }}" type="image/x-icon">
 </head>
 <body>
     @if (Auth::guard('freshman')->check() || Auth::guard('circle')->check())

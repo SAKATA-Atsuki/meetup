@@ -43,6 +43,7 @@
     </script>
     <title>サークル登録</title>
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <link rel="shortcut icon" href="{{ asset("ritsumeikan.jpeg") }}" type="image/x-icon">
 </head>
 <body>
     <div class="header">
