@@ -1167,7 +1167,7 @@ body {
 .circle_content .name .button_4 {
   text-decoration: none;
   text-align: center;
-  width: 42px;
+  width: 41px;
   height: 31px;
   font-size: 20px;
   color: red;
@@ -1326,7 +1326,7 @@ body {
 .circle_thread_content .name .button_4 {
   text-decoration: none;
   text-align: center;
-  width: 42px;
+  width: 41px;
   height: 31px;
   font-size: 20px;
   color: red;
@@ -1668,7 +1668,7 @@ body {
 .circle_thread_register_content .name .button_4 {
   text-decoration: none;
   text-align: center;
-  width: 42px;
+  width: 41px;
   height: 31px;
   font-size: 20px;
   color: red;
@@ -1820,7 +1820,7 @@ body {
 .circle_thread_message_content .name .button_4 {
   text-decoration: none;
   text-align: center;
-  width: 42px;
+  width: 41px;
   height: 31px;
   font-size: 20px;
   color: red;
@@ -2279,7 +2279,7 @@ body {
 .freshman_mypage_circle_content .name .button_4 {
   text-decoration: none;
   text-align: center;
-  width: 42px;
+  width: 41px;
   height: 31px;
   font-size: 20px;
   color: red;
@@ -3056,6 +3056,32 @@ body {
 }
 
 .circle_mypage_password_edit_content .button .button_2 {
+  display: block;
+  text-decoration: none;
+  width: 246px;
+  font-size: 25px;
+  color: black;
+  background-color: lightblue;
+  border: blue solid 2px;
+  border-radius: 100px;
+  padding: 5px 0;
+  margin: 0 auto;
+}
+
+/* circle/mypage/notification ---------------------------------------------------------------------------------------------------- */
+.circle_mypage_notification_content {
+  text-align: center;
+}
+
+.circle_mypage_notification_content h1 {
+  font-weight: lighter;
+}
+
+.circle_mypage_notification_content .button {
+  margin: 50px 0;
+}
+
+.circle_mypage_notification_content .button .button_1 {
   display: block;
   text-decoration: none;
   width: 246px;

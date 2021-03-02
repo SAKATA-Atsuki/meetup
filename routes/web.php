@@ -108,6 +108,11 @@ Route::post('circle/mypage/email/update', 'Circle\Mypage\EmailController@update'
 Route::get('circle/mypage/password', 'Circle\Mypage\PasswordController@index')->name('circle.mypage.password')->middleware(CircleLogin::class);
 Route::post('circle/mypage/password/update', 'Circle\Mypage\PasswordController@update')->name('circle.mypage.password.update')->middleware(CircleLogin::class);
 
+// circle.mypage.notification
+Route::get('circle/mypage/notification', 'Circle\Mypage\NotificationController@index')->name('circle.mypage.notification')->middleware(CircleLogin::class);
+Route::get('circle/mypage/notification/reject', 'Circle\Mypage\NotificationController@reject')->name('circle.mypage.reject')->middleware(CircleLogin::class);
+Route::get('circle/mypage/notification/permit', 'Circle\Mypage\NotificationController@permit')->name('circle.mypage.permit')->middleware(CircleLogin::class);
+
 // circle.mypage.withdrawal
 Route::get('circle/mypage/withdrawal', 'Circle\Mypage\WithdrawalController@index')->name('circle.mypage.withdrawal')->middleware(CircleLogin::class);
 Route::post('circle/mypage/withdrawal/delete', 'Circle\Mypage\WithdrawalController@delete')->name('circle.mypage.withdrawal.delete')->middleware(CircleLogin::class);

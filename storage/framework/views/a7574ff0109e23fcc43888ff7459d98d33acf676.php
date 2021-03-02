@@ -7,6 +7,7 @@
     <title>マイページ</title>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
     <link rel="stylesheet" href="<?php echo e(asset('css/style.css')); ?>">
+    <link rel="shortcut icon" href="<?php echo e(asset("ritsumeikan.jpeg")); ?>" type="image/x-icon">
 </head>
 <body>
     <div class="header">
@@ -87,6 +88,7 @@
             <a href="<?php echo e(route('circle.mypage.profile')); ?>" class="button">プロフィール変更</a>    
             <a href="<?php echo e(route('circle.mypage.email')); ?>" class="button">メールアドレス変更</a>    
             <a href="<?php echo e(route('circle.mypage.password')); ?>" class="button">パスワード変更</a>    
+            <a href="<?php echo e(route('circle.mypage.notification')); ?>" class="button">メール通知設定</a>    
             <a href="<?php echo e(route('circle.mypage.withdrawal')); ?>" class="button">退会</a>    
         </div>
     </div>

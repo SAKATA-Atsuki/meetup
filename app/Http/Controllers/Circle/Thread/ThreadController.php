@@ -10,7 +10,10 @@ use App\Models\Favorite;
 use App\Models\Thread;
 use App\Models\Freshman;
 use App\Models\Message;
+use App\Models\Reject;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\FreshmanCreateThreadNotification;
 
 class ThreadController extends Controller
 {
@@ -153,6 +156,7 @@ class ThreadController extends Controller
     // スレッド登録
     public function store(ThreadRegisterRequest $request)
     {
+        // 登録処理
         $thread = new Thread;
         if (Auth::guard('freshman')->check()) {
             $thread->freshman_id = Auth::guard('freshman')->user()->id;
@@ -160,6 +164,15 @@ class ThreadController extends Controller
         $thread->circle_id = $request->id;
         $thread->title = $request->title;
         $thread->save();
+
+        // 通知送信処理
+        if (Auth::guard('freshman')->check()) {
+            $circle = Circle::find($request->id);
+            $reject = Reject::where('circle_id', $circle['id'])->get();
+            if (count($reject) == 0) {
+                Mail::to($circle['email'])->send(new FreshmanCreateThreadNotification(Auth::guard('freshman')->user()->nickname, $request->title));
+            }
+        }
 
         return redirect()->route('circle.thread', ['id' => $request->id, 'pg' => $request->pg]);
     }

@@ -88,6 +88,7 @@
             <a href="{{ route('circle.mypage.profile') }}" class="button">プロフィール変更</a>    
             <a href="{{ route('circle.mypage.email') }}" class="button">メールアドレス変更</a>    
             <a href="{{ route('circle.mypage.password') }}" class="button">パスワード変更</a>    
+            <a href="{{ route('circle.mypage.notification') }}" class="button">メール通知設定</a>    
             <a href="{{ route('circle.mypage.withdrawal') }}" class="button">退会</a>    
         </div>
     </div>

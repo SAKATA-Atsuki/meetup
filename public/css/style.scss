@@ -1009,7 +1009,7 @@ body {
         .button_4 {
             text-decoration: none;
             text-align: center;
-            width: 42px;
+            width: 41px;
             height: 31px;
             font-size: 20px;
             color: red;
@@ -1135,7 +1135,7 @@ body {
         .button_4 {
             text-decoration: none;
             text-align: center;
-            width: 42px;
+            width: 41px;
             height: 31px;
             font-size: 20px;
             color: red;
@@ -1427,7 +1427,7 @@ body {
         .button_4 {
             text-decoration: none;
             text-align: center;
-            width: 42px;
+            width: 41px;
             height: 31px;
             font-size: 20px;
             color: red;
@@ -1552,7 +1552,7 @@ body {
         .button_4 {
             text-decoration: none;
             text-align: center;
-            width: 42px;
+            width: 41px;
             height: 31px;
             font-size: 20px;
             color: red;
@@ -1930,7 +1930,7 @@ body {
         .button_4 {
             text-decoration: none;
             text-align: center;
-            width: 42px;
+            width: 41px;
             height: 31px;
             font-size: 20px;
             color: red;
@@ -2623,6 +2623,32 @@ body {
         }
 
         .button_2 {
+            display: block;
+            text-decoration: none;
+            width: 246px;
+            font-size: 25px;
+            color: black;
+            background-color: lightblue;
+            border: blue solid 2px;
+            border-radius: 100px;
+            padding: 5px 0;        
+            margin: 0 auto;
+        }    
+    }
+}
+
+/* circle/mypage/notification ---------------------------------------------------------------------------------------------------- */
+.circle_mypage_notification_content {
+    text-align: center;
+
+    h1 {
+        font-weight: lighter;
+    }
+
+    .button {
+        margin: 50px 0;
+
+        .button_1 {
             display: block;
             text-decoration: none;
             width: 246px;

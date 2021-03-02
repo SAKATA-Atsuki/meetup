@@ -10,7 +10,10 @@ use App\Models\Favorite;
 use App\Models\Thread;
 use App\Models\Freshman;
 use App\Models\Message;
+use App\Models\Reject;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\FreshmanCreateMessageNotification;
 
 class MessageController extends Controller
 {
@@ -61,6 +64,7 @@ class MessageController extends Controller
     // メッセージ登録
     public function store(MessageRegisterRequest $request)
     {
+        // 登録処理
         $message = new Message;
         $message->thread_id = $request->thread_id;
         if (Auth::guard('freshman')->check()) {
@@ -70,6 +74,15 @@ class MessageController extends Controller
         $message->content = $request->content;
         $message->save();
 
+        // 通知送信処理
+        if (Auth::guard('freshman')->check()) {
+            $circle = Circle::find($request->id);
+            $reject = Reject::where('circle_id', $circle['id'])->get();
+            if (count($reject) == 0) {
+                Mail::to($circle['email'])->send(new FreshmanCreateMessageNotification(Auth::guard('freshman')->user()->nickname, $request->content));
+            }
+        }
+        
         return redirect()->route('circle.thread.message', ['id' => $request->id, 'pg' => $request->pg, 'thread_id' => $request->thread_id, 'page' => $request->page]);
     }    
 
