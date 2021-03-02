@@ -120,8 +120,7 @@
             <form action="<?php echo e(route('circle.thread.message.store')); ?>" method="POST">
                 <?php echo csrf_field(); ?>
                 <div class="form">
-                    <textarea name="content" cols="133" rows="10" class="textarea1"></textarea>
-                    <textarea name="content" cols="41" rows="10" class="textarea2"></textarea>
+                    <textarea name="content" rows="10" class="content"></textarea>
                     <?php $__errorArgs = ['content'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
@@ -147,8 +146,7 @@ unset($__errorArgs, $__bag); ?>
                 <form action="<?php echo e(route('circle.thread.message.store')); ?>" method="POST">
                     <?php echo csrf_field(); ?>
                     <div class="form">
-                        <textarea name="content" cols="133" rows="10" class="textarea1"></textarea>
-                        <textarea name="content" cols="41" rows="10" class="textarea2"></textarea>
+                        <textarea name="content" rows="10" class="content"></textarea>
                         <?php $__errorArgs = ['content'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :

@@ -1932,19 +1932,13 @@ body {
   margin-top: 50px;
 }
 
-@media (max-width: 1010px) {
-  .circle_thread_message_list .form .textarea1 {
-    display: none;
-  }
-}
-
-.circle_thread_message_list .form .textarea2 {
-  display: none;
+.circle_thread_message_list .form .content {
+  width: 900px;
 }
 
 @media (max-width: 1010px) {
-  .circle_thread_message_list .form .textarea2 {
-    display: block;
+  .circle_thread_message_list .form .content {
+    width: 200px;
   }
 }
 

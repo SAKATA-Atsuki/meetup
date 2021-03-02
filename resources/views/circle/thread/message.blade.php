@@ -120,8 +120,7 @@
             <form action="{{ route('circle.thread.message.store') }}" method="POST">
                 @csrf
                 <div class="form">
-                    <textarea name="content" cols="133" rows="10" class="textarea1"></textarea>
-                    <textarea name="content" cols="41" rows="10" class="textarea2"></textarea>
+                    <textarea name="content" rows="10" class="content"></textarea>
                     @error('content')
                         <p class="error">{{ $message }}</p>
                     @enderror
@@ -140,8 +139,7 @@
                 <form action="{{ route('circle.thread.message.store') }}" method="POST">
                     @csrf
                     <div class="form">
-                        <textarea name="content" cols="133" rows="10" class="textarea1"></textarea>
-                        <textarea name="content" cols="41" rows="10" class="textarea2"></textarea>
+                        <textarea name="content" rows="10" class="content"></textarea>
                         @error('content')
                             <p class="error">{{ $message }}</p>
                         @enderror
