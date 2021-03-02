@@ -194,4 +194,4 @@ Route::get('admin/favorite/delete', 'Admin\FavoriteController@getDelete')->name(
 Route::post('admin/favorite/delete', 'Admin\FavoriteController@postDelete')->middleware('auth:admin');
 
 // announce
-Route::get('announce', 'AnnounceController@index');
+// Route::get('announce', 'AnnounceController@index');
