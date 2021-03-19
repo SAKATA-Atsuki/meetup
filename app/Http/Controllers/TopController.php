@@ -39,12 +39,20 @@ class TopController extends Controller
         $campuses = Campus::all();
         $circle_subcategories = Circle_subcategory::where('circle_category_id', $session_top_search['circle_category_id'])->get();
 
-        $circles = Circle::where('name', 'like', '%' . $session_top_search['name'] . '%')
-                            ->where('campus_id', 'like', '%' . $session_top_search['campus_id'] . '%')
-                            ->where('circle_category_id', 'like', '%' . $session_top_search['circle_category_id'] . '%')
-                            ->where('circle_subcategory_id', 'like', '%' . $session_top_search['circle_subcategory_id'] . '%')
-                            ->orderBy('updated_at', 'desc')
-                            ->simplePaginate(10);
+        if ($session_top_search['circle_subcategory_id'] == '') {
+            $circles = Circle::where('name', 'like', '%' . $session_top_search['name'] . '%')
+                                ->where('campus_id', 'like', '%' . $session_top_search['campus_id'] . '%')
+                                ->where('circle_category_id', 'like', '%' . $session_top_search['circle_category_id'] . '%')
+                                ->orderBy('updated_at', 'desc')
+                                ->simplePaginate(10);
+        } else {
+            $circles = Circle::where('name', 'like', '%' . $session_top_search['name'] . '%')
+                                ->where('campus_id', 'like', '%' . $session_top_search['campus_id'] . '%')
+                                ->where('circle_category_id', 'like', '%' . $session_top_search['circle_category_id'] . '%')
+                                ->where('circle_subcategory_id', $session_top_search['circle_subcategory_id'])
+                                ->orderBy('updated_at', 'desc')
+                                ->simplePaginate(10);
+        }
 
         return view('index', compact('session_top_search', 'page', 'campuses', 'circle_subcategories', 'circles'));
     }
@@ -71,12 +79,20 @@ class TopController extends Controller
         $campuses = Campus::all();
         $circle_subcategories = Circle_subcategory::where('circle_category_id', $session_top_search['circle_category_id'])->get();
 
-        $circles = Circle::where('name', 'like', '%' . $session_top_search['name'] . '%')
-                            ->where('campus_id', 'like', '%' . $session_top_search['campus_id'] . '%')
-                            ->where('circle_category_id', 'like', '%' . $session_top_search['circle_category_id'] . '%')
-                            ->where('circle_subcategory_id', 'like', '%' . $session_top_search['circle_subcategory_id'] . '%')
-                            ->orderBy('updated_at', 'desc')
-                            ->simplePaginate(10);
+        if ($session_top_search['circle_subcategory_id'] == '') {
+            $circles = Circle::where('name', 'like', '%' . $session_top_search['name'] . '%')
+                                ->where('campus_id', 'like', '%' . $session_top_search['campus_id'] . '%')
+                                ->where('circle_category_id', 'like', '%' . $session_top_search['circle_category_id'] . '%')
+                                ->orderBy('updated_at', 'desc')
+                                ->simplePaginate(10);
+        } else {
+            $circles = Circle::where('name', 'like', '%' . $session_top_search['name'] . '%')
+                                ->where('campus_id', 'like', '%' . $session_top_search['campus_id'] . '%')
+                                ->where('circle_category_id', 'like', '%' . $session_top_search['circle_category_id'] . '%')
+                                ->where('circle_subcategory_id', $session_top_search['circle_subcategory_id'])
+                                ->orderBy('updated_at', 'desc')
+                                ->simplePaginate(10);
+        }
 
         return view('index', compact('session_top_search', 'page', 'campuses', 'circle_subcategories', 'circles'));
     }
