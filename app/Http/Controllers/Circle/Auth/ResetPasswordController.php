@@ -83,6 +83,12 @@ class ResetPasswordController extends Controller
         $this->guard()->login($user);
     }
 
+    protected function sendResetFailedResponse(Request $request, $response)
+    {
+        return redirect()->back()
+                    ->withErrors(['password' => trans($response)]);
+    }
+
     // ブローカー
     public function broker()
     {
