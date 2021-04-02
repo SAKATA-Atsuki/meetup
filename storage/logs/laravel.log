@@ -18178,3 +18178,12 @@ Did you mean one of these?
 #38 /Applications/MAMP/htdocs/meetup/public/index.php(55): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
 #39 {main}
 "} 
+[2021-03-30 17:47:18] local.ERROR: Command "GetJobdata" is not defined. {"exception":"[object] (Symfony\\Component\\Console\\Exception\\CommandNotFoundException(code: 0): Command \"GetJobdata\" is not defined. at /Applications/MAMP/htdocs/meetup/vendor/symfony/console/Application.php:676)
+[stacktrace]
+#0 /Applications/MAMP/htdocs/meetup/vendor/symfony/console/Application.php(237): Symfony\\Component\\Console\\Application->find('GetJobdata')
+#1 /Applications/MAMP/htdocs/meetup/vendor/symfony/console/Application.php(149): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#2 /Applications/MAMP/htdocs/meetup/vendor/laravel/framework/src/Illuminate/Console/Application.php(93): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#3 /Applications/MAMP/htdocs/meetup/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(131): Illuminate\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#4 /Applications/MAMP/htdocs/meetup/artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#5 {main}
+"} 

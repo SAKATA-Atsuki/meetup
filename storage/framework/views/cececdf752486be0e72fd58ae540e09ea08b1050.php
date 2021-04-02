@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>サークルパスワードリセット</title>
     <link rel="stylesheet" href="<?php echo e(asset('css/style.css')); ?>">
+    <link rel="shortcut icon" href="<?php echo e(asset("ritsumeikan.jpeg")); ?>" type="image/x-icon">
 </head>
 <body>
     <div class="header">
