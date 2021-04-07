@@ -30,7 +30,7 @@ class AnnounceNotification extends Mailable
      */
     public function build()
     {
-        return $this->subject('少し重要なお知らせです')
+        return $this->subject('立命館大学へようこそ！')
                     ->view('text')
                     ->with(['name' => $this->name]);
     }
